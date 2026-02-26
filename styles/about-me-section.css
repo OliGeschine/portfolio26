@@ -1,0 +1,57 @@
+section {
+    display: flex;
+    width: 100%;
+    padding: 100px 50px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 90px;
+    margin-bottom: 40px;
+}
+
+.infobox {
+    width: 470px;
+}
+
+.profile_picture_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.profile_picture {
+    width: 400px;
+    height: 500px;
+    border-radius: 20px;
+}
+
+.placeholder_span {
+    position: absolute;
+    font-size: 60px;
+    color: rgba(0, 0, 0, 0.4);
+    rotate: -45deg;
+    z-index: 2;
+}
+
+.short_info_container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 600px;
+}
+
+.short_info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.about_me_icons {
+    width: 48px;
+    height: 48px;
+}
