@@ -10,11 +10,14 @@
     <link rel="stylesheet" href="./styles/navbar.css">
     <link rel="stylesheet" href="./styles/landing-section.css">
     <link rel="stylesheet" href="./styles/about-me-section.css">
+    <link rel="stylesheet" href="./styles/skills-section.css">
+    <link rel="stylesheet" href="./styles/portfolio-section.css">
 
     <script src="script.js"></script>
 </head>
 
 <body>
+
     <nav>
         <h1>
             <a href="#landing_page">
@@ -28,7 +31,7 @@
             <div class="navigation-links">
                 <a href="#about_me">About me</a>
                 <a href="#skills">Skills</a>
-                <a href="#">Portfolio</a>
+                <a href="#portfolio">Portfolio</a>
             </div>
 
             <div onclick="toggleLanguageIcon()" class="change_language_button">
@@ -39,6 +42,8 @@
         </div>
 
     </nav>
+
+
     <section id="landing_page" class="landing-section">
         <div class="headlines">
             <h1>Oliver Geschine</h1>
@@ -54,9 +59,10 @@
             <a href=""><img src="./assets/icons/email.png" alt="Email"></a>
             <a href=""><img src="./assets/icons/linkedin.png" alt="LinkedIn"></a>
         </div>
-
     </section>
-    <section id="about_me">
+
+
+    <section id="about_me" class="about_me_section">
         <div class="infobox">
             <h1>About Me</h1>
             <span>
@@ -85,10 +91,10 @@
             <span class="placeholder_span">placeholder</span>
             <img class="profile_picture" src="./assets/img/profile_picture.png" alt="">
         </div>
-
     </section>
 
-    <section id="skills">
+
+    <section id="skills" class="skills_section">
         <img class="skills_picture" src="./assets/img/skills_overview.png" alt="">
 
         <div class="skills_infobox">
@@ -113,10 +119,37 @@
                 consequatur iste consequuntur quasi.</span>
             <button>Let's talk!</button>
         </div>
-
-
-
     </section>
+
+
+    <section id="portfolio" class="portfolio_section">
+        <div class="headline_container">
+            <img src="./assets/icons/purple_line.png" alt="">
+            <h1>Portfolio</h1>
+        </div>
+
+        <div class="project_container">
+            <img src="./assets/img/pollo_loco.png" alt="">
+            <div id="overlay" class="overlay">
+                <div class="button_container">
+                    <button class="git_button">Github</button>
+                    <button class="live_button">Live test</button>
+                </div>
+                <div class="info_container">
+                    <h2>title</h2>
+                    <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi, exercitationem, voluptas sint
+                        voluptates quia id, odio aliquid itaque ducimus nemo ullam doloremque enim! Dolorum magnam,
+                        blanditiis ratione sed consequuntur deleniti?
+                    </span>
+                    <span>
+                        JavaScript | HTML | CSS
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 </body>
 
 </html>

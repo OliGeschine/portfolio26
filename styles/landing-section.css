@@ -30,7 +30,7 @@ h2 {
     margin-bottom: 60px;
 }
 
-button {
+.landing-section button {
     cursor: pointer;
     color: white;
     height: 58px;
@@ -43,7 +43,7 @@ button {
     border: none;
 }
 
-button:hover {
+.landing-section button:hover {
     background-color: #9747FF;
     transform: scale(1.15);
 }
