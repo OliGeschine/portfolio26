@@ -12,7 +12,7 @@
 }
 
 .dNone {
-    display: none;
+    display: none !important;
 }
 
 .headline_container {
@@ -20,6 +20,14 @@
     align-items: center;
     gap: 20px;
     margin-bottom: 40px;
+}
+
+.project-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    max-width: 1286px;
 }
 
 .project_container {

@@ -17,7 +17,7 @@
     <script src="script.js"></script>
 </head>
 
-<body>
+<body onload="renderProjects()">
 
     <nav>
         <h1>
@@ -129,27 +129,10 @@
             <h1>Portfolio</h1>
         </div>
 
-        <div class="project_container">
-            <img id="projectImg" class="project-container-img" src="./assets/img/pollo_loco.png" alt="">
-            <div id="overlay" class="overlay">
-                <div class="button_container">
-                    <button class="git_button">Github</button>
-                    <button class="live_button">Live test</button>
-                </div>
-                <div class="info_container">
-                    <h2 id="title">El Pollo Loco</h2>
-                    <span class="project-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi,
-                        exercitationem, voluptas sint
-                        voluptates quia id, odio aliquid itaque ducimus nemo ullam doloremque enim! Dolorum magnam,
-                        blanditiis ratione sed consequuntur deleniti?
-                    </span>
-                    <span class="used-skills">
-                        JavaScript | HTML | CSS
-                    </span>
-                </div>
-            </div>
-        </div>
+        <div id="projectList" class="project-wrapper"></div>
+
     </section>
+
 
     <section class="comment-section">
         <div class="comment-content">
