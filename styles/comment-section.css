@@ -2,25 +2,56 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 100px 50px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    padding-left: 50px;
     gap: 60px;
     box-sizing: border-box;
+    width: 100%;
 }
 
 .comment-content {
     display: flex;
-    gap: 20px;
+    justify-content: flex-end;
+    gap: 48px;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .comment-container {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid #9747FF;
+    border-radius: 10px;
+    width: 851px;
+    height: 272px;
+    padding: 48px 96px;
 }
 
-.comment-img img {
-    width: 100px;
-    height: 100px;
+.quote-marks {
+    width: 65px;
+    height: 70px;
+    position: relative;
+    left: 55px;
+    bottom: 50px;
+}
+
+.comment-img-container {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.comment-img {
+    width: 272px;
+    height: 272px;
     background-color: #ccc;
     border-radius: 50%;
+    border: 3px solid #70E61C;
+}
+
+.comment-green-line {
+    height: 3px;
 }
 
 .comment-navigation-container {
