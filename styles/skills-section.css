@@ -22,9 +22,86 @@
     position: relative;
 }
 
+.skills-overview {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 60px;
+    grid-template-areas:
+        "skill1 skill2 skill3 skill4"
+        "skill5 skill6 skill7 skill8"
+        "skill9 skill10 . ."
+        "skill11 . . .";
+}
+
+.skill-container:nth-child(1) {
+    grid-area: skill1;
+}
+
+.skill-container:nth-child(2) {
+    grid-area: skill2;
+}
+
+.skill-container:nth-child(3) {
+    grid-area: skill3;
+}
+
+.skill-container:nth-child(4) {
+    grid-area: skill4;
+}
+
+.skill-container:nth-child(5) {
+    grid-area: skill5;
+}
+
+.skill-container:nth-child(6) {
+    grid-area: skill6;
+}
+
+.skill-container:nth-child(7) {
+    grid-area: skill7;
+}
+
+.skill-container:nth-child(8) {
+    grid-area: skill8;
+}
+
+.skill-container:nth-child(9) {
+    grid-area: skill9;
+}
+
+.skill-container:nth-child(10) {
+    grid-area: skill10;
+}
+
+.skill-container:nth-child(11) {
+    grid-area: skill11;
+}
+
 .skills_picture {
-    /* width: 500px;
-    height: 500px; */
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.skills_picture:hover {
+    transform: translateY(-10px);
+    transition: all 0.1s ease-in-out;
+}
+
+.skill-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-align: center;
+    width: 88px;
+}
+
+.skill-container span {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 120%;
 }
 
 .skills_section h1 {

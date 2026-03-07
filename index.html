@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio</title>
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./styles/navbar.css">
@@ -18,94 +18,55 @@
 </head>
 
 <body onload="renderProjects()">
+    <div class="content-wrapper">
+        <nav>
+            <h1>
+                <a href="#landing_page">
+                    <span>Ol</span><span class="purple-dot">i</span><span>ve</span><span class="green-r">r</span>
+                </a>
+            </h1>
 
-    <nav>
-        <h1>
-            <a href="#landing_page">
-                <span>Ol</span><span class="purple-dot">i</span><span>ve</span><span class="green-r">r</span>
-            </a>
-        </h1>
 
+            <div class="navigation-bar">
 
-        <div class="navigation-bar">
+                <div class="navigation-links">
+                    <a href="#about_me">About me</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#portfolio">Portfolio</a>
+                </div>
 
-            <div class="navigation-links">
-                <a href="#about_me">About me</a>
-                <a href="#skills">Skills</a>
-                <a href="#portfolio">Portfolio</a>
+                <div onclick="toggleLanguageIcon()" class="change_language_button">
+                    <img id="de_active" src="./assets/icons/de_active.png" alt="">
+                    <img id="en_active" class="dNone" src="./assets/icons/en_active.png" alt="">
+                </div>
+
             </div>
 
-            <div onclick="toggleLanguageIcon()" class="change_language_button">
-                <img id="de_active" src="./assets/icons/de_active.png" alt="">
-                <img id="en_active" class="dNone" src="./assets/icons/en_active.png" alt="">
+        </nav>
+
+
+        <section id="landing_page" class="landing-section">
+            <div class="headlines">
+                <h1>Oliver Geschine</h1>
+                <h2>FRONTEND DEVELOPER</h2>
             </div>
 
-        </div>
-
-    </nav>
+            <button>Let's get in touch!</button>
 
 
-    <section id="landing_page" class="landing-section">
-        <div class="headlines">
-            <h1>Oliver Geschine</h1>
-            <h2>FRONTEND DEVELOPER</h2>
-        </div>
-
-        <button>Let's get in touch!</button>
-
-
-        <div class="links">
-            <img src="./assets/icons/green_line.png" alt="">
-            <a href="https://github.com/OliPDM" target="_blank"><img src="./assets/icons/github.png" alt="Github"></a>
-            <a href=""><img src="./assets/icons/email.png" alt="Email"></a>
-            <a href=""><img src="./assets/icons/linkedin.png" alt="LinkedIn"></a>
-        </div>
-    </section>
-
-
-    <section id="about_me" class="about_me_section">
-        <div class="infobox">
-            <h1>About Me</h1>
-            <span>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto excepturi architecto tempore adipisci,
-                praesentium quia nemo et vel molestiae error cupiditate, alias, labore voluptatibus officia. Deserunt
-                rerum
-                officia provident nam!
-            </span>
-            <div class="short_info_container">
-                <div class="short_info">
-                    <img class="about_me_icons" src="./assets/icons/location_icon.png" alt="">
-                    <span>where are you located?</span>
-                </div>
-                <div class="short_info">
-                    <img class="about_me_icons" src="./assets/icons/bulb_icon.png" alt="">
-                    <span>speak about your interests in developing yourself.</span>
-                </div>
-                <div class="short_info">
-                    <img class="about_me_icons" src="./assets/icons/puzzle_icon.svg" alt="">
-                    <span>describe how you solve problems.</span>
-                </div>
+            <div class="links">
+                <img src="./assets/icons/green_line.png" alt="">
+                <a href="https://github.com/OliPDM" target="_blank"><img src="./assets/icons/github.png"
+                        alt="Github"></a>
+                <a href=""><img src="./assets/icons/email.png" alt="Email"></a>
+                <a href=""><img src="./assets/icons/linkedin.png" alt="LinkedIn"></a>
             </div>
-        </div>
-
-        <div class="profile_picture_container">
-            <span class="placeholder_span">placeholder</span>
-            <img class="profile_picture" src="./assets/img/profile_picture.png" alt="">
-        </div>
-    </section>
+        </section>
 
 
-    <section id="skills" class="skills_section">
-        <img class="vector-bg-img" src="./assets/img/Vector.png" alt="">
-        <div class="skills-content">
-            <img class="skills_picture" src="./assets/img/skills_overview.png" alt="">
-
-            <div class="skills_infobox">
-                <div class="skills_headline_container">
-                    <h1>Skills</h1>
-                    <img class="blue_line" src="./assets/icons/blue_line.png" alt="">
-                </div>
-
+        <section id="about_me" class="about_me_section">
+            <div class="infobox">
+                <h1>About Me</h1>
                 <span>
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto excepturi architecto tempore
                     adipisci,
@@ -114,51 +75,145 @@
                     rerum
                     officia provident nam!
                 </span>
-                <div class="h2_container">
-                    <h2>Looking for</h2><span class="purple-span">another skill</span><span>?</span>
+                <div class="short_info_container">
+                    <div class="short_info">
+                        <img class="about_me_icons" src="./assets/icons/location_icon.png" alt="">
+                        <span>where are you located?</span>
+                    </div>
+                    <div class="short_info">
+                        <img class="about_me_icons" src="./assets/icons/bulb_icon.png" alt="">
+                        <span>speak about your interests in developing yourself.</span>
+                    </div>
+                    <div class="short_info">
+                        <img class="about_me_icons" src="./assets/icons/puzzle_icon.svg" alt="">
+                        <span>describe how you solve problems.</span>
+                    </div>
                 </div>
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis sapiente asperiores non
-                    voluptate
-                    et
-                    nihil natus, debitis cupiditate incidunt, veniam harum voluptatibus minus perspiciatis doloribus,
-                    officia
-                    consequatur iste consequuntur quasi.</span>
-                <button>Let's talk!</button>
             </div>
-        </div>
-    </section>
 
-
-    <section id="portfolio" class="portfolio_section">
-        <div class="headline_container">
-            <img src="./assets/icons/purple_line.png" alt="">
-            <h1>Portfolio</h1>
-        </div>
-
-        <div id="projectList" class="project-wrapper"></div>
-
-    </section>
-
-
-    <section class="comment-section">
-        <div class="comment-content">
-            <img class="quote-marks" src="./assets/icons/quotation_marks_green.png" alt="">
-            <div class="comment-container">
-
-                <span name="comment" id="comment" cols="30" rows="10" placeholder="Write your comment here...">here come
-                    the comments</span>
-                <span>comment author</span>
+            <div class="profile_picture_container">
+                <span class="placeholder_span">placeholder</span>
+                <img class="profile_picture" src="./assets/img/profile_picture.png" alt="">
             </div>
-            <div class="comment-img-container">
-                <img class="comment-img" src="./assets/img/profile_picture.png" alt="">
-                <img class="comment-green-line" src="./assets/icons/green_line.png" alt="">
+        </section>
+
+
+        <section id="skills" class="skills_section">
+            <img class="vector-bg-img" src="./assets/img/Vector.png" alt="">
+            <div class="skills-content">
+                <div class="skills-overview">
+                    <div class="skill-container">
+                        <img class="skills_picture" src="./assets/img/html.png" alt="">
+                        <span>HTML</span>
+                    </div>
+
+                    <div class="skill-container">
+                        <img class="skills_picture" src="./assets/img/css.png" alt="">
+                        <span>CSS</span>
+                    </div>
+                    <div class="skill-container">
+                        <img class="skills_picture" src="./assets/img/javascript.png" alt="">
+                        <span>JavaScript</span>
+                    </div>
+
+                    <div class="skill-container">
+                        <img class="skills_picture" src="./assets/img/typescript.png" alt="">
+                        <span>TypeScript</span>
+                    </div>
+                    <div class="skill-container">
+                        <img class="skills_picture" src="./assets/img/angular.png" alt="">
+                        <span>Angular</span>
+                    </div>
+
+                    <div class="skill-container">
+                        <img class="skills_picture" src="./assets/img/firebase.png" alt="">
+                        <span>Firebase</span>
+                    </div>
+                    <div class="skill-container">
+                        <img class="skills_picture" src="./assets/img/git.png" alt="">
+                        <span>Git</span>
+                    </div>
+
+                    <div class="skill-container">
+                        <img class="skills_picture" src="./assets/img/rest_api.png" alt="">
+                        <span>REST API</span>
+                    </div>
+                    <div class="skill-container">
+                        <img class="skills_picture" src="./assets/img/scrum.png" alt="">
+                        <span>Scrum</span>
+                    </div>
+
+                    <div class="skill-container">
+                        <img class="skills_picture" src="./assets/img/material_design.png" alt="">
+                        <span>Material Design</span>
+                    </div>
+                    <div class="skill-container">
+                        <img class="skills_picture" src="./assets/img/continually_learning_blue.png" alt="">
+                        <span>Continually Learning</span>
+                    </div>
+                </div>
+
+                <div class="skills_infobox">
+                    <div class="skills_headline_container">
+                        <h1>Skills</h1>
+                        <img class="blue_line" src="./assets/icons/blue_line.png" alt="">
+                    </div>
+
+                    <span>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto excepturi architecto tempore
+                        adipisci,
+                        praesentium quia nemo et vel molestiae error cupiditate, alias, labore voluptatibus officia.
+                        Deserunt
+                        rerum
+                        officia provident nam!
+                    </span>
+                    <div class="h2_container">
+                        <h2>Looking for</h2><span class="purple-span">another skill</span><span>?</span>
+                    </div>
+                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis sapiente asperiores non
+                        voluptate
+                        et
+                        nihil natus, debitis cupiditate incidunt, veniam harum voluptatibus minus perspiciatis
+                        doloribus,
+                        officia
+                        consequatur iste consequuntur quasi.</span>
+                    <button>Let's talk!</button>
+                </div>
             </div>
-        </div>
-
-        <div class="comment-navigation-container"></div>
-    </section>
+        </section>
 
 
+        <section id="portfolio" class="portfolio_section">
+            <div class="headline_container">
+                <img src="./assets/icons/purple_line.png" alt="">
+                <h1>Portfolio</h1>
+            </div>
+
+            <div id="projectList" class="project-wrapper"></div>
+
+        </section>
+
+
+        <section class="comment-section">
+            <div class="comment-content">
+                <img class="quote-marks" src="./assets/icons/quotation_marks_green.png" alt="">
+                <div class="comment-container">
+
+                    <span name="comment" id="comment" cols="30" rows="10" placeholder="Write your comment here...">here
+                        come
+                        the comments</span>
+                    <span>comment author</span>
+                </div>
+                <div class="comment-img-container">
+                    <img class="comment-img" src="./assets/img/profile_picture.png" alt="">
+                    <img class="comment-green-line" src="./assets/icons/green_line.png" alt="">
+                </div>
+            </div>
+
+            <div class="comment-navigation-container"></div>
+        </section>
+
+    </div>
 </body>
 
 </html>
