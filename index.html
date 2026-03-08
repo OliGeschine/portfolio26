@@ -14,10 +14,12 @@
     <link rel="stylesheet" href="./styles/portfolio-section.css">
     <link rel="stylesheet" href="./styles/comment-section.css">
 
+    <script src="./scripts/projects.js"></script>
+    <script src="./scripts/comments.js"></script>
     <script src="script.js"></script>
 </head>
 
-<body onload="renderProjects()">
+<body onload="renderProjects(), renderComments()">
     <div class="content-wrapper">
         <nav>
             <h1>
@@ -194,23 +196,28 @@
         </section>
 
 
-        <section class="comment-section">
+        <section class="comment-section" id="comment-section">
             <div class="comment-content">
                 <img class="quote-marks" src="./assets/icons/quotation_marks_green.png" alt="">
                 <div class="comment-container">
 
-                    <span name="comment" id="comment" cols="30" rows="10" placeholder="Write your comment here...">here
-                        come
-                        the comments</span>
-                    <span>comment author</span>
+                    <span name="comment" id="comment" cols="30" rows="10"
+                        placeholder="Write your comment here..."></span>
+                    <span id="name"></span><span id="position"></span>
                 </div>
                 <div class="comment-img-container">
-                    <img class="comment-img" src="./assets/img/profile_picture.png" alt="">
+                    <img class="comment-img" id="comment_img" alt="">
                     <img class="comment-green-line" src="./assets/icons/green_line.png" alt="">
                 </div>
             </div>
 
-            <div class="comment-navigation-container"></div>
+            <div class="comment-navigation-container">
+                <div id="left_arrow" class="arrow" onclick="changeComment(-1)" alt=""></div>
+                <span id="navigation_dot_left" class="navigation-dot">•</span>
+                <span id="navigation_dot_middle" class="navigation-dot">•</span>
+                <span id="navigation_dot_right" class="navigation-dot">•</span>
+                <div id="right_arrow" class="arrow" onclick="changeComment(1)" alt=""></div>
+            </div>
         </section>
 
     </div>

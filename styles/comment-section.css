@@ -32,7 +32,7 @@
     width: 65px;
     height: 70px;
     position: relative;
-    left: 55px;
+    left: 70px;
     bottom: 50px;
 }
 
@@ -56,17 +56,35 @@
 
 .comment-navigation-container {
     display: flex;
+    align-items: center;
     gap: 10px;
     margin-top: 20px;
+    line-height: 120%;
 }
 
-.comment-navigation-container button {
-    cursor: pointer;
-    color: white;
+.arrow {
+    width: 40px;
     height: 40px;
-    width: 100px;
-    border-radius: 10px;
-    background-color: #70E61C;
-    border: none;
-    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+#left_arrow {
+    background-image: url("../assets/icons/arrow_left.png");
+}
+
+#left_arrow:hover {
+    background-image: url("../assets/icons/arrow_left_framed.png");
+}
+
+#right_arrow {
+    background-image: url("../assets/icons/arrow_right.png");
+}
+
+#right_arrow:hover {
+    background-image: url("../assets/icons/arrow_right_framed.png");
+}
+
+.navigation-dot {
+    font-size: 24px;
+    color: #9747FF;
 }
