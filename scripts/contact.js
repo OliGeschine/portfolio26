@@ -166,6 +166,15 @@ function checkEmptyFields(inputs, values, showErrors = true) {
         if (showErrors) styleMessageValues(inputs);
         hasEmptyFields = true;
     }
+    if (!checkbox.checked) {
+        if (showErrors) {
+            document.querySelector('.error-message').style.display = 'block';
+            setTimeout(() => {
+                document.querySelector('.error-message').style.display = 'none';
+            }, 3000);
+        }
+        hasEmptyFields = true;
+    }
 
     return hasEmptyFields;
 }
@@ -274,7 +283,7 @@ async function sendContactForm() {
             from_name: document.getElementById('contactName').value.trim(),
             from_email: document.getElementById('contactEmail').value.trim(),
             message: document.getElementById('contactMessage').value.trim(),
-            to_email: 'oli.geschine@web.de' // Ihre E-Mail-Adresse hier eintragen
+            to_email: 'oli.geschine@web.de'
         };
 
         const response = await emailjs.send(

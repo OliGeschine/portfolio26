@@ -152,6 +152,7 @@
     font-size: 14px;
     margin-top: -20px;
     margin-bottom: 20px;
+    display: none;
 }
 
 /* new contact form css */
@@ -263,4 +264,31 @@ input::placeholder {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.inputFields.contact-message {
+    height: 150px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+textarea.inputFields {
+    padding: 20px;
+    border: 1px solid #9747FF;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: white;
+    text-align: start;
+    resize: vertical;
+}
+
+textarea.inputFields:focus {
+    outline: unset;
+}
+
+textarea.inputFields::placeholder {
+    color: white;
+    opacity: 30%;
+    font-size: 16px;
 }

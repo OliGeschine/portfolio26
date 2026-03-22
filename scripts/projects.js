@@ -4,12 +4,16 @@ let projects = [
         description: "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
         usedSkills: "JavaScript | HTML | CSS",
         img: "./assets/img/pollo_loco.png",
+        github: "https://github.com/OliPDM/el_pollo_loco",
+        live: "https://oliver-geschine.developerakademie.net/el_pollo_loco/index.html"
     },
     {
         title: "Join",
         description: "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
         usedSkills: "JavaScript | HTML | CSS | Firebase",
         img: "./assets/img/join.png",
+        github: "https://github.com/OliPDM/join",
+        live: "https://oliver-geschine.developerakademie.net/join/index.html"
     },
 ];
 
@@ -28,8 +32,8 @@ function renderProjects() {
             </div>
             <div class="overlay dNone">
                 <div class="button_container">
-                    <button class="git_button">Github</button>
-                    <button class="live_button">Live test</button>
+                    <a class="git_button" href="${project.github}" target="_blank">Github</a>
+                    <a class="live_button" href="${project.live}" target="_blank">Live test</a>
                 </div>
                 <div class="info_container">
                     <h2 id="title">${project.title}</h2>

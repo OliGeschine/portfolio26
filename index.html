@@ -203,13 +203,22 @@
         </section>
 
 
+
         <section id="portfolio" class="portfolio_section">
-            <div class="headline_container">
-                <img src="./assets/icons/purple_line.png" alt="">
-                <h1>Portfolio</h1>
+            <div class="project-headline-wrapper">
+                <div class="headline_container">
+                    <img src="./assets/icons/purple_line.png" alt="">
+                    <h1>Portfolio</h1>
+                </div>
+                <span>
+                    Explore a selection of my work here - Interact with projects to see my skills in action.
+                </span>
             </div>
 
             <div id="projectList" class="project-wrapper"></div>
+            <div class="portfolio-section-shadows">
+                <img class="blue-shadow" src="./assets/img/blue_shadow.png" alt="">
+            </div>
 
         </section>
 
@@ -279,9 +288,10 @@
                         <div id="emailError" class="inputError dNone">Fehlertext</div>
                     </div>
                     <div class="inputFieldWrapper">
-                        <input class="inputFields" type="text" placeholder="Your message" id="contactMessage" required>
+                        <textarea class="inputFields contact-message" placeholder="Your message" id="contactMessage"
+                            required></textarea>
                         <img class="inputIcon" src="./assets/img/phone.svg">
-                        <span id="phonePlaceholderError" class="errorMsg">Placeholder</span>
+                        <span id="messagePlaceholderError" class="errorMsg">Placeholder</span>
                         <div id="messageError" class="inputError dNone">Fehlertext</div>
                     </div>
                     <div>
