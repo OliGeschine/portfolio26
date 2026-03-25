@@ -1,8 +1,6 @@
 .skills_section {
     display: flex;
     width: 100%;
-    padding-top: 100px;
-    padding-bottom: 50px;
     align-items: center;
     gap: 60px;
 }
@@ -17,7 +15,7 @@
 
 .vector-bg-img {
     width: 100%;
-    bottom: 285px;
+    bottom: 180px;
     position: relative;
 }
 
