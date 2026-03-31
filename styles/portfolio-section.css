@@ -6,6 +6,8 @@
     padding-top: 100px;
     position: relative;
     width: 100%;
+    background-color: #141D2F;
+    isolation: isolate;
 }
 
 .portfolio_section h1 {

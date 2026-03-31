@@ -6,6 +6,8 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    background-color: #141D2F;
+    isolation: isolate;
 }
 
 .landing-section h1 {

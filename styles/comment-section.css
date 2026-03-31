@@ -8,6 +8,7 @@
     gap: 60px;
     box-sizing: border-box;
     width: 100%;
+    background-color: #141D2F;
 }
 
 .comment-content {

@@ -3,6 +3,7 @@
     width: 100%;
     align-items: center;
     gap: 60px;
+    background-color: #141D2F;
 }
 
 .skills-content {
@@ -11,18 +12,19 @@
     position: absolute;
     width: 100%;
     gap: 100px;
+    padding-top: 50px;
 }
 
 .vector-bg-img {
     width: 100%;
-    bottom: 180px;
+    bottom: 130px;
     position: relative;
 }
 
 .skills-overview {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px 60px;
+    gap: 80px 80px;
     grid-template-areas:
         "skill1 skill2 skill3 skill4"
         "skill5 skill6 skill7 skill8"
@@ -110,6 +112,7 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    padding-top: 20px;
 }
 
 .skills_headline_container {

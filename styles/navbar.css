@@ -21,7 +21,7 @@ nav {
     z-index: 99;
     background-color: #141D2F;
     padding: 0 37px;
-    border: 1px solid lightblue;
+    /* border: 1px solid lightblue; */
 }
 
 nav div {
