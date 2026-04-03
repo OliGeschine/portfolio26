@@ -11,7 +11,7 @@
     justify-content: flex-end;
     position: absolute;
     width: 100%;
-    gap: 100px;
+    gap: 200px;
     padding-top: 50px;
 }
 
@@ -126,6 +126,13 @@
 .skills_section h2 {
     font-size: 32px;
     margin: 0;
+    line-height: 120%;
+}
+
+.skills_infobox_span {
+    font-size: 16px;
+    line-height: 120%;
+    width: 471px;
 }
 
 .blue_line {
@@ -138,12 +145,12 @@
     display: flex;
     gap: 8px;
     line-height: 120%;
-    margin-bottom: 20px;
 }
 
 .h2_container>span {
     font-size: 32px;
     font-weight: 700;
+    line-height: 120%;
 }
 
 .purple-span {

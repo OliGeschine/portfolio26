@@ -15,6 +15,14 @@ let projects = [
         github: "https://github.com/OliPDM/join",
         live: "https://oliver-geschine.developerakademie.net/join/index.html"
     },
+    {
+        title: "Pokedex",
+        description: "A Pokédex application that allows users to search and view details of various Pokémon.",
+        usedSkills: "JavaScript | HTML | CSS | API",
+        img: "./assets/img/pokedex.png",
+        github: "https://github.com/OliPDM/pokedex",
+        live: "https://oliver-geschine.developerakademie.net/pokedex/index.html"
+    },
 ];
 
 let currentProjectCount = 0;
