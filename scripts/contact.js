@@ -3,67 +3,65 @@ const EMAIL_CONFIG = {
     templateId: 'template_h8anrii',   // Ersetzen Sie mit Ihrer EmailJS Template ID
     publicKey: 'FjqmytnRfRDnz8Rhd'      // Ersetzen Sie mit Ihrem EmailJS Public Key
 };
-let hasError = false; // Global definieren
+let hasError = false;
 let isFormValid = false;
+let checkboxChecked = false;
 
 function initEmailJS() {
     emailjs.init(EMAIL_CONFIG.publicKey);
 }
 
 function enableMsgButton() {
-    let checkbox = document.getElementById("checkbox");
     let sendMessageButton = document.getElementById("sendMessageButton");
-
-    if (checkbox.checked && isFormValid) { // ⚠️ HINZUGEFÜGT: && isFormValid
+    if (checkboxChecked && isFormValid) {
         sendMessageButton.disabled = false;
-        sendMessageButton.classList.add("checked");
+        sendMessageButton.classList.add("checkedButton");
     } else {
         sendMessageButton.disabled = true;
-        sendMessageButton.classList.remove("checked");
+        sendMessageButton.classList.remove("checkedButton");
     }
 }
 
-// Event-Listener für das Formular hinzufügen
 function initContactForm() {
     initEmailJS();
     const sendButton = document.getElementById('sendMessageButton');
-    const checkbox = document.getElementById('checkbox'); // ⚠️ KORRIGIERT: checkbox definieren
-
-    // Submit Event für Button
+    const checkboxContainer = document.getElementById('checkbox');
     sendButton.addEventListener('click', handleFormSubmit);
-    checkbox.addEventListener('change', enableMsgButton);
-
-    // Real-time Validation für Input-Felder - ⚠️ KORRIGIERT: input statt blur
+    checkboxContainer.addEventListener('click', toggleCheckbox);
     document.getElementById('contactName').addEventListener('input', validateFormRealTime);
     document.getElementById('contactEmail').addEventListener('input', validateFormRealTime);
     document.getElementById('contactMessage').addEventListener('input', validateFormRealTime);
-
-    // Blur-Events für detaillierte Validierung
     document.getElementById('contactName').addEventListener('blur', validateSingleField);
     document.getElementById('contactEmail').addEventListener('blur', validateSingleField);
     document.getElementById('contactMessage').addEventListener('blur', validateSingleField);
 }
 
+function toggleCheckbox() {
+    checkboxChecked = !checkboxChecked;
+    const checkboxContainer = document.getElementById('checkbox');
+    if (checkboxChecked) {
+        checkboxContainer.classList.add('checked');
+    } else {
+        checkboxContainer.classList.remove('checked');
+    }
+    enableMsgButton();
+}
+
 async function validateFormRealTime() {
-    const isValid = await validateContactInput(false); // false = keine Error-Messages anzeigen
+    const isValid = await validateContactInput(false);
     isFormValid = isValid;
-    enableMsgButton(); // Button-Status aktualisieren
+    enableMsgButton();
 }
 
 async function handleFormSubmit(event) {
     event.preventDefault();
-
     const sendButton = document.getElementById('sendMessageButton');
     const originalText = sendButton.innerHTML;
-
-    // Button deaktivieren und Loading-Zustand anzeigen
     sendButton.disabled = true;
     sendButton.innerHTML = 'Sending...';
     sendButton.classList.add('loading');
-
     try {
-        const isValid = await validateContactInput(true); // true = Error-Messages anzeigen
-
+        const isValid = await validateContactInput(true);
         if (isValid) {
             const success = await sendContactForm();
             if (success) {
@@ -77,7 +75,6 @@ async function handleFormSubmit(event) {
         console.error('Error sending form:', error);
         showErrorMessage('An error occurred. Please try again.');
     } finally {
-        // Button zurücksetzen
         sendButton.disabled = false;
         sendButton.innerHTML = originalText;
         sendButton.classList.remove('loading');
@@ -87,14 +84,11 @@ async function handleFormSubmit(event) {
 
 async function validateSingleField(event) {
     const fieldId = event.target.id;
-
     if (fieldId === 'contactEmail') {
         await validateAddEmailFormat();
     } else if (fieldId === 'contactMessage') {
         await validateMessageFormat();
     }
-
-    // Form-Status nach einzelner Feldvalidierung aktualisieren
     validateFormRealTime();
 }
 
@@ -105,17 +99,13 @@ async function validateContactInput(showErrors = true) {
         email: inputs.emailInput.value.trim().toLowerCase(),
         message: inputs.messageInput.value.trim()
     };
-
     if (showErrors) {
         resetContactInputErrors(inputs);
     }
     hasError = false;
-
     if (checkEmptyFields(inputs, values, showErrors)) return false;
-
     let emailValid = await validateAddEmailFormat(showErrors);
     let messageValid = await validateMessageFormat(showErrors);
-
     return emailValid && messageValid && !hasError;
 }
 
@@ -134,14 +124,15 @@ function resetContactInputErrors(inputs) {
     [inputs.nameInput, inputs.emailInput, inputs.messageInput].forEach(input => {
         if (input) input.classList.remove('error');
     });
-
     [inputs.nameError, inputs.emailError, inputs.messageError].forEach(el => {
         if (el) {
             el.classList.add('dNone');
             el.innerText = "";
         }
     });
-
+    document.querySelectorAll('.inputIcon').forEach(icon => {
+        icon.classList.remove('visible');
+    });
     ['namePlaceholderError', 'emailPlaceholderError', 'messagePlaceholderError'].forEach(id => {
         let el = document.getElementById(id);
         if (el) {
@@ -153,7 +144,6 @@ function resetContactInputErrors(inputs) {
 
 function checkEmptyFields(inputs, values, showErrors = true) {
     let hasEmptyFields = false;
-
     if (!values.name) {
         if (showErrors) styleNameValues(inputs);
         hasEmptyFields = true;
@@ -166,7 +156,7 @@ function checkEmptyFields(inputs, values, showErrors = true) {
         if (showErrors) styleMessageValues(inputs);
         hasEmptyFields = true;
     }
-    if (!checkbox.checked) {
+    if (!checkboxChecked) {
         if (showErrors) {
             document.querySelector('.error-message').style.display = 'block';
             setTimeout(() => {
@@ -175,12 +165,13 @@ function checkEmptyFields(inputs, values, showErrors = true) {
         }
         hasEmptyFields = true;
     }
-
     return hasEmptyFields;
 }
 
 function styleNameValues(inputs) {
     inputs.nameInput.classList.add('error');
+    const nameIcon = inputs.nameInput.parentElement.querySelector('.inputIcon');
+    if (nameIcon) nameIcon.classList.add('visible');
     document.getElementById('namePlaceholderError').innerHTML = "Please enter a name.";
     document.getElementById('namePlaceholderError').classList.add('visible');
     hideErrorMessages('namePlaceholderError', 'contactName');
@@ -189,6 +180,8 @@ function styleNameValues(inputs) {
 
 function styleEmailValues(inputs) {
     inputs.emailInput.classList.add('error');
+    const emailIcon = inputs.emailInput.parentElement.querySelector('.inputIcon');
+    if (emailIcon) emailIcon.classList.add('visible');
     document.getElementById('emailPlaceholderError').innerHTML = "Please enter an e-mail address.";
     document.getElementById('emailPlaceholderError').classList.add('visible');
     hideErrorMessages('emailPlaceholderError', 'contactEmail');
@@ -197,6 +190,8 @@ function styleEmailValues(inputs) {
 
 function styleMessageValues(inputs) {
     inputs.messageInput.classList.add('error');
+    const messageIcon = inputs.messageInput.parentElement.querySelector('.inputIcon');
+    if (messageIcon) messageIcon.classList.add('visible');
     document.getElementById('messagePlaceholderError').innerHTML = "Please enter a message.";
     document.getElementById('messagePlaceholderError').classList.add('visible');
     hideErrorMessages('messagePlaceholderError', 'contactMessage');
@@ -213,6 +208,8 @@ function hideErrorMessages(id, inputId) {
         }
         if (input) {
             input.classList.remove('error');
+            const icon = input.parentElement.querySelector('.inputIcon');
+            if (icon) icon.classList.remove('visible');
         }
     }, 3000);
 }
@@ -222,58 +219,57 @@ async function validateAddEmailFormat(showErrors = true) {
     let email = emailInput.value.trim().toLowerCase();
     let pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     let errorMsgEmail = document.getElementById("emailError");
-
     if (emailInput.value == '') {
-        return true; // Leeres Feld wird in checkEmptyFields behandelt
+        return true;
     }
-
     if (!pattern.test(email)) {
         if (showErrors) patternTestEmail(emailInput, errorMsgEmail);
         return false;
     }
-
     if (errorMsgEmail && showErrors) errorMsgEmail.classList.add("dNone");
     return true;
 }
 
-// Fehlende Funktion hinzufügen
 async function validateMessageFormat(showErrors = true) {
     let messageInput = document.getElementById("contactMessage");
     let message = messageInput.value.trim();
     let errorMsgMessage = document.getElementById("messageError");
-
     if (message === '') {
-        return true; // Wird in checkEmptyFields behandelt
+        return true;
     }
-
     if (message.length < 10) {
         if (showErrors) patternTestMessage(messageInput, errorMsgMessage);
         return false;
     }
-
     if (errorMsgMessage && showErrors) errorMsgMessage.classList.add("dNone");
     return true;
 }
 
 function patternTestEmail(emailInput, errorMsgEmail) {
     emailInput.classList.add("error");
+    const emailIcon = emailInput.parentElement.querySelector('.inputIcon');
+    if (emailIcon) emailIcon.classList.add('visible');
     errorMsgEmail.innerText = "Please enter a valid email address.";
     errorMsgEmail.classList.remove("dNone");
     setTimeout(() => {
         errorMsgEmail.classList.add("dNone");
         errorMsgEmail.innerText = "";
         emailInput.classList.remove("error");
+        if (emailIcon) emailIcon.classList.remove('visible');
     }, 3000);
 }
 
 function patternTestMessage(messageInput, errorMsgMessage) {
     messageInput.classList.add("error");
+    const messageIcon = messageInput.parentElement.querySelector('.inputIcon');
+    if (messageIcon) messageIcon.classList.add('visible');
     errorMsgMessage.innerText = "Message must be at least 10 characters long.";
     errorMsgMessage.classList.remove("dNone");
     setTimeout(() => {
         errorMsgMessage.classList.add("dNone");
         errorMsgMessage.innerText = "";
         messageInput.classList.remove("error");
+        if (messageIcon) messageIcon.classList.remove('visible');
     }, 3000);
 }
 
@@ -285,13 +281,11 @@ async function sendContactForm() {
             message: document.getElementById('contactMessage').value.trim(),
             to_email: 'oli.geschine@web.de'
         };
-
         const response = await emailjs.send(
             EMAIL_CONFIG.serviceId,
             EMAIL_CONFIG.templateId,
             templateParams
         );
-
         console.log('Email sent successfully:', response);
         return true;
     } catch (error) {
@@ -301,14 +295,11 @@ async function sendContactForm() {
 }
 
 function showSuccessMessage() {
-    // Erfolgs-Nachricht anzeigen
     const messageDiv = document.createElement('div');
     messageDiv.className = 'success-message';
     messageDiv.innerHTML = '✓ Message sent successfully!';
-
     const contactSection = document.getElementById('contact');
     contactSection.appendChild(messageDiv);
-
     setTimeout(() => {
         messageDiv.remove();
     }, 5000);
@@ -318,10 +309,8 @@ function showErrorMessage(message) {
     const messageDiv = document.createElement('div');
     messageDiv.className = 'error-message-popup';
     messageDiv.innerHTML = `✗ ${message}`;
-
     const contactSection = document.getElementById('contact');
     contactSection.appendChild(messageDiv);
-
     setTimeout(() => {
         messageDiv.remove();
     }, 5000);
@@ -331,8 +320,11 @@ function resetForm() {
     document.getElementById('contactName').value = '';
     document.getElementById('contactEmail').value = '';
     document.getElementById('contactMessage').value = '';
-    document.getElementById('checkbox').checked = false;
-
+    checkboxChecked = false;
+    document.getElementById('checkbox').classList.remove('checked');
     isFormValid = false;
     enableMsgButton();
+    document.querySelectorAll('.inputIcon').forEach(icon => {
+        icon.classList.remove('visible');
+    });
 }
