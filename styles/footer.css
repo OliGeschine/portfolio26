@@ -36,3 +36,7 @@ footer {
     display: flex;
     gap: 42px;
 }
+
+.legal-notice {
+    font-size: 16px;
+}

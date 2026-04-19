@@ -4,7 +4,7 @@ let projects = [
         description: "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
         usedSkills: "JavaScript | HTML | CSS",
         img: "./assets/img/pollo_loco.png",
-        github: "https://github.com/OliPDM/el_pollo_loco",
+        github: "https://github.com/OliGeschine/el_pollo_loco",
         live: "https://oliver-geschine.developerakademie.net/el_pollo_loco/index.html"
     },
     {
@@ -12,7 +12,7 @@ let projects = [
         description: "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
         usedSkills: "JavaScript | HTML | CSS | Firebase",
         img: "./assets/img/join.png",
-        github: "https://github.com/OliPDM/join",
+        github: "https://github.com/OliGeschine/join",
         live: "https://oliver-geschine.developerakademie.net/join/index.html"
     },
     {
@@ -20,7 +20,7 @@ let projects = [
         description: "A Pokédex application that allows users to search and view details of various Pokémon.",
         usedSkills: "JavaScript | HTML | CSS | API",
         img: "./assets/img/pokedex.png",
-        github: "https://github.com/OliPDM/pokedex",
+        github: "https://github.com/OliGeschine/pokedex",
         live: "https://oliver-geschine.developerakademie.net/pokedex/index.html"
     },
 ];

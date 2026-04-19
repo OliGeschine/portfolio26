@@ -61,10 +61,26 @@ nav {
     display: block !important;
 }
 
-.change_language_button {
-    height: 32px;
-    width: 92px;
+.change_language_container {
+    display: flex;
     cursor: pointer;
+    gap: 14px;
+}
+
+.language-button {
+    width: 38px;
+    height: 32px;
+}
+
+.language-button:hover {
+    background-color: #9747FF;
+    border-radius: 30%;
+    border-color: #9747FF;
+}
+
+.language-button img.active {
+    background-color: #70e71a;
+    border-radius: 30%;
 }
 
 .purple-dot {

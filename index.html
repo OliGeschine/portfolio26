@@ -22,6 +22,7 @@
     <script src="./scripts/comments.js"></script>
     <script src="./scripts/contact.js"></script>
     <script src="./scripts/navbar.js"></script>
+    <script src="./scripts/translations.js"></script>
     <script src="script.js"></script>
 </head>
 
@@ -39,22 +40,26 @@
 
                 <div class="navigation-links-container">
                     <div class="navigations-links">
-                        <a href="#about_me" onclick="setActiveNav(this)">About me</a>
+                        <a href="#about_me" onclick="setActiveNav(this)" data-translate="nav.about">About me</a>
                         <img class="navigation-links-img dNone" src="./assets/icons/purple_line.png" alt="">
                     </div>
                     <div class="navigations-links">
-                        <a href="#skills" onclick="setActiveNav(this)">Skills</a>
+                        <a href="#skills" onclick="setActiveNav(this)" data-translate="nav.skills">Skills</a>
                         <img class="navigation-links-img dNone" src="./assets/icons/purple_line.png" alt="">
                     </div>
                     <div class="navigations-links">
-                        <a href="#portfolio" onclick="setActiveNav(this)">Portfolio</a>
+                        <a href="#portfolio" onclick="setActiveNav(this)" data-translate="nav.portfolio">Portfolio</a>
                         <img class="navigation-links-img dNone" src="./assets/icons/purple_line.png" alt="">
                     </div>
                 </div>
 
-                <div onclick="toggleLanguageIcon()" class="change_language_button">
-                    <img id="de_active" src="./assets/icons/de_active.png" alt="">
-                    <img id="en_active" class="dNone" src="./assets/icons/en_active.png" alt="">
+                <div class="change_language_container">
+                    <div class="language-button" id="de_button" onclick="setLanguageDE()">
+                        <img id="de_active" src="./assets/icons/de_inactive.png" alt="">
+                    </div>
+                    <div class="language-button" id="en_button" onclick="setLanguageEN()">
+                        <img id="en_active" src="./assets/icons/en_inactive.png" alt="">
+                    </div>
                 </div>
 
             </div>
@@ -71,19 +76,20 @@
                 </div>
             </div>
 
-            <a href="#contact" class="landing-section-button">Let's talk!</a>
+            <a href="#contact" class="landing-section-button" data-translate="landing.cta">Let's talk!</a>
 
 
             <div class="links">
                 <img src="./assets/icons/green_line.png" alt="">
-                <a href="https://github.com/OliPDM" target="_blank"><img src="./assets/icons/github.png"
+                <a href="https://github.com/OliGeschine" target="_blank"><img src="./assets/icons/github.png"
                         alt="Github"></a>
                 <a href="#contact"><img src="./assets/icons/email.png" alt="Email"></a>
-                <a href=""><img src="./assets/icons/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://www.linkedin.com/in/oliver-geschine-a71230404/" target="_blank"><img
+                        src="./assets/icons/linkedin.png" alt="LinkedIn"></a>
             </div>
 
             <div class="scroll-down-container">
-                <span>Scroll down</span>
+                <span data-translate="landing.scroll">Scroll down</span>
                 <img src="./assets/icons/white_arrow_up_framed.png" alt="">
             </div>
 
@@ -97,8 +103,8 @@
 
         <section id="about_me" class="about_me_section">
             <div class="infobox">
-                <h1>About Me</h1>
-                <span>
+                <h1 data-translate="about.title">About Me</h1>
+                <span data-translate="about.intro">
                     Hi there, I'm Oliver, a fresh Software-Developer-Mind that just launched! <br>
                     Nice to meet you here. This is the first step for us creating great things together. <br>
                 </span>
@@ -114,14 +120,14 @@
                     </div>
                     <div class="short_info">
                         <img class="about_me_icons" src="./assets/icons/bulb_icon.png" alt="">
-                        <span>
+                        <span data-translate="about.learning">
                             I like the fact that every new project gives you something to learn and improve.
 
                         </span>
                     </div>
                     <div class="short_info">
                         <img class="about_me_icons" src="./assets/icons/puzzle_icon.svg" alt="">
-                        <span>
+                        <span data-translate="about.problem">
                             Most of the time I try to find a creative way to solve problems, but i also enjoy teaming up
                             with other people to find the best solution.
                         </span>
@@ -338,10 +344,11 @@
                     <span>&copy; Oliver Geschine 2026</span>
                 </div>
                 <div class="footer-links">
-                    <a href="https://github.com/OliPDM" target="_blank"><img src="./assets/icons/github.png"
+                    <a href="https://github.com/OliGeschine" target="_blank"><img src="./assets/icons/github.png"
                             alt="Github"></a>
                     <a href="#contact"><img src="./assets/icons/email.png" alt="Email"></a>
-                    <a href=""><img src="./assets/icons/linkedin.png" alt="LinkedIn"></a>
+                    <a href="https://www.linkedin.com/in/oliver-geschine-a71230404/" target="_blank"><img
+                            src="./assets/icons/linkedin.png" alt="LinkedIn"></a>
                 </div>
             </div>
             <div class="legal-notice">Legal Notice</div>
