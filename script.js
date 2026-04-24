@@ -57,4 +57,17 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         setLanguageDE();
     }
+    const urlParams = new URLSearchParams(window.location.search);
+    const scrollTarget = urlParams.get('scrollTo');
+    if (scrollTarget) {
+        setTimeout(() => {
+            const targetElement = document.getElementById(scrollTarget);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+                console.log('Scrolled to:', scrollTarget);
+            } else {
+                console.log('Element not found:', scrollTarget);
+            }
+        }, 300);
+    }
 });

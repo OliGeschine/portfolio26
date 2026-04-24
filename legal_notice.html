@@ -26,7 +26,7 @@
 
         <nav>
             <h1>
-                <a href="#landing_page">
+                <a onclick="window.location.href='./index.html'">
                     <span>Ol</span><span class="purple-dot">i</span><span>ve</span><span class="green-r">r</span>
                 </a>
             </h1>
@@ -140,17 +140,22 @@
                     <span>Ol</span><span class="purple-dot">i</span><span>ve</span><span class="green-r">r</span>
                 </a>
                 <div>
-                    <span>&copy; Oliver Geschine 2026</span>
+                    <span class="copyright-name">&copy; Oliver Geschine 2026</span>
                 </div>
                 <div class="footer-links">
                     <a href="https://github.com/OliGeschine" target="_blank"><img src="./assets/icons/github.png"
                             alt="Github"></a>
-                    <a href="#contact"><img src="./assets/icons/email.png" alt="Email"></a>
+                    <a onclick="window.location.href='./index.html?scrollTo=contact'"><img
+                            src="./assets/icons/email.png" alt="Email"></a>
                     <a href="https://www.linkedin.com/in/oliver-geschine-a71230404/" target="_blank"><img
                             src="./assets/icons/linkedin.png" alt="LinkedIn"></a>
                 </div>
             </div>
-            <div class="legal-notice">Legal Notice</div>
+            <div class="footer-legal-notice-container">
+                <div class="legal-notice" onclick="window.location.href='./legal_notice.html'">Legal Notice</div>
+                <img class="footer-legal-notice-img" src="./assets/icons/green_line.png" alt="">
+            </div>
+
         </footer>
 </body>
 

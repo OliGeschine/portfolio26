@@ -8,6 +8,10 @@
     padding-right: 130px;
 }
 
+nav span {
+    color: white;
+}
+
 .header-content {
     height: 73px;
     display: flex;

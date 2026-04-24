@@ -12,6 +12,10 @@ footer {
     z-index: 1;
 }
 
+footer span {
+    color: white;
+}
+
 .footer-content {
     display: flex;
     justify-content: space-between;
