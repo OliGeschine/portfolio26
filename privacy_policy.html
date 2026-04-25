@@ -12,13 +12,14 @@
     <link rel="stylesheet" href="./styles/privacy.css">
 
     <script src="./scripts/navbar.js"></script>
+    <script src="./scripts/includeHTML.js"></script>
     <script src="./scripts/translations.js"></script>
     <script src="script.js"></script>
 
 
 </head>
 
-<body>
+<body onload="includeHTML()">
 
     <div class="content-wrapper">
 
@@ -94,28 +95,7 @@
 
         </div>
 
-        <footer>
-            <div class="footer-content">
-                <a class="footer-name" href="#landing_page">
-                    <span>Ol</span><span class="purple-dot">i</span><span>ve</span><span class="green-r">r</span>
-                </a>
-                <div>
-                    <span class="copyright-name">&copy; Oliver Geschine 2026</span>
-                </div>
-                <div class="footer-links">
-                    <a href="https://github.com/OliGeschine" target="_blank"><img src="./assets/icons/github.png"
-                            alt="Github"></a>
-                    <a onclick="navigateToContact()"><img src="./assets/icons/email.png" alt="Email"></a>
-                    <a href="https://www.linkedin.com/in/oliver-geschine-a71230404/" target="_blank"><img
-                            src="./assets/icons/linkedin.png" alt="LinkedIn"></a>
-                </div>
-            </div>
-            <div class="footer-legal-notice-container">
-                <div class="legal-notice" onclick="window.location.href='./legal_notice.html'">Legal Notice</div>
-                <img class="footer-legal-notice-img" src="./assets/icons/green_line.png" alt="">
-            </div>
-
-        </footer>
+        <div class="inlude-footer" w3-include-html="./footer.html"></div>
 
     </div>
 

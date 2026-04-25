@@ -18,6 +18,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
+    <script src="./scripts/includeHTML.js"></script>
     <script src="./scripts/projects.js"></script>
     <script src="./scripts/comments.js"></script>
     <script src="./scripts/contact.js"></script>
@@ -26,7 +27,7 @@
     <script src="script.js"></script>
 </head>
 
-<body onload="renderProjects(), renderComments(), initContactForm()">
+<body onload="renderProjects(), renderComments(), initContactForm(), includeHTML(), setLanguageFromURL()">
     <div class="content-wrapper">
         <nav>
             <h1>
@@ -209,10 +210,8 @@
                     </span>
                     <div class="h2_container">
                         <p data-translate="skills.looking"></p>
-                        <span data-translate="skills.another" class="purple-span">another skill</span>
+                        <p data-translate="skills.another" class="purple-p">another skill</p>
                         <p data-translate="skills.question">?</p>
-
-                        <!-- <h2>Looking for</h2><span class="purple-span">another skill</span><span>?</span> -->
                     </div>
                     <span data-translate="skills.description" class="skills_infobox_span"></span>
                     <a href="#contact" class="skills-section-button" data-translate="skills.cta"></a>
@@ -312,7 +311,7 @@
                     </div>
                     <div class="inputFieldWrapper">
                         <textarea class="inputFields contact-message" placeholder="Your message" id="contactMessage"
-                            data-translate="contact.message.placeholder" required></textarea>
+                            data-translate-placeholder="contact.message.placeholder" required></textarea>
                         <img class="inputIcon" src="./assets/icons/error.png" alt="Error">
                         <span id="messagePlaceholderError" class="errorMsg"
                             data-translate="contact.message.error">Placeholder</span>
@@ -335,28 +334,7 @@
                 <img class="purple-shadow" src="./assets/img/purple_shadow.png" alt="">
             </div>
         </section>
-        <footer>
-            <div class="footer-content">
-                <a class="footer-name" href="#landing_page">
-                    <span>Ol</span><span class="purple-dot">i</span><span>ve</span><span class="green-r">r</span>
-                </a>
-                <div>
-                    <span class="copyright-name">&copy; Oliver Geschine 2026</span>
-                </div>
-                <div class="footer-links">
-                    <a href="https://github.com/OliGeschine" target="_blank"><img src="./assets/icons/github.png"
-                            alt="Github"></a>
-                    <a href="#contact"><img src="./assets/icons/email.png" alt="Email"></a>
-                    <a href="https://www.linkedin.com/in/oliver-geschine-a71230404/" target="_blank"><img
-                            src="./assets/icons/linkedin.png" alt="LinkedIn"></a>
-                </div>
-            </div>
-            <div class="footer-legal-notice-container">
-                <div class="legal-notice" onclick="window.location.href='./legal_notice.html'">Legal Notice</div>
-                <img class="footer-legal-notice-img" src="./assets/icons/green_line.png" alt="">
-            </div>
-
-        </footer>
+        <div class="inlude-footer" w3-include-html="./footer.html"></div>
     </div>
 </body>
 

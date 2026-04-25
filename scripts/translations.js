@@ -2,7 +2,7 @@ const translations = {
     de: {
         // Navigation
         'nav.about': 'Über mich',
-        'nav.skills': 'Fähigkeiten',
+        'nav.skills': 'Skills',
         'nav.portfolio': 'Portfolio',
 
         // Landing Section
@@ -22,8 +22,8 @@ const translations = {
         // Skills
         'skills.title': 'Skills',
         'skills.intro': 'Während meiner Weiterbildung in der Developer Akademie konnte ich bereits Erfahrungen in verschiedensten Projekten und unterschiedlichen Frontend Technologien (z.B. HTML, CSS, Javascript) sammeln. Dies hat mir gezeigt, wie wichtig es ist, sich stetig weiterzuentwickeln und neue Fähigkeiten im Bereich der IT anzueignen.',
-        'skills.looking': 'Suchst du nach',
-        'skills.another': 'einer anderen Fähigkeit',
+        'skills.looking': 'Suchen Sie nach',
+        'skills.another': 'einem bestimmten Skill',
         'skills.question': '?',
         'skills.description': 'Ich finde die Vielfalt an Entwicklungsmöglichkeiten in der IT unheimlich spannend und freue mich darauf, im Laufe der Zeit, viele neue Techniken zu erlernen, um stetig als Entwickler zu wachsen.',
         'skills.cta': 'Nimm Kontakt auf!',

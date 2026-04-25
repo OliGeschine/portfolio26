@@ -146,17 +146,17 @@
     align-items: center;
     gap: 8px;
     line-height: 120%;
-    width: 400px;
+    width: 470px;
 }
 
-p {
-    font-size: 32px;
+.skills_section p {
+    font-size: 21px;
     font-weight: 700;
     line-height: 120%;
 }
 
-.purple-span {
-    font-size: 32px;
+.purple-p {
+    font-size: 22px;
     color: #9747ff;
 }
 
