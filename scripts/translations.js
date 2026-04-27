@@ -30,7 +30,10 @@ const translations = {
 
         // Portfolio
         'portfolio.title': 'Portfolio',
-        'portfolio.description': 'Erkunde hier eine Auswahl meiner Arbeiten - Interagiere mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.',
+        'portfolio.headline': 'Erkunde hier eine Auswahl meiner Arbeiten - Interagiere mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.',
+        'portfolio.project1.description': 'Jump & Run-Spiel auf Basis eines objektorientierten Ansatzes. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.',
+        'portfolio.project2.description': 'Task-Manager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-Drop-Funktionen, weise Benutzer und Kategorien zu.',
+        'portfolio.project3.description': 'Eine Pokédex-Anwendung, die es Benutzern ermöglicht, nach verschiedenen Pokémon zu suchen und Details anzuzeigen.',
 
         // Contact
         'contact.title': 'Kontakt',
@@ -77,7 +80,10 @@ const translations = {
 
         // Portfolio
         'portfolio.title': 'Portfolio',
-        'portfolio.description': 'Explore a selection of my work here - Interact with projects to see my skills in action.',
+        'portfolio.headline': 'Explore a selection of my work here - Interact with projects to see my skills in action.',
+        'portfolio.project1.description': 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
+        'portfolio.project2.description': 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
+        'portfolio.project3.description': 'A Pokédex application that allows users to search and view details of various Pokémon.',
 
         // Contact
         'contact.title': 'Contact',

@@ -45,7 +45,7 @@ function renderProjects() {
                 </div>
                 <div class="info_container">
                     <h2 id="title">${project.title}</h2>
-                    <span id="description" class="project-description">${project.description}</span>
+                    <span id="description" class="project-description" data-translate="portfolio.project${i + 1}.description">${project.description}</span>
                     <span id="usedSkills" class="used-skills">${project.usedSkills}</span>
                 </div>`;
         addHoverEvents(projectContainer);
