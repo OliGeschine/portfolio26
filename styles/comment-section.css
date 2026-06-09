@@ -2,10 +2,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 100px;
-    padding-bottom: 50px;
-    padding-left: 50px;
-    gap: 60px;
+    padding-top: clamp(60px, 12vh, 100px);
+    /* ⚠️ GEÄNDERT */
+    padding-bottom: clamp(40px, 8vh, 50px);
+    /* ⚠️ GEÄNDERT */
+    padding-left: clamp(20px, 5vw, 50px);
+    /* ⚠️ GEÄNDERT */
+    padding-right: clamp(20px, 5vw, 50px);
+    /* ⚠️ GEÄNDERT */
+    gap: clamp(40px, 8vh, 60px);
+    /* ⚠️ GEÄNDERT */
     box-sizing: border-box;
     width: 100%;
     background-color: #141D2F;
@@ -14,28 +20,50 @@
 .comment-content {
     display: flex;
     justify-content: flex-end;
-    gap: 48px;
+    gap: clamp(30px, 5vw, 48px);
+    /* ⚠️ GEÄNDERT */
     box-sizing: border-box;
     width: 100%;
-
+    max-width: 1440px;
+    /* ⚠️ HINZUGEFÜGT */
+    position: relative;
+    /* ⚠️ HINZUGEFÜGT */
 }
 
 .comment-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 3px solid #9747FF;
-    border-radius: 30px;
-    width: 851px;
-    height: 272px;
-    padding: 48px 96px;
-    gap: 40px;
+    border: clamp(2px, 0.3vw, 3px) solid #9747FF;
+    /* ⚠️ GEÄNDERT */
+    border-radius: clamp(20px, 3vw, 30px);
+    /* ⚠️ GEÄNDERT */
+    width: 100%;
+    /* ⚠️ GEÄNDERT */
+    max-width: clamp(600px, 60vw, 851px);
+    /* ⚠️ GEÄNDERT */
+    min-height: clamp(220px, 30vw, 272px);
+    /* ⚠️ GEÄNDERT */
+    height: auto;
+    /* ⚠️ GEÄNDERT */
+    padding: clamp(30px, 5vw, 48px) clamp(40px, 8vw, 96px);
+    /* ⚠️ GEÄNDERT */
+    gap: clamp(25px, 4vh, 40px);
+    /* ⚠️ GEÄNDERT */
+}
+
+.comment-container span {
+    font-size: clamp(16px, 2vw, 18px);
+    /* ⚠️ HINZUGEFÜGT */
+    line-height: 1.5;
+    /* ⚠️ HINZUGEFÜGT */
 }
 
 .comment-writer-container {
     display: grid;
     grid-template-columns: 1fr auto;
-    gap: 16px;
+    gap: clamp(12px, 2vw, 16px);
+    /* ⚠️ GEÄNDERT */
     align-items: center;
     width: 100%;
 }
@@ -43,30 +71,49 @@
 .comment-writer {
     white-space: nowrap;
     justify-self: end;
+    font-size: clamp(16px, 1.8vw, 18px);
+    /* ⚠️ HINZUGEFÜGT */
 }
 
 .quote-marks {
-    width: 97px;
-    height: 68px;
-    position: relative;
-    left: 80px;
-    bottom: 40px;
+    width: clamp(60px, 8vw, 97px);
+    /* ⚠️ GEÄNDERT */
+    height: clamp(42px, 6vw, 68px);
+    /* ⚠️ GEÄNDERT */
+    position: absolute;
+    /* ⚠️ GEÄNDERT */
+    left: clamp(20px, 5vw, 80px);
+    /* ⚠️ GEÄNDERT */
+    top: clamp(-20px, -3vw, -40px);
+    /* ⚠️ GEÄNDERT */
 }
 
 .comment-img-container {
     display: flex;
     align-items: center;
     box-sizing: border-box;
+    position: relative;
+    /* ⚠️ HINZUGEFÜGT */
+    flex-shrink: 0;
+    /* ⚠️ HINZUGEFÜGT */
 }
 
 .comment-img {
-    width: 300px;
-    height: 300px;
+    width: clamp(220px, 25vw, 300px);
+    /* ⚠️ GEÄNDERT */
+    height: clamp(220px, 25vw, 300px);
+    /* ⚠️ GEÄNDERT */
     background-color: #ccc;
     transition: all 0.3s ease-out;
     position: absolute;
-    top: -15px;
-    left: -15px;
+    top: clamp(-12px, -1.5vw, -15px);
+    /* ⚠️ GEÄNDERT */
+    left: clamp(-12px, -1.5vw, -15px);
+    /* ⚠️ GEÄNDERT */
+    border-radius: 50%;
+    /* ⚠️ HINZUGEFÜGT */
+    object-fit: cover;
+    /* ⚠️ HINZUGEFÜGT */
 }
 
 .comment-img.transition-out {
@@ -75,37 +122,57 @@
 }
 
 .green-border {
-    width: 272px;
-    height: 272px;
-    border: 4px solid #70E61C;
+    width: clamp(200px, 23vw, 272px);
+    /* ⚠️ GEÄNDERT */
+    height: clamp(200px, 23vw, 272px);
+    /* ⚠️ GEÄNDERT */
+    border: clamp(3px, 0.4vw, 4px) solid #70E61C;
+    /* ⚠️ GEÄNDERT */
     border-radius: 50%;
     overflow: hidden;
     position: relative;
 }
 
 .comment-blue-line {
-    height: 2px;
+    height: clamp(1px, 0.2vw, 2px);
+    /* ⚠️ GEÄNDERT */
     border-radius: 10px;
     width: 100%;
-    min-width: 60px;
+    min-width: clamp(40px, 8vw, 60px);
+    /* ⚠️ GEÄNDERT */
 }
 
 .comment-green-line {
-    height: 4px;
+    height: clamp(3px, 0.4vw, 4px);
+    /* ⚠️ GEÄNDERT */
 }
 
 .comment-navigation-container {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-top: 20px;
+    justify-content: center;
+    /* ⚠️ HINZUGEFÜGT */
+    gap: clamp(8px, 1.5vw, 10px);
+    /* ⚠️ GEÄNDERT */
+    margin-top: clamp(15px, 3vh, 20px);
+    /* ⚠️ GEÄNDERT */
     line-height: 120%;
 }
 
 .arrow {
-    width: 40px;
-    height: 40px;
+    width: clamp(35px, 4vw, 40px);
+    /* ⚠️ GEÄNDERT */
+    height: clamp(35px, 4vw, 40px);
+    /* ⚠️ GEÄNDERT */
     cursor: pointer;
+    background-size: contain;
+    /* ⚠️ HINZUGEFÜGT */
+    background-repeat: no-repeat;
+    /* ⚠️ HINZUGEFÜGT */
+    background-position: center;
+    /* ⚠️ HINZUGEFÜGT */
+    transition: all 0.3s ease;
+    /* ⚠️ HINZUGEFÜGT */
 }
 
 #left_arrow {
@@ -125,6 +192,292 @@
 }
 
 .navigation-dot {
-    font-size: 24px;
+    font-size: clamp(20px, 2.5vw, 24px);
+    /* ⚠️ GEÄNDERT */
     color: #9747FF;
+}
+
+/* ⚠️ TABLET - 1024px - Vertikales Layout */
+@media(max-width: 1024px) {
+    .comment-section {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+
+    .comment-content {
+        flex-direction: column;
+        /* ⚠️ Vertikal */
+        align-items: center;
+        /* ⚠️ Zentriert */
+        gap: 40px;
+    }
+
+    /* ⚠️ REIHENFOLGE MIT ORDER */
+    .comment-img-container {
+        order: 1;
+        /* ⚠️ Zuerst - Bild oben */
+        width: 100%;
+        /* ⚠️ Volle Breite */
+        justify-content: center;
+        /* ⚠️ Zentriert */
+    }
+
+    .quote-marks {
+        order: 2;
+        /* ⚠️ Danach */
+        position: static;
+        /* ⚠️ GEÄNDERT - aus absoluter Position */
+        align-self: flex-start;
+        /* ⚠️ Linksbündig */
+        margin-left: 0;
+        margin-bottom: -20px;
+    }
+
+    .comment-container {
+        order: 3;
+        /* ⚠️ Dann Container */
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .comment-navigation-container {
+        order: 4;
+        /* ⚠️ Zuletzt - Navigation unten */
+    }
+
+    .comment-green-line {
+        display: none;
+        /* ⚠️ Grüne Linie ausblenden auf Tablet */
+    }
+}
+
+/* ⚠️ MOBILE - 768px */
+@media(max-width: 768px) {
+    .comment-section {
+        padding-top: 50px;
+        padding-bottom: 35px;
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: 35px;
+    }
+
+    .comment-content {
+        gap: 30px;
+    }
+
+    .comment-container {
+        padding: 30px 25px;
+        gap: 25px;
+        border-radius: 20px;
+        min-height: 200px;
+    }
+
+    .comment-container span {
+        font-size: 16px;
+        text-align: center;
+        /* ⚠️ Zentriert auf Mobile */
+    }
+
+    .comment-writer-container {
+        flex-direction: column;
+        /* ⚠️ GEÄNDERT - vertikal */
+        gap: 15px;
+    }
+
+    .comment-writer {
+        justify-self: center;
+        /* ⚠️ Zentriert */
+        font-size: 16px;
+    }
+
+    .comment-blue-line {
+        width: 60%;
+    }
+
+    .comment-img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .green-border {
+        width: 230px;
+        height: 230px;
+    }
+
+    .quote-marks {
+        width: 70px;
+        height: 50px;
+        margin-bottom: -15px;
+    }
+
+    .comment-navigation-container {
+        gap: 8px;
+        margin-top: 15px;
+    }
+
+    .arrow {
+        width: 36px;
+        height: 36px;
+    }
+
+    .navigation-dot {
+        font-size: 20px;
+    }
+}
+
+/* ⚠️ SMALL MOBILE - 480px */
+@media(max-width: 480px) {
+    .comment-section {
+        padding-top: 40px;
+        padding-bottom: 30px;
+        gap: 30px;
+    }
+
+    .comment-content {
+        gap: 25px;
+    }
+
+    .comment-container {
+        padding: 25px 20px;
+        gap: 20px;
+        border-radius: 18px;
+        min-height: 180px;
+    }
+
+    .comment-container span {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .comment-writer {
+        font-size: 16px;
+    }
+
+    .comment-img {
+        width: 220px;
+        height: 220px;
+        top: -10px;
+        left: -10px;
+    }
+
+    .green-border {
+        width: 200px;
+        height: 200px;
+        border-width: 3px;
+    }
+
+    .quote-marks {
+        width: 60px;
+        height: 42px;
+    }
+
+    .comment-blue-line {
+        width: 50%;
+    }
+}
+
+/* ⚠️ EXTRA SMALL - 375px */
+@media(max-width: 375px) {
+    .comment-section {
+        padding-top: 35px;
+        padding-bottom: 25px;
+        padding-left: 15px;
+        padding-right: 15px;
+        gap: 25px;
+    }
+
+    .comment-container {
+        padding: 20px 15px;
+        gap: 18px;
+        min-height: 160px;
+    }
+
+    .comment-img {
+        width: 190px;
+        height: 190px;
+    }
+
+    .green-border {
+        width: 170px;
+        height: 170px;
+    }
+
+    .quote-marks {
+        width: 55px;
+        height: 38px;
+    }
+}
+
+/* ⚠️ MINIMUM - 320px */
+@media(max-width: 320px) {
+    .comment-section {
+        padding-top: 30px;
+        padding-bottom: 20px;
+        padding-left: 12px;
+        padding-right: 12px;
+        gap: 20px;
+    }
+
+    .comment-content {
+        gap: 20px;
+    }
+
+    .comment-container {
+        padding: 18px 12px;
+        gap: 16px;
+        border-radius: 15px;
+        min-height: 150px;
+        border-width: 2px;
+    }
+
+    .comment-container span {
+        font-size: 16px;
+        line-height: 1.3;
+    }
+
+    .comment-writer-container {
+        gap: 12px;
+    }
+
+    .comment-writer {
+        font-size: 16px;
+    }
+
+    .comment-img {
+        width: 170px;
+        height: 170px;
+        top: -8px;
+        left: -8px;
+    }
+
+    .green-border {
+        width: 154px;
+        height: 154px;
+        border-width: 3px;
+    }
+
+    .quote-marks {
+        width: 50px;
+        height: 35px;
+        margin-bottom: -12px;
+    }
+
+    .comment-blue-line {
+        width: 40%;
+        min-width: 40px;
+    }
+
+    .comment-navigation-container {
+        gap: 6px;
+        margin-top: 12px;
+    }
+
+    .arrow {
+        width: 32px;
+        height: 32px;
+    }
+
+    .navigation-dot {
+        font-size: 18px;
+    }
 }
