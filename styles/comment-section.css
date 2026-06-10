@@ -3,16 +3,8 @@
     flex-direction: column;
     align-items: center;
     padding-top: clamp(60px, 12vh, 100px);
-    /* ⚠️ GEÄNDERT */
     padding-bottom: clamp(40px, 8vh, 50px);
-    /* ⚠️ GEÄNDERT */
-    padding-left: clamp(20px, 5vw, 50px);
-    /* ⚠️ GEÄNDERT */
-    padding-right: clamp(20px, 5vw, 50px);
-    /* ⚠️ GEÄNDERT */
     gap: clamp(40px, 8vh, 60px);
-    /* ⚠️ GEÄNDERT */
-    box-sizing: border-box;
     width: 100%;
     background-color: #141D2F;
 }
@@ -76,16 +68,11 @@
 }
 
 .quote-marks {
-    width: clamp(60px, 8vw, 97px);
-    /* ⚠️ GEÄNDERT */
-    height: clamp(42px, 6vw, 68px);
-    /* ⚠️ GEÄNDERT */
-    position: absolute;
-    /* ⚠️ GEÄNDERT */
-    left: clamp(20px, 5vw, 80px);
-    /* ⚠️ GEÄNDERT */
-    top: clamp(-20px, -3vw, -40px);
-    /* ⚠️ GEÄNDERT */
+    width: 97px;
+    height: 68px;
+    position: relative;
+    left: 80px;
+    bottom: 40px;
 }
 
 .comment-img-container {
@@ -206,48 +193,31 @@
 
     .comment-content {
         flex-direction: column;
-        /* ⚠️ Vertikal */
-        align-items: center;
-        /* ⚠️ Zentriert */
-        gap: 40px;
+        gap: 0;
     }
 
     /* ⚠️ REIHENFOLGE MIT ORDER */
     .comment-img-container {
         order: 1;
-        /* ⚠️ Zuerst - Bild oben */
-        width: 100%;
-        /* ⚠️ Volle Breite */
-        justify-content: center;
-        /* ⚠️ Zentriert */
+        justify-content: flex-end;
     }
 
     .quote-marks {
-        order: 2;
-        /* ⚠️ Danach */
-        position: static;
-        /* ⚠️ GEÄNDERT - aus absoluter Position */
-        align-self: flex-start;
-        /* ⚠️ Linksbündig */
-        margin-left: 0;
-        margin-bottom: -20px;
+        order: 3;
+        left: 10px;
+        bottom: -35px;
     }
 
     .comment-container {
         order: 3;
-        /* ⚠️ Dann Container */
-        max-width: 100%;
-        width: 100%;
+        margin-left: clamp(20px, 8vw, 80px);
+        margin-right: clamp(20px, 5vw, 50px);
+        max-width: 90%;
     }
 
     .comment-navigation-container {
         order: 4;
         /* ⚠️ Zuletzt - Navigation unten */
-    }
-
-    .comment-green-line {
-        display: none;
-        /* ⚠️ Grüne Linie ausblenden auf Tablet */
     }
 }
 
@@ -256,8 +226,6 @@
     .comment-section {
         padding-top: 50px;
         padding-bottom: 35px;
-        padding-left: 20px;
-        padding-right: 20px;
         gap: 35px;
     }
 
@@ -269,19 +237,14 @@
         padding: 30px 25px;
         gap: 25px;
         border-radius: 20px;
-        min-height: 200px;
     }
 
     .comment-container span {
         font-size: 16px;
-        text-align: center;
-        /* ⚠️ Zentriert auf Mobile */
     }
 
     .comment-writer-container {
         flex-direction: column;
-        /* ⚠️ GEÄNDERT - vertikal */
-        gap: 15px;
     }
 
     .comment-writer {
@@ -308,6 +271,7 @@
         width: 70px;
         height: 50px;
         margin-bottom: -15px;
+        left: 15px;
     }
 
     .comment-navigation-container {
@@ -333,15 +297,10 @@
         gap: 30px;
     }
 
-    .comment-content {
-        gap: 25px;
-    }
-
     .comment-container {
         padding: 25px 20px;
         gap: 20px;
         border-radius: 18px;
-        min-height: 180px;
     }
 
     .comment-container span {
@@ -369,6 +328,7 @@
     .quote-marks {
         width: 60px;
         height: 42px;
+        left: 5px;
     }
 
     .comment-blue-line {
@@ -381,15 +341,12 @@
     .comment-section {
         padding-top: 35px;
         padding-bottom: 25px;
-        padding-left: 15px;
-        padding-right: 15px;
         gap: 25px;
     }
 
     .comment-container {
         padding: 20px 15px;
         gap: 18px;
-        min-height: 160px;
     }
 
     .comment-img {
@@ -426,7 +383,6 @@
         padding: 18px 12px;
         gap: 16px;
         border-radius: 15px;
-        min-height: 150px;
         border-width: 2px;
     }
 
