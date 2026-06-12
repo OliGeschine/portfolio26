@@ -265,7 +265,7 @@
 }
 
 @media (max-width: 515px) {
-    .skills_infobox {
+    .skills-intro {
         padding-right: clamp(12px, 4vw, 60px);
     }
 
