@@ -3,27 +3,21 @@
     flex-direction: column;
     padding-top: clamp(80px, 15vh, 165px);
     padding-bottom: clamp(40px, 8vh, 80px);
-    padding-left: clamp(20px, 5vw, 100px);
-    padding-right: clamp(20px, 5vw, 100px);
     gap: clamp(40px, 8vh, 60px);
     width: 100%;
     background-color: #141D2F;
     isolation: isolate;
     box-sizing: border-box;
     position: relative;
-    align-items: center;
-    /* ⚠️ HINZUGEFÜGT - zentriert alle Kinder */
 }
 
 .contact-headline-container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
     line-height: 120%;
-    width: 100%;
     max-width: 1440px;
     gap: clamp(20px, 4vw, 32px);
-    /* ⚠️ ENTFERNT - margin: 0 auto; - nicht mehr nötig wegen align-items: center auf parent */
 }
 
 .contact-headline-container h1 {
@@ -43,7 +37,7 @@
     gap: clamp(40px, 12vw, 150px);
     width: 100%;
     max-width: 1440px;
-    /* ⚠️ ENTFERNT - margin: 0 auto; - nicht mehr nötig */
+    padding-right: clamp(20px, 5vw, 100px);
     align-items: flex-start;
 }
 
@@ -56,14 +50,14 @@
 }
 
 .contact-content-img {
-    width: clamp(50px, 8vw, 68px);
+    width: clamp(30px, 8vw, 68px);
     height: clamp(2px, 0.3vw, 3px);
 }
 
 .contact-content-headline-container {
     display: flex;
     align-items: center;
-    gap: clamp(20px, 3vw, 30px);
+    gap: clamp(10px, 3vw, 30px);
     flex-wrap: wrap;
 }
 
@@ -392,56 +386,36 @@ textarea.inputFields::placeholder {
     .contact-section {
         padding-top: 80px;
         padding-bottom: 60px;
-        align-items: center;
-        /* ⚠️ Bleibt - alle Elemente zentriert */
+    }
+
+    .contact-content-wrapper {
+        max-width: 100%;
     }
 
     .contact-headline-container {
-        justify-content: center;
-        /* ⚠️ Headline zentriert */
         order: 1;
-        /* ⚠️ Zuerst - funktioniert jetzt! */
     }
 
     .contact-content-container {
         flex-direction: column;
-        /* ⚠️ Vertikal */
         gap: 50px;
         align-items: center;
-        /* ⚠️ Zentriert */
         order: 2;
-        /* ⚠️ Danach - WICHTIG! */
     }
 
     /* ⚠️ REIHENFOLGE INNERHALB VON contact-content-container */
-    .contact-content-wrapper {
-        /* order: 1 - Standard, muss nicht gesetzt werden */
-        max-width: 100%;
-        width: 100%;
-    }
 
     .contact-input-container {
         order: 2;
-        /* ⚠️ Nach dem wrapper */
-        max-width: 100%;
-        width: 100%;
+        padding-left: clamp(20px, 5vw, 100px);
     }
 
     .contact-content-span-container {
-        padding-left: 0;
-        /* ⚠️ Kein Offset auf Tablet */
-        text-align: center;
-        /* ⚠️ Zentriert */
-    }
-
-    .contact-content-headline-container {
-        justify-content: center;
-        /* ⚠️ Zentriert */
+        max-width: 600px;
     }
 
     #up_arrow {
         align-self: center;
-        /* ⚠️ Zentriert */
     }
 }
 
@@ -450,15 +424,7 @@ textarea.inputFields::placeholder {
     .contact-section {
         padding-top: 60px;
         padding-bottom: 50px;
-        padding-left: 20px;
-        padding-right: 20px;
         gap: 40px;
-    }
-
-    .contact-headline-container {
-        flex-direction: column;
-        /* ⚠️ Vertikal */
-        gap: 15px;
     }
 
     .contact-headline-container h1 {
@@ -522,24 +488,15 @@ textarea.inputFields::placeholder {
     }
 
     .contact-headline-container img {
-        width: 180px;
+        width: 120px;
     }
 
     .contact-content-container {
         gap: 35px;
     }
 
-    .contact-content-headline-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-
     .contact-content-headline-container h2 {
-        font-size: 26px;
-    }
-
-    .contact-content-img {
-        width: 60px;
+        font-size: 20px;
     }
 
     .contact-content-span-container {
@@ -579,11 +536,7 @@ textarea.inputFields::placeholder {
     }
 
     .contact-headline-container img {
-        width: 160px;
-    }
-
-    .contact-content-headline-container h2 {
-        font-size: 24px;
+        width: 70px;
     }
 
     .contact-content-span-container {
@@ -592,93 +545,5 @@ textarea.inputFields::placeholder {
 
     .contact-message {
         height: 130px;
-    }
-}
-
-/* ⚠️ MINIMUM - 320px */
-@media(max-width: 320px) {
-    .contact-section {
-        padding-top: 40px;
-        padding-bottom: 30px;
-        padding-left: 12px;
-        padding-right: 12px;
-        gap: 25px;
-    }
-
-    .contact-headline-container {
-        gap: 12px;
-    }
-
-    .contact-headline-container h1 {
-        font-size: 34px;
-    }
-
-    .contact-headline-container img {
-        width: 140px;
-    }
-
-    .contact-content-container {
-        gap: 30px;
-    }
-
-    .contact-content-headline-container {
-        gap: 12px;
-    }
-
-    .contact-content-headline-container h2 {
-        font-size: 22px;
-    }
-
-    .contact-content-img {
-        width: 50px;
-    }
-
-    .contact-content-span-container {
-        padding-top: 16px;
-        gap: 16px;
-        font-size: 16px;
-    }
-
-    .inputFieldContainer,
-    .contact-input-container {
-        gap: 20px;
-    }
-
-    .inputFields {
-        padding: 12px;
-        font-size: 16px;
-    }
-
-    .contact-message {
-        height: 120px;
-    }
-
-    .send-message-button {
-        width: 180px;
-        height: 48px;
-        font-size: 16px;
-        padding: 12px 18px;
-    }
-
-    .checkbox-container {
-        gap: 6px;
-        font-size: 16px;
-    }
-
-    .checkbox-icon-container {
-        width: 20px;
-        height: 20px;
-    }
-
-    .arrow {
-        width: 32px;
-        height: 32px;
-    }
-
-    .inputIcon {
-        width: 18px;
-        height: 18px;
-        right: 12px;
-        top: 12px;
     }
 }
