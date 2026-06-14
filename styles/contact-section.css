@@ -422,7 +422,6 @@ textarea.inputFields::placeholder {
 /* ⚠️ MOBILE - 768px */
 @media(max-width: 768px) {
     .contact-section {
-        padding-top: 60px;
         padding-bottom: 50px;
         gap: 40px;
     }
@@ -478,7 +477,6 @@ textarea.inputFields::placeholder {
 /* ⚠️ SMALL MOBILE - 480px */
 @media(max-width: 480px) {
     .contact-section {
-        padding-top: 50px;
         padding-bottom: 40px;
         gap: 35px;
     }

@@ -5,7 +5,6 @@
     align-items: center;
     padding-top: 109px;
     padding-bottom: clamp(60px, 10vh, 120px);
-    /* ⚠️ HINZUGEFÜGT */
     position: relative;
     width: 100%;
     background-color: #141D2F;
@@ -14,7 +13,6 @@
 
 .portfolio_section h1 {
     font-size: clamp(45px, 8vw, 90px);
-    /* ⚠️ GEÄNDERT - responsive */
     font-weight: 700;
     line-height: 120%;
 }
@@ -28,53 +26,40 @@
     flex-direction: column;
     width: 100%;
     gap: clamp(15px, 3vh, 20px);
-    /* ⚠️ GEÄNDERT */
     margin-bottom: clamp(30px, 5vh, 40px);
-    /* ⚠️ GEÄNDERT */
 }
 
 .headline_container {
     display: flex;
     align-items: center;
     gap: clamp(20px, 3vw, 32px);
-    /* ⚠️ GEÄNDERT */
     margin-bottom: clamp(20px, 4vh, 40px);
-    /* ⚠️ GEÄNDERT */
 }
 
 .headline_span {
     font-size: clamp(14px, 1.8vw, 16px);
-    /* ⚠️ GEÄNDERT */
     line-height: 120%;
     font-weight: 400;
     width: 100%;
-    /* ⚠️ GEÄNDERT */
     max-width: 473px;
-    /* ⚠️ HINZUGEFÜGT */
     position: relative;
     left: clamp(0px, 8vw, 100px);
-    /* ⚠️ GEÄNDERT - responsive offset */
 }
 
 .project-wrapper {
     display: flex;
     flex-wrap: wrap;
     gap: clamp(30px, 4vw, 40px);
-    /* ⚠️ GEÄNDERT */
     justify-content: center;
     max-width: 1286px;
     width: 100%;
-    /* ⚠️ HINZUGEFÜGT */
 }
 
 .project_container {
     width: clamp(300px, 90vw, 603px);
-    /* ⚠️ GEÄNDERT - responsive */
     height: clamp(300px, 90vw, 603px);
-    /* ⚠️ GEÄNDERT - responsive, gleich wie width */
     border: solid 1px #70E61C;
     border-radius: clamp(15px, 2vw, 20px);
-    /* ⚠️ GEÄNDERT */
     position: relative;
     overflow: hidden;
     display: flex;
@@ -88,7 +73,6 @@
     height: 600px;
     transition: all 0.3s ease;
     object-fit: cover;
-    /* ⚠️ HINZUGEFÜGT */
 }
 
 .zoomed {
@@ -102,9 +86,7 @@
     display: flex;
     flex-direction: column;
     height: auto;
-    /* ⚠️ GEÄNDERT - flexible Höhe */
     min-height: clamp(300px, 60vw, 550px);
-    /* ⚠️ HINZUGEFÜGT */
     gap: 74px;
     position: absolute;
     top: 75px;
@@ -112,36 +94,26 @@
     width: 100%;
     z-index: 10;
     box-sizing: border-box;
-    /* ⚠️ HINZUGEFÜGT */
 }
 
 .button_container {
     display: flex;
     justify-content: space-evenly;
     gap: clamp(10px, 2vw, 20px);
-    /* ⚠️ HINZUGEFÜGT */
     flex-wrap: wrap;
-    /* ⚠️ HINZUGEFÜGT - für sehr kleine Screens */
 }
 
 .portfolio_section button {
     cursor: pointer;
     color: white;
     height: clamp(48px, 6vw, 58px);
-    /* ⚠️ GEÄNDERT */
     width: clamp(130px, 20vw, 160px);
-    /* ⚠️ GEÄNDERT */
     border-radius: clamp(8px, 1vw, 10px);
-    /* ⚠️ GEÄNDERT */
     padding: clamp(12px, 1.5vh, 15px) clamp(20px, 3vw, 30px);
-    /* ⚠️ GEÄNDERT */
     font-size: clamp(16px, 2.5vw, 23px);
-    /* ⚠️ GEÄNDERT */
     line-height: 120%;
     margin-top: clamp(15px, 2vh, 20px);
-    /* ⚠️ GEÄNDERT */
     transition: all 0.3s ease;
-    /* ⚠️ HINZUGEFÜGT */
 }
 
 .git_button {
@@ -151,31 +123,21 @@
     color: white;
     height: 58px;
     width: clamp(120px, 18vw, 137px);
-    /* ⚠️ GEÄNDERT */
     border-radius: clamp(8px, 1vw, 10px);
-    /* ⚠️ GEÄNDERT */
     padding: clamp(12px, 1.5vh, 15px) clamp(20px, 3vw, 30px);
-    /* ⚠️ GEÄNDERT */
     font-size: clamp(16px, 2.5vw, 23px);
-    /* ⚠️ GEÄNDERT */
     line-height: 120%;
     margin-top: clamp(15px, 2vh, 20px);
-    /* ⚠️ GEÄNDERT */
     text-decoration: none;
     display: flex;
-    /* ⚠️ HINZUGEFÜGT */
     align-items: center;
-    /* ⚠️ HINZUGEFÜGT */
     justify-content: center;
-    /* ⚠️ HINZUGEFÜGT */
     transition: all 0.3s ease;
-    /* ⚠️ HINZUGEFÜGT */
 }
 
 .git_button:hover {
     background-color: #1ddae6;
     transform: scale(1.05);
-    /* ⚠️ HINZUGEFÜGT */
 }
 
 .live_button {
@@ -185,31 +147,21 @@
     color: white;
     height: 58px;
     width: clamp(130px, 20vw, 152px);
-    /* ⚠️ GEÄNDERT */
     border-radius: clamp(8px, 1vw, 10px);
-    /* ⚠️ GEÄNDERT */
     padding: clamp(12px, 1.5vh, 15px) clamp(20px, 3vw, 30px);
-    /* ⚠️ GEÄNDERT */
     font-size: clamp(16px, 2.5vw, 23px);
-    /* ⚠️ GEÄNDERT */
     line-height: 120%;
     margin-top: clamp(15px, 2vh, 20px);
-    /* ⚠️ GEÄNDERT */
     text-decoration: none;
     display: flex;
-    /* ⚠️ HINZUGEFÜGT */
     align-items: center;
-    /* ⚠️ HINZUGEFÜGT */
     justify-content: center;
-    /* ⚠️ HINZUGEFÜGT */
     transition: all 0.3s ease;
-    /* ⚠️ HINZUGEFÜGT */
 }
 
 .live_button:hover {
     background-color: #70E61C;
     transform: scale(1.05);
-    /* ⚠️ HINZUGEFÜGT */
 }
 
 .info_container {
@@ -221,43 +173,33 @@
     align-items: center;
     gap: 40px;
     height: auto;
-    /* ⚠️ GEÄNDERT - flexible Höhe */
     min-height: 374px;
     padding: 40px;
     padding-top: 0px;
     padding-bottom: 0;
     border-top-left-radius: clamp(20px, 3vw, 30px);
-    /* ⚠️ GEÄNDERT */
     border-top-right-radius: clamp(20px, 3vw, 30px);
-    /* ⚠️ GEÄNDERT */
     border-bottom-left-radius: clamp(15px, 2vw, 20px);
-    /* ⚠️ GEÄNDERT */
     border-bottom-right-radius: clamp(15px, 2vw, 20px);
-    /* ⚠️ GEÄNDERT */
 }
 
 .portfolio_section h2 {
     color: #9747FF;
     font-size: clamp(24px, 4vw, 32px);
-    /* ⚠️ GEÄNDERT */
     font-weight: 700;
     text-align: center;
-    /* ⚠️ HINZUGEFÜGT */
 }
 
 .project-description {
     font-size: clamp(14px, 2vw, 18px);
-    /* ⚠️ GEÄNDERT */
     line-height: 125%;
     text-align: center;
     padding: 0 clamp(10px, 2vw, 20px);
-    /* ⚠️ HINZUGEFÜGT */
 }
 
 .used-skills {
     color: #70E61C;
     font-size: clamp(14px, 2vw, 18px);
-    /* ⚠️ HINZUGEFÜGT */
 }
 
 .portfolio-section-shadows {
@@ -267,19 +209,14 @@
     top: 0;
     left: 0;
     z-index: -10;
-    overflow: hidden;
-    /* ⚠️ HINZUGEFÜGT */
 }
 
 .blue-shadow {
     position: absolute;
     bottom: 60%;
     right: clamp(-500px, -30vw, -350px);
-    /* ⚠️ GEÄNDERT */
     width: clamp(400px, 60vw, 740px);
-    /* ⚠️ GEÄNDERT */
     height: clamp(450px, 65vw, 800px);
-    /* ⚠️ GEÄNDERT */
     z-index: -1;
     pointer-events: none;
 }
@@ -288,11 +225,8 @@
     position: absolute;
     top: 57%;
     left: clamp(-600px, -40vw, -514px);
-    /* ⚠️ GEÄNDERT */
     width: clamp(450px, 65vw, 800px);
-    /* ⚠️ GEÄNDERT */
     height: clamp(500px, 70vw, 870px);
-    /* ⚠️ GEÄNDERT */
     z-index: -1;
     pointer-events: none;
 }
@@ -424,53 +358,5 @@
     .overlay {
         top: 40px;
         gap: 35px;
-    }
-}
-
-/* ⚠️ MEDIA QUERY - 320px - Minimum */
-@media(max-width: 320px) {
-    .portfolio_section {
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-
-    .portfolio_section h1 {
-        font-size: 34px;
-    }
-
-    .headline_container {
-        gap: 10px;
-        margin-bottom: 15px;
-    }
-
-    .project_container {
-        min-width: 296px;
-        border-radius: 12px;
-    }
-
-    .overlay {
-        gap: 20px;
-    }
-
-    .info_container {
-        gap: 15px;
-        padding: 15px 10px;
-        min-height: 220px;
-        border-top-left-radius: 18px;
-        border-top-right-radius: 18px;
-        border-bottom-left-radius: 12px;
-        border-bottom-right-radius: 12px;
-    }
-
-    .portfolio_section h2 {
-        font-size: 20px;
-    }
-
-    .used-skills {
-        font-size: 12px;
-    }
-
-    .project-wrapper {
-        gap: 25px;
     }
 }

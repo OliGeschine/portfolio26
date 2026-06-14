@@ -8,7 +8,6 @@
     position: relative;
     background-color: #141D2F;
     isolation: isolate;
-    padding: 0 20px;
 }
 
 .landing-section h1 {
@@ -154,12 +153,6 @@
 
 /* Tablets Portrait */
 @media(max-width: 768px) {
-    .landing-section {
-        padding: 0 15px;
-        padding-top: 120px;
-        padding-bottom: 80px;
-    }
-
     .headlines {
         padding-bottom: 0;
     }
@@ -174,7 +167,6 @@
     .landing-section {
         height: auto;
         min-height: 100vh;
-        padding: 100px 15px 60px;
     }
 
     .links {
@@ -185,10 +177,6 @@
 
 /* Mobile Portrait */
 @media(max-width: 480px) {
-    .landing-section {
-        padding: 90px 10px 50px;
-    }
-
     .headlines {
         gap: 4px;
     }
@@ -196,10 +184,6 @@
 
 /* Extra Small Devices */
 @media(max-width: 375px) {
-    .landing-section {
-        padding: 80px 10px 40px;
-    }
-
     .links {
         gap: 20px;
     }
@@ -207,20 +191,5 @@
     .links a img {
         width: 30px;
         height: 30px;
-    }
-}
-
-/* iPhone SE & sehr kleine Geräte */
-@media(max-width: 320px) {
-    .landing-section {
-        padding: 80px 8px 30px;
-    }
-
-    .links {
-        gap: 15px;
-    }
-
-    .scroll-down-container {
-        display: none;
     }
 }

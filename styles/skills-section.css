@@ -6,7 +6,6 @@
     min-height: clamp(600px, 100vh, 885px);
     height: auto;
     box-sizing: border-box;
-    position: relative;
     overflow: hidden;
     padding-top: 109px;
 }
