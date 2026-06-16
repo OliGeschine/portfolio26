@@ -1,11 +1,22 @@
-.main-content {
-    height: 63%;
-    margin-top: 56px;
+#legal {
     display: flex;
     flex-direction: column;
-    width: 1168px;
-    height: 950px;
-    padding-right: 130px;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #141D2F;
+    box-sizing: border-box;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    width: clamp(300px, 90vw, 1168px);
+    margin-top: clamp(40px, 6vh, 56px);
+    margin-bottom: clamp(40px, 6vh, 60px);
+    padding-right: clamp(0px, 10vw, 130px);
+    height: auto;
+    box-sizing: border-box;
 }
 
 nav span {
@@ -13,49 +24,93 @@ nav span {
 }
 
 .header-content {
-    height: 73px;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     width: 100%;
-    gap: 25px;
+    gap: clamp(15px, 3vw, 25px);
     margin-top: 130px;
 }
 
 .purple-line-left {
-    width: 130px;
+    width: clamp(45px, 14vw, 130px);
     height: 2px;
+    flex-shrink: 0;
 }
 
 .purple-line-right {
-    width: 500px;
+    width: clamp(65px, 20vw, 500px);
     height: 2px;
+    flex-shrink: 0;
 }
 
 h1 {
-    font-size: 48px;
+    font-size: clamp(22px, 6vw, 48px);
     color: #70E61C;
+    font-weight: 700;
+    line-height: 120%;
+    margin: 0;
 }
 
 h2 {
-    font-size: 33px;
-    color: #9747FF;
-}
-
-h3 {
-    font-size: 19px;
+    font-size: clamp(20px, 4vw, 33px);
     color: #9747FF;
     font-weight: 700;
     line-height: 120%;
+    margin-top: clamp(25px, 2vh, 40px);
+    margin-bottom: clamp(15px, 2vh, 20px);
+}
+
+h3 {
+    font-size: clamp(18px, 2vw, 19px);
+    color: #9747FF;
+    font-weight: 700;
+    line-height: 120%;
+    margin-top: clamp(20px, 3vh, 24px);
+    margin-bottom: clamp(10px, 1.5vh, 12px);
 }
 
 .main-content p {
-    font-size: 16px;
+    font-size: clamp(16px, 1.8vw, 16px);
     font-weight: 400;
-    line-height: 120%;
-    margin-bottom: 24px;
+    line-height: 1.5;
+    margin-bottom: clamp(20px, 3vh, 24px);
+    color: white;
+}
+
+.main-content div {
+    font-size: clamp(16px, 1.8vw, 16px);
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: clamp(15px, 2vh, 20px);
+    color: white;
 }
 
 span {
     color: #9747FF;
+    font-weight: 700;
+}
+
+/* ⚠️ TABLET - 768px */
+@media(max-width: 768px) {
+    .header-content {
+        gap: 8px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .main-content p,
+    .main-content div {
+        font-size: 16px;
+    }
+}
+
+/* ⚠️ MOBILE - 480px */
+@media(max-width: 480px) {
+    h3 {
+        font-size: 17px;
+    }
 }
