@@ -98,19 +98,8 @@ span {
         gap: 8px;
     }
 
-    h3 {
-        font-size: 18px;
-    }
-
     .main-content p,
     .main-content div {
         font-size: 16px;
-    }
-}
-
-/* ⚠️ MOBILE - 480px */
-@media(max-width: 480px) {
-    h3 {
-        font-size: 17px;
     }
 }
