@@ -188,6 +188,10 @@ nav {
     z-index: 98;
 }
 
+.modal.dNone {
+    display: none;
+}
+
 .modal.show {
     transform: translateX(0);
 }

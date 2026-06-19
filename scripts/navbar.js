@@ -1,9 +1,7 @@
 function setActiveNav(clickedLink) {
-    // Alle aktiven Zustände entfernen
     document.querySelectorAll('.navigations-links').forEach(link => {
         link.classList.remove('active');
     });
-    // Angeklickten Link aktivieren
     clickedLink.parentElement.classList.add('active');
     closeModal();
 }
@@ -16,12 +14,13 @@ function toggleModal() {
     menuIconTop.classList.toggle('active');
     menuIconMiddle.classList.toggle('active');
     menuIconBottom.classList.toggle('active');
-    modal.classList.toggle('show');
     if (modal.classList.contains('dNone')) {
         modal.classList.remove('dNone');
-        setTimeout(() => {
-            modal.classList.add('show');
-        }, 5);
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                modal.classList.add('show');
+            });
+        });
     } else {
         modal.classList.remove('show');
         setTimeout(() => {

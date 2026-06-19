@@ -6,7 +6,6 @@
     padding-left: clamp(20px, 8vw, 100px);
     justify-content: space-between;
     align-items: center;
-    gap: clamp(30px, 5vw, 60px);
     box-sizing: border-box;
     background-color: #141D2F;
     isolation: isolate;
@@ -33,7 +32,9 @@
     position: absolute;
     left: 0;
     top: clamp(290px, 65vh, 900px);
-    height: 800px;
+    height: auto;
+    max-height: clamp(350px, 55vh, 800px);
+    aspect-ratio: 16 / 9;
     z-index: 0;
     pointer-events: none;
 }
@@ -111,6 +112,7 @@
     .about_me_section {
         flex-direction: column;
         align-items: center;
+        gap: clamp(30px, 5vw, 60px);
     }
 
     /* ⚠️ Bild OBEN */
