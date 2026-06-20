@@ -6,32 +6,33 @@
  * 
  * @returns {Promise<void>} A Promise that resolves when all HTML includes are finished loading.
  */
-function includeHTML() {
-    return new Promise((resolve) => {
-        let elements = document.querySelectorAll('[w3-include-html]');
-        let total = elements.length;
-        let loaded = 0;
-        elements.forEach(elmnt => {
-            let file = elmnt.getAttribute('w3-include-html');
-            fetch(file)
-                .then(response => {
-                    if (!response.ok) throw new Error('Include failed');
-                    return response.text();
-                })
-                .then(data => {
-                    elmnt.innerHTML = data;
-                    elmnt.removeAttribute('w3-include-html');
-                    loaded++;
-                    if (loaded === total) resolve();
-                })
-                .catch(error => {
-                    elmnt.innerHTML = "Error loading component";
-                    console.error(error);
-                    loaded++;
-                    if (loaded === total) resolve();
-                });
-        });
+async function includeHTML() {
+    const includeElements = document.querySelectorAll('[w3-include-html]');
 
-        if (total === 0) resolve(); // sofort fertig, wenn nichts zu laden
+    const promises = Array.from(includeElements).map(async (element) => {
+        const file = element.getAttribute('w3-include-html');
+        if (file) {
+            try {
+                const response = await fetch(file);
+                if (response.ok) {
+                    const html = await response.text();
+                    element.innerHTML = html;
+                    element.removeAttribute('w3-include-html');
+                } else {
+                    element.innerHTML = 'Page not found.';
+                }
+            } catch (error) {
+                console.error('Error loading HTML:', error);
+                element.innerHTML = 'Error loading content.';
+            }
+        }
     });
+
+    // ⚠️ WICHTIG: Warte bis alle Includes geladen sind
+    await Promise.all(promises);
+
+    // ⚠️ Nach dem Laden: Übersetze die Seite
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    translatePage(savedLang);
+    updateLanguageButtons(savedLang);
 }

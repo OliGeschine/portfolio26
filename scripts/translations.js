@@ -4,9 +4,11 @@ const translations = {
         'nav.about': 'Über mich',
         'nav.skills': 'Skills',
         'nav.portfolio': 'Portfolio',
+        'nav.contact': 'Kontakt', // ⚠️ HINZUGEFÜGT
 
         // Landing Section
         'landing.iam': 'Ich bin',
+        'landing.name': 'Oliver Geschine',
         'landing.role': 'FRONTEND ENTWICKLER',
         'landing.cta': 'Lass uns sprechen!',
         'landing.scroll': 'scroll weiter',
@@ -146,6 +148,7 @@ const translations = {
         'nav.about': 'About me',
         'nav.skills': 'Skills',
         'nav.portfolio': 'Portfolio',
+        'nav.contact': 'Contact', // ⚠️ HINZUGEFÜGT
 
         // Landing Section  
         'landing.iam': 'I am',

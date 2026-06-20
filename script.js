@@ -1,8 +1,21 @@
 function init() {
-    renderProjects(),
-        renderComments(),
-        initContactForm(),
-        includeHTML()
+    includeHTML().then(() => {
+        initNavbar();
+        getActiveLanguage();
+    });
+    if (document.getElementById('comment_img')) {
+        renderProjects();
+        renderComments();
+        initContactForm();
+    }
+}
+
+function initNavbar() {
+    const modal = document.querySelector('.modal');
+    const burgerMenu = document.getElementById('burger_menu');
+    if (burgerMenu && modal) {
+        console.log('Navbar initialized');
+    }
 }
 
 /////// side translation ///////
@@ -15,8 +28,32 @@ function setLanguageDE() {
     if (document.getElementById('comment_img')) {
         renderComments();
     }
-    document.getElementById('de_button')?.classList.add('active');
-    document.getElementById('en_button')?.classList.remove('active');
+    updateLanguageButtons('de');
+}
+
+function updateLanguageButtons(lang) {
+    const deButton = document.getElementById('de_button');
+    const enButton = document.getElementById('en_button');
+    if (deButton && enButton) {
+        if (lang === 'de') {
+            deButton.classList.add('active');
+            enButton.classList.remove('active');
+        } else {
+            enButton.classList.add('active');
+            deButton.classList.remove('active');
+        }
+    }
+    const deButtonModal = document.getElementById('de_button_modal');
+    const enButtonModal = document.getElementById('en_button_modal');
+    if (deButtonModal && enButtonModal) {
+        if (lang === 'de') {
+            deButtonModal.classList.add('active');
+            enButtonModal.classList.remove('active');
+        } else {
+            enButtonModal.classList.add('active');
+            deButtonModal.classList.remove('active');
+        }
+    }
 }
 
 function setLanguageEN() {
@@ -26,8 +63,7 @@ function setLanguageEN() {
     if (document.getElementById('comment_img')) {
         renderComments();
     }
-    document.getElementById('en_button')?.classList.add('active');
-    document.getElementById('de_button')?.classList.remove('active');
+    updateLanguageButtons('en');
 }
 
 function translatePage(lang) {
@@ -48,7 +84,7 @@ function translatePage(lang) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    getActiveLanguage();
+    init();
     const urlParams = new URLSearchParams(window.location.search);
     const scrollTarget = urlParams.get('scrollTo');
     if (scrollTarget) {
@@ -82,8 +118,7 @@ function setLanguageDEModal() {
     if (document.getElementById('comment_img')) {
         renderComments();
     }
-    document.getElementById('de_button_modal')?.classList.add('active');
-    document.getElementById('en_button_modal')?.classList.remove('active');
+    updateLanguageButtons('de');
 }
 
 function setLanguageENModal() {
@@ -93,6 +128,5 @@ function setLanguageENModal() {
     if (document.getElementById('comment_img')) {
         renderComments();
     }
-    document.getElementById('en_button_modal')?.classList.add('active');
-    document.getElementById('de_button_modal')?.classList.remove('active');
+    updateLanguageButtons('en');
 }
