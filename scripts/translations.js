@@ -76,7 +76,7 @@ const translations = {
         'legal.disclaimer.text': 'Portfolio wird "wie besehen" ohne jegliche Gewährleistung bereitgestellt, weder ausdrücklich noch stillschweigend, einschließlich, aber nicht beschränkt auf die stillschweigenden Gewährleistungen der Marktgängigkeit, Eignung für einen bestimmten Zweck und Nichtverletzung. In keinem Fall haften wir, die aufgeführten Studenten, oder die Developer Akademie für direkte, indirekte, zufällige, besondere, Folge- oder exemplarische Schäden, einschließlich, aber nicht beschränkt auf Schäden für Gewinnverluste, Geschäftswert, Nutzung, Daten oder andere immaterielle Verluste, selbst wenn wir über die Möglichkeit solcher Schäden informiert wurden, die sich aus oder im Zusammenhang mit der Nutzung oder Leistung von Portfolio ergeben.',
         'legal.indemnity': 'Schadloshaltung',
         'legal.indemnity.text': 'Sie erklären sich damit einverstanden, uns, die aufgeführten Studenten, die Developer Akademie und unsere verbundenen Unternehmen, Partner, leitenden Angestellten, Direktoren, Vertreter und Mitarbeiter von allen Ansprüchen, Forderungen, Verlusten, Schäden, Kosten oder Verbindlichkeiten (einschließlich angemessener Anwaltskosten) freizustellen, zu verteidigen und schadlos zu halten, die sich aus oder im Zusammenhang mit Ihrer Nutzung von Portfolio und/oder Ihrem Verstoß gegen dieses Impressum ergeben.',
-        'legal.contact.info': 'Für Fragen oder Mitteilungen kontaktieren Sie uns bitte unter',
+        'legal.contact.info': 'Für Fragen oder Mitteilungen kontaktieren Sie mich bitte unter',
         'legal.date': 'Datum: 26. Juli 2025',
 
         // Privacy Policy
@@ -220,7 +220,7 @@ const translations = {
         'legal.disclaimer.text': 'Portfolio is provided "as is" without warranty of any kind, whether express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event will we, the listed students, or the Developer Akademie, be liable for any direct, indirect, incidental, special, consequential or exemplary damages, including but not limited to, damages for loss of profits, goodwill, use, data, or other intangible losses, even if we have been advised of the possibility of such damages, arising out of or in connection with the use or performance of Portfolio.',
         'legal.indemnity': 'Indemnity',
         'legal.indemnity.text': 'You agree to indemnify, defend and hold harmless us, the listed students, the Developer Akademie, and our affiliates, partners, officers, directors, agents, and employees, from and against any claim, demand, loss, damage, cost, or liability (including reasonable legal fees) arising out of or relating to your use of Portfolio and/or your breach of this Legal Notice.',
-        'legal.contact.info': 'For any questions or notices, please contact us at',
+        'legal.contact.info': 'For any questions or notices, please contact me at',
         'legal.date': 'Date: July 26, 2025',
 
         // Privacy Policy

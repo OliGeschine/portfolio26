@@ -8,7 +8,6 @@
  */
 async function includeHTML() {
     const includeElements = document.querySelectorAll('[w3-include-html]');
-
     const promises = Array.from(includeElements).map(async (element) => {
         const file = element.getAttribute('w3-include-html');
         if (file) {
@@ -27,11 +26,7 @@ async function includeHTML() {
             }
         }
     });
-
-    // ⚠️ WICHTIG: Warte bis alle Includes geladen sind
     await Promise.all(promises);
-
-    // ⚠️ Nach dem Laden: Übersetze die Seite
     const savedLang = localStorage.getItem('preferredLanguage') || 'en';
     translatePage(savedLang);
     updateLanguageButtons(savedLang);

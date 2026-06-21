@@ -21,7 +21,7 @@ let projects = [
         usedSkills: "JavaScript | HTML | CSS | API",
         img: "./assets/img/pokedex.png",
         github: "https://github.com/OliGeschine/pokedex",
-        live: "https://oliver-geschine.developerakademie.net/pokedex/index.html"
+        live: "https://oliver-geschine.de/pokedex/index.html"
     },
 ];
 

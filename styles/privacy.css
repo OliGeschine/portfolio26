@@ -22,7 +22,6 @@
     align-items: center;
     justify-content: flex-end;
     gap: clamp(15px, 3vw, 25px);
-    margin-top: 130px;
 }
 
 .privacy-h1 {
@@ -89,4 +88,19 @@
     font-size: clamp(16px, 1.8vw, 16px);
     line-height: 1.5;
     color: white;
+}
+
+.return-arrow-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.return-arrow {
+    width: 32px;
+    height: 32px;
+    margin-top: 130px;
+    margin-bottom: 40px;
+    margin-right: 30px;
+    cursor: pointer;
 }

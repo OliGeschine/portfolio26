@@ -30,7 +30,6 @@ nav span {
     justify-content: flex-end;
     width: 100%;
     gap: clamp(15px, 3vw, 25px);
-    margin-top: 130px;
 }
 
 .purple-line-left {
@@ -90,6 +89,21 @@ h3 {
 span {
     color: #9747FF;
     font-weight: 700;
+}
+
+.return-arrow-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.return-arrow {
+    width: 32px;
+    height: 32px;
+    margin-top: 130px;
+    margin-bottom: 40px;
+    margin-right: 30px;
+    cursor: pointer;
 }
 
 /* ⚠️ TABLET - 768px */

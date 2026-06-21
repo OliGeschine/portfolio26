@@ -3,8 +3,12 @@ function init() {
         initNavbar();
         getActiveLanguage();
     });
-    if (document.getElementById('comment_img')) {
+    const projectList = document.getElementById('projectList');
+    if (projectList && projectList.children.length === 0) {
         renderProjects();
+    }
+    const commentImg = document.getElementById('comment_img');
+    if (commentImg) {
         renderComments();
         initContactForm();
     }
@@ -110,7 +114,6 @@ function getActiveLanguage() {
 
 
 /////// Modal ///////
-
 function setLanguageDEModal() {
     currentLanguage = 'de';
     localStorage.setItem('preferredLanguage', 'de');

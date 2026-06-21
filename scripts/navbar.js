@@ -43,27 +43,20 @@ function closeModal() {
     }, 300);
 }
 
-// ⚠️ NEU: Navigation zu Home
 function navigateToHome() {
     window.location.href = './index.html';
 }
 
-// ⚠️ NEU: Navigation zu Sections (funktioniert auf allen Seiten)
 function navigateToSection(sectionId) {
     const currentPage = window.location.pathname;
-
-    // Prüfe ob wir auf index.html sind
     if (currentPage.includes('index.html') || currentPage === '/' || currentPage.endsWith('/')) {
-        // Direktes Scrollen auf index.html
         const targetElement = document.getElementById(sectionId);
         if (targetElement) {
             targetElement.scrollIntoView({ behavior: 'smooth' });
             setActiveNav(event.target);
         }
     } else {
-        // Von anderen Seiten: Navigiere zu index.html mit scrollTo Parameter
         window.location.href = `./index.html?scrollTo=${sectionId}`;
     }
-
     closeModal();
 }
