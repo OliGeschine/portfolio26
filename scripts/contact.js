@@ -1,7 +1,7 @@
 const EMAIL_CONFIG = {
-    serviceId: 'service_vet94ip',     // Ersetzen Sie mit Ihrer EmailJS Service ID
-    templateId: 'template_h8anrii',   // Ersetzen Sie mit Ihrer EmailJS Template ID
-    publicKey: 'FjqmytnRfRDnz8Rhd'      // Ersetzen Sie mit Ihrem EmailJS Public Key
+    serviceId: 'service_vet94ip',
+    templateId: 'template_h8anrii',
+    publicKey: 'FjqmytnRfRDnz8Rhd'
 };
 let hasError = false;
 let isFormValid = false;
@@ -13,11 +13,15 @@ function initEmailJS() {
 
 function enableMsgButton() {
     let sendMessageButton = document.getElementById("sendMessageButton");
-    if (checkboxChecked && isFormValid) {
-        sendMessageButton.disabled = false;
+    const name = document.getElementById('contactName').value.trim();
+    const email = document.getElementById('contactEmail').value.trim();
+    const message = document.getElementById('contactMessage').value.trim();
+    const allFieldsFilled = name !== '' && email !== '' && message !== '';
+    const allValid = checkboxChecked && isFormValid && allFieldsFilled;
+    sendMessageButton.disabled = !allValid;
+    if (allValid) {
         sendMessageButton.classList.add("checkedButton");
     } else {
-        sendMessageButton.disabled = true;
         sendMessageButton.classList.remove("checkedButton");
     }
 }
@@ -84,10 +88,15 @@ async function handleFormSubmit(event) {
 
 async function validateSingleField(event) {
     const fieldId = event.target.id;
+    const input = event.target;
+    if (input.value.trim() === '') {
+        validateFormRealTime();
+        return;
+    }
     if (fieldId === 'contactEmail') {
-        await validateAddEmailFormat();
+        await validateAddEmailFormat(false);
     } else if (fieldId === 'contactMessage') {
-        await validateMessageFormat();
+        await validateMessageFormat(false);
     }
     validateFormRealTime();
 }
@@ -156,13 +165,11 @@ function checkEmptyFields(inputs, values, showErrors = true) {
         if (showErrors) styleMessageValues(inputs);
         hasEmptyFields = true;
     }
-    if (!checkboxChecked) {
-        if (showErrors) {
-            document.querySelector('.error-message').style.display = 'block';
-            setTimeout(() => {
-                document.querySelector('.error-message').style.display = 'none';
-            }, 3000);
-        }
+    if (showErrors && !checkboxChecked) {
+        document.querySelector('.error-message').style.display = 'block';
+        setTimeout(() => {
+            document.querySelector('.error-message').style.display = 'none';
+        }, 3000);
         hasEmptyFields = true;
     }
     return hasEmptyFields;
