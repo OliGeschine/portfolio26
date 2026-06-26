@@ -36,6 +36,11 @@ function setLanguageDE() {
 }
 
 function updateLanguageButtons(lang) {
+    changeDesktopButtons(lang);
+    changeModalButtons(lang);
+}
+
+function changeDesktopButtons(lang) {
     const deButton = document.getElementById('de_button');
     const enButton = document.getElementById('en_button');
     if (deButton && enButton) {
@@ -47,6 +52,9 @@ function updateLanguageButtons(lang) {
             deButton.classList.remove('active');
         }
     }
+}
+
+function changeModalButtons(lang) {
     const deButtonModal = document.getElementById('de_button_modal');
     const enButtonModal = document.getElementById('en_button_modal');
     if (deButtonModal && enButtonModal) {
@@ -111,7 +119,6 @@ function getActiveLanguage() {
         setLanguageDEModal();
     }
 }
-
 
 /////// Modal ///////
 function setLanguageDEModal() {

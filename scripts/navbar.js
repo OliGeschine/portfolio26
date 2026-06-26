@@ -7,13 +7,7 @@ function setActiveNav(clickedLink) {
 }
 
 function toggleModal() {
-    let modal = document.querySelector('.modal');
-    const menuIconTop = document.querySelector('.menu-icon-line-top');
-    const menuIconMiddle = document.querySelector('.menu-icon-line-middle');
-    const menuIconBottom = document.querySelector('.menu-icon-line-bottom');
-    menuIconTop.classList.toggle('active');
-    menuIconMiddle.classList.toggle('active');
-    menuIconBottom.classList.toggle('active');
+    getModalSettings();
     if (modal.classList.contains('dNone')) {
         modal.classList.remove('dNone');
         requestAnimationFrame(() => {
@@ -27,6 +21,16 @@ function toggleModal() {
             modal.classList.add('dNone');
         }, 300);
     }
+}
+
+function getModalSettings() {
+    let modal = document.querySelector('.modal');
+    const menuIconTop = document.querySelector('.menu-icon-line-top');
+    const menuIconMiddle = document.querySelector('.menu-icon-line-middle');
+    const menuIconBottom = document.querySelector('.menu-icon-line-bottom');
+    menuIconTop.classList.toggle('active');
+    menuIconMiddle.classList.toggle('active');
+    menuIconBottom.classList.toggle('active');
 }
 
 function closeModal() {

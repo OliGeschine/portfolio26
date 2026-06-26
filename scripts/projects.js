@@ -31,10 +31,16 @@ function renderProjects() {
     let projectList = document.querySelector('#projectList');
     for (let i = 0; i < projects.length; i++) {
         let project = projects[i];
+        let projectContainer = getModalLayout(project, i);
+        addHoverEvents(projectContainer);
+        projectList.appendChild(projectContainer);
+    }
+}
 
-        let projectContainer = document.createElement('div');
-        projectContainer.classList.add('project_container');
-        projectContainer.innerHTML = `
+function getModalLayout(project, i) {
+    let projectContainer = document.createElement('div');
+    projectContainer.classList.add('project_container');
+    projectContainer.innerHTML = `
             <div id="img">
                 <img id="projectImg" class="project-container-img" src="${project.img}" alt="">
             </div>
@@ -48,20 +54,16 @@ function renderProjects() {
                     <span id="description" class="project-description" data-translate="portfolio.project${i + 1}.description">${project.description}</span>
                     <span id="usedSkills" class="used-skills">${project.usedSkills}</span>
                 </div>`;
-        addHoverEvents(projectContainer);
-        projectList.appendChild(projectContainer);
-    }
+    return projectContainer;
 }
 
 function addHoverEvents(container) {
     const img = container.querySelector('.project-container-img');
     const overlay = container.querySelector('.overlay');
-
     container.addEventListener('mouseenter', function () {
         overlay?.classList.remove('dNonePortfolio');
         img?.classList.add('zoomed');
     });
-
     container.addEventListener('mouseleave', function () {
         overlay?.classList.add('dNonePortfolio');
         img?.classList.remove('zoomed');

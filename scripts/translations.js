@@ -4,7 +4,7 @@ const translations = {
         'nav.about': 'Über mich',
         'nav.skills': 'Skills',
         'nav.portfolio': 'Portfolio',
-        'nav.contact': 'Kontakt', // ⚠️ HINZUGEFÜGT
+        'nav.contact': 'Kontakt',
 
         // Landing Section
         'landing.iam': 'Ich bin',
@@ -148,7 +148,7 @@ const translations = {
         'nav.about': 'About me',
         'nav.skills': 'Skills',
         'nav.portfolio': 'Portfolio',
-        'nav.contact': 'Contact', // ⚠️ HINZUGEFÜGT
+        'nav.contact': 'Contact',
 
         // Landing Section  
         'landing.iam': 'I am',
