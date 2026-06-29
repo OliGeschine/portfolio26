@@ -23,6 +23,20 @@ function toggleModal() {
     }
 }
 
+let resizeTimeout;
+
+function hideModalOnResize() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        const modal = document.querySelector('.modal');
+        if (modal && !modal.classList.contains('dNone') && window.innerWidth > 768) {
+            closeModal();
+        }
+    }, 10);
+}
+
+window.addEventListener('resize', hideModalOnResize);
+
 function getModalSettings() {
     let modal = document.querySelector('.modal');
     const menuIconTop = document.querySelector('.menu-icon-line-top');
