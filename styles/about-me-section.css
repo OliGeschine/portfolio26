@@ -2,12 +2,12 @@
     display: flex;
     width: 100%;
     padding-top: 109px;
-    padding-right: clamp(20px, 8vw, 100px);
-    padding-left: clamp(20px, 8vw, 100px);
-    justify-content: space-between;
+    gap: 250px;
     align-items: center;
     box-sizing: border-box;
     background-color: #141D2F;
+    padding-right: clamp(20px, 8vw, 100px);
+    padding-left: clamp(20px, 8vw, 100px);
     isolation: isolate;
     position: relative;
 }
@@ -28,13 +28,11 @@
 }
 
 .vector-bg-img {
-    width: 100%;
+    width: 1440px;
+    height: 878px;
     position: absolute;
-    left: 0;
-    top: clamp(290px, 65vh, 900px);
-    height: auto;
-    max-height: clamp(350px, 55vh, 800px);
-    aspect-ratio: 16 / 9;
+    left: 2px;
+    top: 55vh;
     z-index: 0;
     pointer-events: none;
 }
@@ -43,13 +41,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 655px;
 }
 
 .profile_picture {
-    width: clamp(280px, 35vw, 520px);
-    border-radius: clamp(12px, 2vw, 20px);
+    width: 400px;
+    border-radius: 20px;
     z-index: 1;
-    margin-top: 15px;
+    padding-top: 40px;
+    margin-top: 90px;
+    aspect-ratio: 11 / 16;
 }
 
 .placeholder_span {
@@ -99,19 +100,21 @@
     pointer-events: none;
 }
 
-/* ⚠️ TABLET */
-@media(max-width: 1024px) {
-    .infobox {
-        width: clamp(280px, 45vw, 450px);
+@media(max-width: 1310px) {
+    .about_me_section {
+        gap: 0px;
+        justify-content: space-between;
     }
 }
 
 /* ⚠️ MOBILE */
-@media(max-width: 995px) {
+@media(max-width: 1024px) {
     .about_me_section {
         flex-direction: column;
         align-items: center;
-        gap: clamp(30px, 5vw, 60px);
+        gap: 40px;
+        padding-right: 0;
+        padding-left: 0;
     }
 
     /* ⚠️ Bild OBEN */
@@ -119,19 +122,15 @@
         right: 0;
         order: 1;
         width: 100%;
-        max-width: clamp(280px, 80vw, 400px);
+        max-width: 400px;
     }
 
-    .profile_picture {
-        width: 100%;
-    }
-
-    /* ⚠️ Text UNTEN */
     .infobox {
         z-index: 3;
         order: 2;
+        padding-right: clamp(20px, 8vw, 100px);
+        padding-left: clamp(20px, 8vw, 100px);
         width: 100%;
-        max-width: 100%;
     }
 
     .about_me_section h1 {
@@ -153,30 +152,56 @@
         height: clamp(28px, 6vw, 40px);
     }
 
-    .placeholder_span {
-        font-size: clamp(24px, 6vw, 40px);
+    .profile_picture {
+        width: 100%;
+    }
+
+    .vector-bg-img {
+        width: 1000px;
+        height: 610px;
+        top: 58vh;
+    }
+}
+
+/* ⚠️ TABLET - Medium */
+@media(max-width: 768px) {
+    .vector-bg-img {
+        width: 850px;
+        height: 518px;
+        top: 60vh;
+        left: 0;
     }
 }
 
 /* ⚠️ SMALL MOBILE - 480px */
 @media(max-width: 480px) {
+    .about_me_section {
+        gap: 0px;
+    }
+
     .about_me_section h1 {
         font-size: 36px;
     }
 
     .profile_picture_container {
-        max-width: 300px;
+        max-width: 350px;
+    }
+
+    .vector-bg-img {
+        width: 640px;
+        height: 390px;
+        top: 59vh;
     }
 }
 
 /* ⚠️ EXTRA SMALL - 375px */
 @media(max-width: 375px) {
-    .about_me_section h1 {
-        font-size: 32px;
+    .about_me_section {
+        gap: 0px;
     }
 
-    .profile_picture_container {
-        max-width: 260px;
+    .about_me_section h1 {
+        font-size: 32px;
     }
 
     .short_info_container {
@@ -189,7 +214,14 @@
         height: 30px;
     }
 
-    .placeholder_span {
-        font-size: 26px;
+    .profile_picture_container {
+        max-width: 280px;
+        height: 630px;
+    }
+
+    .vector-bg-img {
+        width: 560px;
+        height: 341px;
+        top: 55vh;
     }
 }
