@@ -2,7 +2,7 @@
     display: flex;
     width: 100%;
     padding-top: 109px;
-    gap: 250px;
+    gap: 190px;
     align-items: center;
     box-sizing: border-box;
     background-color: #141D2F;
@@ -10,6 +10,7 @@
     padding-left: clamp(20px, 8vw, 100px);
     isolation: isolate;
     position: relative;
+    /* ✅ Bereits vorhanden */
 }
 
 .about_me_section h1 {
@@ -18,8 +19,10 @@
 }
 
 .infobox {
-    width: clamp(300px, 40vw, 470px);
+    width: clamp(300px, 40vw, 530px);
     z-index: 3;
+    position: relative;
+    /* ⚠️ NEU: Erstellt Stacking Context */
 }
 
 .infobox>span {
@@ -28,11 +31,10 @@
 }
 
 .vector-bg-img {
-    width: 1440px;
-    height: 878px;
+    width: 2100px;
+    /* height: 878px; */
     position: absolute;
-    left: 2px;
-    top: 55vh;
+    top: 300px;
     z-index: 0;
     pointer-events: none;
 }
@@ -41,16 +43,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 655px;
+    top: 50px;
+    height: 520px;
+    position: relative;
+    z-index: 2;
 }
 
 .profile_picture {
-    width: 400px;
+    height: 620px;
+    width: 460px;
     border-radius: 20px;
     z-index: 1;
-    padding-top: 40px;
-    margin-top: 90px;
-    aspect-ratio: 11 / 16;
+    position: relative;
 }
 
 .placeholder_span {
@@ -85,6 +89,8 @@
     height: clamp(32px, 4vw, 48px);
     z-index: 1;
     flex-shrink: 0;
+    position: relative;
+    /* ⚠️ NEU: Für z-index */
 }
 
 .about_me_icons:hover {
@@ -108,7 +114,7 @@
 }
 
 /* ⚠️ MOBILE */
-@media(max-width: 1024px) {
+@media(max-width: 1180px) {
     .about_me_section {
         flex-direction: column;
         align-items: center;
@@ -123,6 +129,7 @@
         order: 1;
         width: 100%;
         max-width: 400px;
+        z-index: 2;
     }
 
     .infobox {
@@ -130,7 +137,9 @@
         order: 2;
         padding-right: clamp(20px, 8vw, 100px);
         padding-left: clamp(20px, 8vw, 100px);
+        padding-top: 85px;
         width: 100%;
+        position: relative;
     }
 
     .about_me_section h1 {
@@ -153,23 +162,48 @@
     }
 
     .profile_picture {
-        width: 100%;
+        position: relative;
+        z-index: 1;
     }
 
     .vector-bg-img {
-        width: 1000px;
-        height: 610px;
-        top: 58vh;
+        width: 1900px;
+        top: 320px;
+        z-index: 0;
     }
 }
 
 /* ⚠️ TABLET - Medium */
 @media(max-width: 768px) {
+    .about_me_section {
+        gap: 0px;
+    }
+
     .vector-bg-img {
         width: 850px;
-        height: 518px;
-        top: 60vh;
-        left: 0;
+        top: 450px;
+        z-index: 0;
+    }
+
+    .infobox {
+        padding-top: 120px;
+    }
+}
+
+@media(max-width: 600px) {
+    .vector-bg-img {
+        width: 750px;
+        top: 410px;
+        z-index: 0;
+    }
+
+    .profile_picture {
+        height: 520px;
+        width: 380px;
+    }
+
+    .infobox {
+        padding-top: 80px;
     }
 }
 
@@ -177,27 +211,40 @@
 @media(max-width: 480px) {
     .about_me_section {
         gap: 0px;
+        padding-top: 40px;
     }
 
     .about_me_section h1 {
         font-size: 36px;
     }
 
+    .infobox {
+        padding-top: 24px;
+    }
+
     .profile_picture_container {
         max-width: 350px;
+        height: 520px;
+        z-index: 2;
+    }
+
+    .profile_picture {
+        height: 420px;
+        width: 300px;
     }
 
     .vector-bg-img {
         width: 640px;
-        height: 390px;
-        top: 55vh;
+        top: 375px;
+        z-index: 0;
     }
 }
 
 /* ⚠️ EXTRA SMALL - 375px */
 @media(max-width: 375px) {
     .about_me_section {
-        gap: 0px;
+        gap: 40px;
+        padding-top: 80px;
     }
 
     .about_me_section h1 {
@@ -216,12 +263,23 @@
 
     .profile_picture_container {
         max-width: 280px;
-        height: 630px;
+        height: 360px;
+        z-index: 2;
+    }
+
+    .profile_picture {
+        height: 320px;
+        width: 230px;
     }
 
     .vector-bg-img {
         width: 560px;
-        height: 341px;
-        top: 55vh;
+        height: 630px;
+        top: 195px;
+        z-index: 0;
+    }
+
+    .infobox {
+        padding-top: 6px;
     }
 }
