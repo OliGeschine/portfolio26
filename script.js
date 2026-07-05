@@ -28,7 +28,6 @@ function initNavbar() {
     const modal = document.querySelector('.modal');
     const burgerMenu = document.getElementById('burger_menu');
     if (burgerMenu && modal) {
-        console.log('Navbar initialized');
     }
 }
 

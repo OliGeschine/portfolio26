@@ -1,3 +1,15 @@
+/**
+ * @typedef {Object} Comment
+ * @property {string} profile_img - Path to the profile image
+ * @property {string} name - Name of the commenter
+ * @property {string} comment - The comment text (English fallback)
+ * @property {string} position - Professional position of the commenter
+ */
+
+/**
+ * Array of comment objects containing testimonials.
+ * @type {Comment[]}
+ */
 let comments = [
     {
         profile_img: "./assets/img/profile_picture.png",
@@ -17,10 +29,21 @@ let comments = [
         comment: "navigation dot function also works fine.",
         position: "CSS Design Tester",
     },
-]
+];
 
+/**
+ * Index of the currently displayed comment.
+ * @type {number}
+ * @default 0
+ */
 let currentCommentCount = 0;
 
+/**
+ * Renders the current comment with fade transition effect.
+ * Updates the comment text, name, position and profile image based on the current index.
+ * Retrieves translated content from the translations object if available.
+ * @returns {void}
+ */
 function renderComments() {
     const commentImg = document.getElementById('comment_img');
     commentImg.classList.add('transition-out');
@@ -38,6 +61,19 @@ function renderComments() {
     updateNavigationDots();
 }
 
+/**
+ * Changes the displayed comment based on the given direction.
+ * Handles infinite loop navigation (wraps around at start/end).
+ * @param {number} direction - Direction to navigate: 1 for next, -1 for previous
+ * @returns {void}
+ * @example
+ * // Navigate to next comment
+ * changeComment(1);
+ *
+ * @example
+ * // Navigate to previous comment
+ * changeComment(-1);
+ */
 function changeComment(direction) {
     if (direction === 1) {
         currentCommentCount++;
@@ -53,6 +89,11 @@ function changeComment(direction) {
     renderComments();
 }
 
+/**
+ * Updates all navigation dots to the default inactive color.
+ * Then highlights the active dot based on the current comment index.
+ * @returns {void}
+ */
 function updateNavigationDots() {
     document.getElementById('navigation_dot_left').style.color = '#9747FF';
     document.getElementById('navigation_dot_middle').style.color = '#9747FF';
@@ -60,6 +101,12 @@ function updateNavigationDots() {
     getCurrentDot();
 }
 
+/**
+ * Highlights the navigation dot corresponding to the current comment.
+ * Sets the active dot color to green (#70E61C).
+ * @returns {void}
+ * @private
+ */
 function getCurrentDot() {
     if (currentCommentCount === 0) {
         document.getElementById('navigation_dot_left').style.color = '#70E61C';
