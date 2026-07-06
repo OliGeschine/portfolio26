@@ -15,6 +15,10 @@
  * @property {string} message - Trimmed message value
  */
 
+/**
+ * Flag indicating if the form has any validation errors.
+ * @type {boolean}
+ */
 let hasError = false;
 
 /**
@@ -93,20 +97,6 @@ function clearErrorIcons() {
 }
 
 /**
- * Resets all placeholder error messages to default state.
- * @returns {void}
- */
-function clearPlaceholderErrors() {
-    ['namePlaceholderError', 'emailPlaceholderError', 'messagePlaceholderError'].forEach(id => {
-        let el = document.getElementById(id);
-        if (el) {
-            el.classList.remove('visible');
-            el.innerText = "Placeholder";
-        }
-    });
-}
-
-/**
  * Resets all error states and messages for contact form inputs.
  * @param {ContactInputs} inputs - Object containing form input and error elements
  * @returns {void}
@@ -115,7 +105,6 @@ function resetContactInputErrors(inputs) {
     clearInputErrorClasses(inputs);
     clearErrorMessages(inputs);
     clearErrorIcons();
-    clearPlaceholderErrors();
 }
 
 /**
@@ -162,10 +151,12 @@ function validateCheckboxState(showErrors, checkboxChecked) {
  */
 function displayCheckboxError() {
     const errorMessage = document.querySelector('.error-message');
-    errorMessage.style.display = 'block';
-    setTimeout(() => {
-        errorMessage.style.display = 'none';
-    }, 3000);
+    if (errorMessage) {
+        errorMessage.style.display = 'block';
+        setTimeout(() => {
+            errorMessage.style.display = 'none';
+        }, 3000);
+    }
 }
 
 /**
@@ -191,9 +182,6 @@ function styleNameValues(inputs) {
     inputs.nameInput.classList.add('error');
     const nameIcon = inputs.nameInput.parentElement.querySelector('.inputIcon');
     if (nameIcon) nameIcon.classList.add('visible');
-    document.getElementById('namePlaceholderError').innerHTML = "Please enter a name.";
-    document.getElementById('namePlaceholderError').classList.add('visible');
-    hideErrorMessages('namePlaceholderError', 'contactName');
     hasError = true;
 }
 
@@ -206,9 +194,6 @@ function styleEmailValues(inputs) {
     inputs.emailInput.classList.add('error');
     const emailIcon = inputs.emailInput.parentElement.querySelector('.inputIcon');
     if (emailIcon) emailIcon.classList.add('visible');
-    document.getElementById('emailPlaceholderError').innerHTML = "Please enter an e-mail address.";
-    document.getElementById('emailPlaceholderError').classList.add('visible');
-    hideErrorMessages('emailPlaceholderError', 'contactEmail');
     hasError = true;
 }
 
@@ -221,32 +206,7 @@ function styleMessageValues(inputs) {
     inputs.messageInput.classList.add('error');
     const messageIcon = inputs.messageInput.parentElement.querySelector('.inputIcon');
     if (messageIcon) messageIcon.classList.add('visible');
-    document.getElementById('messagePlaceholderError').innerHTML = "Please enter a message.";
-    document.getElementById('messagePlaceholderError').classList.add('visible');
-    hideErrorMessages('messagePlaceholderError', 'contactMessage');
     hasError = true;
-}
-
-/**
- * Hides error messages and styling after 3 seconds.
- * @param {string} id - ID of the error message element
- * @param {string} inputId - ID of the input field element
- * @returns {void}
- */
-function hideErrorMessages(id, inputId) {
-    setTimeout(() => {
-        let el = document.getElementById(id);
-        let input = document.getElementById(inputId);
-        if (el) {
-            el.classList.remove('visible');
-            el.innerText = "Placeholder";
-        }
-        if (input) {
-            input.classList.remove('error');
-            const icon = input.parentElement.querySelector('.inputIcon');
-            if (icon) icon.classList.remove('visible');
-        }
-    }, 3000);
 }
 
 /**
@@ -257,20 +217,21 @@ function hideErrorMessages(id, inputId) {
  */
 async function validateAddEmailFormat(showErrors = true) {
     let emailInput = document.getElementById("contactEmail");
-    if (!emailInput) {
-        return true;
-    }
+    if (!emailInput) return true;
     let email = emailInput.value.trim().toLowerCase();
     let pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     let errorMsgEmail = document.getElementById("emailError");
     if (emailInput.value == '') return true;
     if (!pattern.test(email)) {
-        if (showErrors) {
-            patternTestEmail(emailInput, errorMsgEmail);
-        }
+        if (showErrors) patternTestEmail(emailInput, errorMsgEmail);
         return false;
     }
-    if (errorMsgEmail && showErrors) errorMsgEmail.classList.add("dNone");
+    if (showErrors) {
+        emailInput.classList.remove("error");
+        const emailIcon = emailInput.parentElement.querySelector('.inputIcon');
+        if (emailIcon) emailIcon.classList.remove('visible');
+        if (errorMsgEmail) errorMsgEmail.classList.add("dNone");
+    }
     return true;
 }
 
@@ -282,6 +243,7 @@ async function validateAddEmailFormat(showErrors = true) {
  */
 async function validateMessageFormat(showErrors = true) {
     let messageInput = document.getElementById("contactMessage");
+    if (!messageInput) return true;
     let message = messageInput.value.trim();
     let errorMsgMessage = document.getElementById("messageError");
     if (message === '') return true;
@@ -289,7 +251,12 @@ async function validateMessageFormat(showErrors = true) {
         if (showErrors) patternTestMessage(messageInput, errorMsgMessage);
         return false;
     }
-    if (errorMsgMessage && showErrors) errorMsgMessage.classList.add("dNone");
+    if (showErrors) {
+        messageInput.classList.remove("error");
+        const messageIcon = messageInput.parentElement.querySelector('.inputIcon');
+        if (messageIcon) messageIcon.classList.remove('visible');
+        if (errorMsgMessage) errorMsgMessage.classList.add("dNone");
+    }
     return true;
 }
 
@@ -300,17 +267,12 @@ async function validateMessageFormat(showErrors = true) {
  * @returns {void}
  */
 function patternTestEmail(emailInput, errorMsgEmail) {
+    if (!errorMsgEmail) return;
     emailInput.classList.add("error");
     const emailIcon = emailInput.parentElement.querySelector('.inputIcon');
     if (emailIcon) emailIcon.classList.add('visible');
     errorMsgEmail.innerText = "Please enter a valid email address.";
     errorMsgEmail.classList.remove("dNone");
-    setTimeout(() => {
-        errorMsgEmail.classList.add("dNone");
-        errorMsgEmail.innerText = "";
-        emailInput.classList.remove("error");
-        if (emailIcon) emailIcon.classList.remove('visible');
-    }, 3000);
 }
 
 /**
@@ -320,15 +282,10 @@ function patternTestEmail(emailInput, errorMsgEmail) {
  * @returns {void}
  */
 function patternTestMessage(messageInput, errorMsgMessage) {
+    if (!errorMsgMessage) return;
     messageInput.classList.add("error");
     const messageIcon = messageInput.parentElement.querySelector('.inputIcon');
     if (messageIcon) messageIcon.classList.add('visible');
     errorMsgMessage.innerText = "Message must be at least 10 characters long.";
     errorMsgMessage.classList.remove("dNone");
-    setTimeout(() => {
-        errorMsgMessage.classList.add("dNone");
-        errorMsgMessage.innerText = "";
-        messageInput.classList.remove("error");
-        if (messageIcon) messageIcon.classList.remove('visible');
-    }, 3000);
 }

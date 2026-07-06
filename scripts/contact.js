@@ -63,9 +63,13 @@ function initContactForm() {
     const checkboxContainer = document.getElementById('checkbox');
     sendButton.addEventListener('click', handleFormSubmit);
     checkboxContainer.addEventListener('click', toggleCheckbox);
+
+    // ✅ Input Events - Validierung + Error-Removal während des Tippens
     document.getElementById('contactName').addEventListener('input', validateFormRealTime);
-    document.getElementById('contactEmail').addEventListener('input', validateFormRealTime);
-    document.getElementById('contactMessage').addEventListener('input', validateFormRealTime);
+    document.getElementById('contactEmail').addEventListener('input', handleEmailInput);
+    document.getElementById('contactMessage').addEventListener('input', handleMessageInput);
+
+    // Blur Events - Validierung beim Verlassen des Feldes
     document.getElementById('contactName').addEventListener('blur', validateSingleField);
     document.getElementById('contactEmail').addEventListener('blur', validateSingleField);
     document.getElementById('contactMessage').addEventListener('blur', validateSingleField);
@@ -175,6 +179,48 @@ async function validateSingleField(event) {
     } else if (fieldId === 'contactMessage') {
         await validateMessageFormat(true);
     }
+    await validateFormRealTime();
+}
+
+/**
+ * Handles email input events and removes error styling when user starts typing.
+ * @returns {Promise<void>}
+ * @async
+ */
+async function handleEmailInput() {
+    const emailInput = document.getElementById('contactEmail');
+    const emailError = document.getElementById('emailError');
+    const emailIcon = emailInput.parentElement.querySelector('.inputIcon');
+
+    // ✅ Entferne Error-Styling sofort beim Tippen
+    if (emailInput.value.trim() !== '') {
+        emailInput.classList.remove('error');
+        if (emailIcon) emailIcon.classList.remove('visible');
+        if (emailError) emailError.classList.add('dNone');
+    }
+
+    // Validiere in Echtzeit für Button-Status
+    await validateFormRealTime();
+}
+
+/**
+ * Handles message input events and removes error styling when user starts typing.
+ * @returns {Promise<void>}
+ * @async
+ */
+async function handleMessageInput() {
+    const messageInput = document.getElementById('contactMessage');
+    const messageError = document.getElementById('messageError');
+    const messageIcon = messageInput.parentElement.querySelector('.inputIcon');
+
+    // ✅ Entferne Error-Styling sofort beim Tippen
+    if (messageInput.value.trim() !== '') {
+        messageInput.classList.remove('error');
+        if (messageIcon) messageIcon.classList.remove('visible');
+        if (messageError) messageError.classList.add('dNone');
+    }
+
+    // Validiere in Echtzeit für Button-Status
     await validateFormRealTime();
 }
 

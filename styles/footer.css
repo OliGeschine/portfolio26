@@ -64,6 +64,7 @@ footer span {
     flex-direction: column;
     line-height: 1.2rem;
     width: 100px;
+    margin-top: 12px;
 }
 
 .footer-legal-notice-img {
