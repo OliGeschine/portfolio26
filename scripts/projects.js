@@ -20,7 +20,7 @@ let projects = [
         usedSkills: "JavaScript | HTML | CSS",
         img: "./assets/img/pollo_loco.png",
         github: "https://github.com/OliGeschine/el_pollo_loco",
-        live: "https://oliver-geschine.developerakademie.net/el_pollo_loco/index.html"
+        live: "https://oliver-geschine.de/el_pollo_loco/index.html"
     },
     {
         title: "Join",
@@ -28,7 +28,7 @@ let projects = [
         usedSkills: "JavaScript | HTML | CSS | Firebase",
         img: "./assets/img/join.png",
         github: "https://github.com/OliGeschine/join",
-        live: "https://oliver-geschine.developerakademie.net/join/index.html"
+        live: "https://oliver-geschine.de/join/index.html"
     },
     {
         title: "Pokedex",
