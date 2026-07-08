@@ -130,14 +130,14 @@
 .landing-section-shadows img:first-child {
     position: absolute;
     top: 12%;
-    left: clamp(-500px, calc(-85vw / 3), -185px);
+    left: clamp(-500px, calc(-50vw / 3), -185px);
     width: clamp(400px, 60vw, 800px);
     height: clamp(400px, 60vw, 800px);
 }
 
 .landing-section-shadows img:nth-child(2) {
     position: absolute;
-    top: 60%;
+    top: 45%;
     right: clamp(-435px, calc(-85vw / 2.5), -230px);
     transform: translateY(-50%);
     width: clamp(400px, 60vw, 800px);

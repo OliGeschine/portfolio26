@@ -205,7 +205,7 @@
 }
 
 /* ✅ NEU: dNone Klasse */
-.dNone {
+.contactdNone {
     display: none;
 }
 
@@ -275,11 +275,11 @@ textarea.inputFields {
 
 .purple-shadow {
     position: absolute;
-    bottom: 0%;
-    right: clamp(-400px, -20vw, -290px);
+    bottom: -20%;
+    right: -131px;
     z-index: -1;
-    width: clamp(400px, 50vw, 600px);
-    height: auto;
+    width: 680px;
+    height: 1100px;
 }
 
 .checkbox-container {
@@ -357,6 +357,13 @@ textarea.inputFields {
     #up_arrow {
         align-self: center;
     }
+
+    .purple-shadow {
+        bottom: -10%;
+        right: clamp(-200px, -10vw, -100px);
+        width: clamp(450px, 45vw, 600px);
+        height: clamp(800px, 90vh, 1000px);
+    }
 }
 
 /* MOBILE - 768px */
@@ -403,6 +410,13 @@ textarea.inputFields {
         font-size: 16px;
         gap: 8px;
     }
+
+    .purple-shadow {
+        bottom: -5%;
+        right: clamp(-120px, -10vw, -60px);
+        width: clamp(350px, 50vw, 450px);
+        height: clamp(600px, 80vh, 800px);
+    }
 }
 
 /* SMALL MOBILE - 480px */
@@ -445,6 +459,13 @@ textarea.inputFields {
         width: 36px;
         height: 36px;
     }
+
+    .purple-shadow {
+        bottom: 0%;
+        right: clamp(-100px, -8vw, -70px);
+        width: clamp(280px, 60vw, 350px);
+        height: clamp(500px, 70vh, 650px);
+    }
 }
 
 /* EXTRA SMALL - 375px */
@@ -463,5 +484,12 @@ textarea.inputFields {
 
     textarea.inputFields {
         height: 130px;
+    }
+
+    .purple-shadow {
+        bottom: 5%;
+        right: clamp(-80px, -5vw, -60px);
+        width: clamp(250px, 70vw, 300px);
+        height: clamp(450px, 65vh, 550px);
     }
 }
