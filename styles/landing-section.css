@@ -79,11 +79,29 @@
     display: flex;
     align-items: center;
     gap: clamp(20px, 4vw, 42px);
+    position: relative;
+    padding-left: calc(clamp(50px, 10vw, 100px) + clamp(15px, 2vw, 20px));
+    /* ✅ Linie-Width + Gap */
 }
 
 .links>img {
     width: clamp(50px, 10vw, 100px);
     height: 2px;
+    position: absolute;
+    left: 0;
+}
+
+/* Pseudo-Element für Gap-Visualisierung (optional) */
+.links::before {
+    content: '';
+    position: absolute;
+    left: clamp(50px, 10vw, 100px);
+    /* ✅ Nach der Linie */
+    width: clamp(15px, 2vw, 20px);
+    /* ✅ Gap-Breite */
+    height: 2px;
+    background: transparent;
+    /* Unsichtbar, nur Platzhalter */
 }
 
 .links a {
@@ -122,19 +140,22 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: -10;
     pointer-events: none;
     overflow: hidden;
 }
 
+/* ✅ Linker Shadow (Purple) - Desktop/Widescreen */
 .landing-section-shadows img:first-child {
     position: absolute;
     top: 12%;
     left: clamp(-500px, calc(-50vw / 3), -185px);
     width: clamp(400px, 60vw, 800px);
     height: clamp(400px, 60vw, 800px);
+    z-index: -1;
 }
 
+/* ✅ Rechter Shadow (Blue) - Desktop/Widescreen */
 .landing-section-shadows img:nth-child(2) {
     position: absolute;
     top: 45%;
@@ -142,6 +163,49 @@
     transform: translateY(-50%);
     width: clamp(400px, 60vw, 800px);
     height: clamp(400px, 60vw, 800px);
+    z-index: -1;
+}
+
+/* ✅ WIDESCREEN (über 1440px) - Shadows an Bildschirmrändern */
+@media(min-width: 1441px) {
+    .landing-section {
+        width: 1440px;
+    }
+
+    .landing-section-shadows {
+        overflow: visible;
+    }
+
+    .landing-section-shadows img:first-child {
+        left: calc((100vw - 1440px) / -2 - 200px);
+        width: 800px;
+        height: 800px;
+    }
+
+    .landing-section-shadows img:nth-child(2) {
+        right: calc((100vw - 1440px) / -2 - 200px);
+        width: 800px;
+        height: 800px;
+    }
+
+    /* ✅ NEU: Grüne Linie bis zum linken Bildschirmrand mit Gap */
+    .links>img {
+        left: calc((100vw - 1440px) / -2);
+        width: calc((100vw - 1440px) / 2 + 100px);
+        /* Bis zur Linie */
+    }
+
+    .links::before {
+        left: 100px;
+        /* Nach der Linie */
+        width: 20px;
+        /* Gap */
+    }
+
+    .links {
+        padding-left: 120px;
+        /* 100px (Linie) + 20px (Gap) */
+    }
 }
 
 /* Tablet & kleine Desktops */

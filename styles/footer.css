@@ -2,7 +2,10 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 50px 100px;
+    padding-top: 50px;
+    padding-right: 100px;
+    padding-bottom: 39px;
+    padding-left: 100px;
     width: 100%;
     height: 291px;
     font-size: 23px;

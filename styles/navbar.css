@@ -18,10 +18,14 @@ nav {
     top: 0px;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 1440px;
+    /* max-width: 1440px; */
     z-index: 99;
     background-color: #141D2F;
     padding: 0 37px;
+}
+
+nav a {
+    cursor: pointer;
 }
 
 .navigation-bar {

@@ -5,7 +5,6 @@
     margin-top: clamp(40px, 6vh, 56px);
     margin-bottom: clamp(40px, 6vh, 60px);
     height: auto;
-    width: 100%;
     box-sizing: border-box;
     background-color: #141D2F;
 }
@@ -20,8 +19,10 @@
     height: auto;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     gap: clamp(15px, 3vw, 25px);
+    position: relative;
+    width: 100%;
 }
 
 .privacy-h1 {
@@ -30,6 +31,12 @@
     font-weight: 700;
     line-height: 120%;
     margin: 0;
+    position: relative;
+    z-index: 2;
+    background-color: #141D2F;
+    /* ✅ Hintergrund damit Linie nicht durchscheint */
+    padding: 0 10px;
+    /* ✅ Etwas Abstand zur Linie */
 }
 
 .privacy-h2 {
@@ -72,12 +79,21 @@
     width: clamp(45px, 14vw, 130px);
     height: 2px;
     flex-shrink: 0;
+    position: relative;
+    z-index: 2;
 }
 
 .second-header-line {
-    width: clamp(65px, 20vw, 500px);
+    position: absolute;
+    left: 50%;
+    /* ✅ Von der Mitte aus starten */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100vw;
+    /* ✅ Volle Viewport-Breite nach rechts */
     height: 2px;
     flex-shrink: 0;
+    z-index: 1;
 }
 
 .content ul {
