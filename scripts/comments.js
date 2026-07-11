@@ -12,7 +12,7 @@
  */
 let comments = [
     {
-        profile_img: "./assets/img/profile_picture.png",
+        profile_img: "./assets/img/profile_img.png",
         name: "O. Geschine",
         comment: "This is the test comment, to see if everything works fine.",
         position: "Software Developer",

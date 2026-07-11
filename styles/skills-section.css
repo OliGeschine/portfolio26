@@ -5,8 +5,6 @@
     background-color: #141D2F;
     min-height: clamp(600px, 100vh, 885px);
     height: auto;
-    box-sizing: border-box;
-    overflow: hidden;
     padding-top: 109px;
 }
 
@@ -131,7 +129,6 @@
     margin-bottom: clamp(10px, 2vh, 20px);
     width: 100%;
     max-width: clamp(300px, 90vw, 761px);
-    flex-wrap: wrap;
     margin-left: auto;
 }
 
@@ -160,7 +157,6 @@
 .blue_line {
     width: clamp(120px, 20vw, 287px);
     height: clamp(2px, 0.3vh, 3px);
-    background-color: #70E61C;
     flex-shrink: 0;
 }
 
@@ -211,6 +207,31 @@
     transform: scale(1.07);
 }
 
+/* ✅ WIDESCREEN (über 1440px) - Blaue Linie bis zum Bildschirmrand */
+@media(min-width: 1441px) {
+    .skills_section {
+        overflow: visible;
+    }
+
+    .skills-content {
+        max-width: 1440px;
+        margin: 0 auto;
+        justify-content: flex-start;
+        overflow: visible;
+    }
+
+    .skills_headline_container {
+        max-width: 100%;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+    }
+
+    .blue_line {
+        position: relative;
+        width: calc((100vw - 1440px) / 2 + 470px);
+    }
+}
+
 /* ⚠️ TABLET - 3 Spalten */
 @media(max-width: 1180px) {
     .skills-content {
@@ -258,10 +279,6 @@
 
     .skills_headline_container {
         gap: 10px;
-    }
-
-    .blue_line {
-        width: clamp(150px, 40vw, 200px);
     }
 
     .skills-section-button {
@@ -339,9 +356,5 @@
 
     .purple-p {
         font-size: 17px;
-    }
-
-    .blue_line {
-        width: 140px;
     }
 }

@@ -1,6 +1,6 @@
 .about_me_section {
     display: flex;
-    width: 100%;
+    /* width: 100%; */
     padding-top: 109px;
     gap: 190px;
     align-items: center;
@@ -10,7 +10,7 @@
     padding-left: clamp(20px, 8vw, 100px);
     isolation: isolate;
     position: relative;
-    /* ✅ Bereits vorhanden */
+    overflow: visible;
 }
 
 .about_me_section h1 {
@@ -22,7 +22,6 @@
     width: clamp(300px, 40vw, 530px);
     z-index: 3;
     position: relative;
-    /* ⚠️ NEU: Erstellt Stacking Context */
 }
 
 .infobox>span {
@@ -32,7 +31,6 @@
 
 .vector-bg-img {
     width: 2100px;
-    /* height: 878px; */
     position: absolute;
     top: 300px;
     z-index: 0;
@@ -90,7 +88,6 @@
     z-index: 1;
     flex-shrink: 0;
     position: relative;
-    /* ⚠️ NEU: Für z-index */
 }
 
 .about_me_icons:hover {
@@ -104,6 +101,17 @@
     height: 1100px;
     z-index: -1;
     pointer-events: none;
+}
+
+/* ✅ WIDESCREEN (über 1440px) - Vector über volle Breite */
+@media(min-width: 1441px) {
+    .vector-bg-img {
+        --viewport-diff: calc(100vw - 1441px);
+        width: 100vw;
+        left: -185%;
+        transform: translateX(calc((1440px - 100vw) / 2));
+        top: calc(390px - var(--viewport-diff) * 210 / 1817);
+    }
 }
 
 @media(max-width: 1310px) {

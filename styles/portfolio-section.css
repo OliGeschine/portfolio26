@@ -25,6 +25,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    max-width: 1440px;
     gap: clamp(15px, 3vh, 20px);
     margin-bottom: clamp(30px, 5vh, 40px);
 }
@@ -34,6 +35,13 @@
     align-items: center;
     gap: clamp(20px, 3vw, 32px);
     margin-bottom: clamp(20px, 4vh, 40px);
+    position: relative;
+}
+
+.headline_container>img {
+    width: clamp(50px, 10vw, 100px);
+    height: 4px;
+    right: calc(100% + clamp(20px, 3vw, 32px));
 }
 
 .headline_span {
@@ -42,8 +50,7 @@
     font-weight: 400;
     width: 100%;
     max-width: 473px;
-    position: relative;
-    left: clamp(0px, 8vw, 100px);
+    margin-left: clamp(0px, 8vw, 100px);
 }
 
 .project-wrapper {
@@ -209,16 +216,17 @@
     top: 0;
     left: 0;
     z-index: -10;
+    pointer-events: none;
 }
 
 .blue-shadow {
     position: absolute;
-    bottom: 53%;
-    right: clamp(-500px, -22vw, -350px);
-    width: clamp(400px, 60vw, 740px);
-    height: clamp(450px, 65vw, 800px);
+    bottom: 30%;
+    right: clamp(-435px, calc(-85vw / 2.5), -230px);
+    transform: translateY(-50%);
+    width: clamp(400px, 60vw, 900px);
+    height: clamp(450px, 65vw, 1040px);
     z-index: -1;
-    pointer-events: none;
 }
 
 .green-shadow {
@@ -228,21 +236,49 @@
     width: 800px;
     height: 870px;
     z-index: -1;
-    pointer-events: none;
+}
+
+@media(min-width: 1441px) {
+    .portfolio_section {
+        overflow: visible;
+    }
+
+    .portfolio_section h1 {
+        margin-left: clamp(0px, 8vw, 100px);
+    }
+
+    .headline_container>img {
+        left: 0;
+        position: absolute;
+        transform: translateX(calc((1440px - 100vw) / 2));
+        width: calc((100vw - 1440px) / 2 + 80px);
+    }
+
+    .blue-shadow {
+        bottom: 5%;
+        width: clamp(400px, 65vw, 1100px);
+        height: clamp(450px, 83vw, 1300px);
+    }
 }
 
 @media(max-width: 1260px) {
     .blue-shadow {
-        bottom: 67%;
+        bottom: 50%;
         right: -350px;
         width: 740px;
         height: 800px;
     }
-
 }
 
 /* ⚠️ MEDIA QUERY - 768px - Tablet */
 @media(max-width: 768px) {
+    .headline_container>img {
+        position: relative;
+        right: auto;
+        left: auto;
+        transform: none;
+    }
+
     .headline_span {
         padding-right: 46px;
     }
@@ -252,8 +288,8 @@
     }
 
     .blue-shadow {
-        bottom: 70%;
-        right: clamp(-350px, -30vw, -180px);
+        bottom: 60%;
+        right: clamp(-350px, -43vw, -180px);
         width: clamp(350px, 90vw, 600px);
         height: clamp(400px, 100vw, 700px);
     }

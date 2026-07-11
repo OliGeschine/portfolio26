@@ -81,7 +81,6 @@
     gap: clamp(20px, 4vw, 42px);
     position: relative;
     padding-left: calc(clamp(50px, 10vw, 100px) + clamp(15px, 2vw, 20px));
-    /* ✅ Linie-Width + Gap */
 }
 
 .links>img {
@@ -91,17 +90,13 @@
     left: 0;
 }
 
-/* Pseudo-Element für Gap-Visualisierung (optional) */
 .links::before {
     content: '';
     position: absolute;
     left: clamp(50px, 10vw, 100px);
-    /* ✅ Nach der Linie */
     width: clamp(15px, 2vw, 20px);
-    /* ✅ Gap-Breite */
     height: 2px;
     background: transparent;
-    /* Unsichtbar, nur Platzhalter */
 }
 
 .links a {
@@ -145,7 +140,6 @@
     overflow: hidden;
 }
 
-/* ✅ Linker Shadow (Purple) - Desktop/Widescreen */
 .landing-section-shadows img:first-child {
     position: absolute;
     top: 12%;
@@ -155,7 +149,6 @@
     z-index: -1;
 }
 
-/* ✅ Rechter Shadow (Blue) - Desktop/Widescreen */
 .landing-section-shadows img:nth-child(2) {
     position: absolute;
     top: 45%;
@@ -166,7 +159,6 @@
     z-index: -1;
 }
 
-/* ✅ WIDESCREEN (über 1440px) - Shadows an Bildschirmrändern */
 @media(min-width: 1441px) {
     .landing-section {
         width: 1440px;
@@ -188,23 +180,18 @@
         height: 800px;
     }
 
-    /* ✅ NEU: Grüne Linie bis zum linken Bildschirmrand mit Gap */
     .links>img {
         left: calc((100vw - 1440px) / -2);
         width: calc((100vw - 1440px) / 2 + 100px);
-        /* Bis zur Linie */
     }
 
     .links::before {
         left: 100px;
-        /* Nach der Linie */
         width: 20px;
-        /* Gap */
     }
 
     .links {
         padding-left: 120px;
-        /* 100px (Linie) + 20px (Gap) */
     }
 }
 
