@@ -100,16 +100,23 @@
 }
 
 .links a {
-    transition: transform 0.1s ease-in-out;
-}
-
-.links a img {
-    width: clamp(30px, 5vw, 40px);
-    height: clamp(30px, 5vw, 40px);
+    display: inline-block;
+    width: clamp(28px, 4vw, 35px);
+    height: clamp(28px, 4vw, 35px);
+    line-height: 0;
+    transition: transform 0.15s ease-in-out;
+    color: white;
 }
 
 .links a:hover {
     transform: scale(1.2);
+}
+
+.social-icon {
+    width: clamp(28px, 4vw, 35px);
+    height: clamp(28px, 4vw, 35px);
+    display: block;
+    transition: all 0.15s ease-in-out;
 }
 
 .scroll-down-container {
@@ -231,6 +238,16 @@
     .headlines {
         gap: 4px;
     }
+
+    .social-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .links a {
+        width: 28px;
+        height: 28px;
+    }
 }
 
 /* Extra Small Devices */
@@ -239,8 +256,13 @@
         gap: 20px;
     }
 
-    .links a img {
-        width: 30px;
-        height: 30px;
+    .social-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .links a {
+        width: 25px;
+        height: 25px;
     }
 }

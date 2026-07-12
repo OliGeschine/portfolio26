@@ -47,7 +47,6 @@
 }
 
 .comment-writer {
-    white-space: nowrap;
     justify-self: end;
     font-size: clamp(16px, 1.8vw, 18px);
 }
@@ -143,6 +142,16 @@
 .navigation-dot {
     font-size: clamp(20px, 2.5vw, 24px);
     color: #9747FF;
+}
+
+@media(min-width: 1441px) {
+    .comment-content {
+        max-width: 100vw;
+    }
+
+    .comment-green-line {
+        width: calc((100vw - 1440px) / 2 + 80px);
+    }
 }
 
 /* ⚠️ TABLET - 1024px - Vertikales Layout */
@@ -320,9 +329,5 @@
     .quote-marks {
         width: 55px;
         height: 38px;
-    }
-
-    .comment-writer {
-        white-space: normal;
     }
 }

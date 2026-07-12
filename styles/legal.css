@@ -23,6 +23,12 @@ nav span {
     color: white;
 }
 
+.legal-header {
+    width: 100%;
+    margin-top: 109px;
+    overflow: visible;
+}
+
 .header-content {
     height: auto;
     display: flex;
@@ -32,6 +38,31 @@ nav span {
     gap: clamp(15px, 3vw, 25px);
 }
 
+.header-content-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.return-arrow-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.return-arrow {
+    width: clamp(30px, 3vw, 40px);
+    height: clamp(35px, 4vw, 40px);
+    color: #70E61C;
+    cursor: pointer;
+    background-image: url(../assets/icons/arrow_left_framed.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-self: flex-end;
+    margin-right: 38px;
+}
+
 .purple-line-left {
     width: clamp(45px, 14vw, 130px);
     height: 2px;
@@ -39,7 +70,7 @@ nav span {
 }
 
 .purple-line-right {
-    width: clamp(65px, 20vw, 500px);
+    width: clamp(150px, 40vw, 580px);
     height: 2px;
     flex-shrink: 0;
 }
@@ -91,19 +122,28 @@ span {
     font-weight: 700;
 }
 
-.return-arrow-container {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
+@media (min-width: 1441px) {
+    .purple-line-right {
+        position: relative;
+        width: calc((100vw - 1440px) / 2 + 580px);
+    }
 }
 
-.return-arrow {
-    width: 32px;
-    height: 32px;
-    margin-top: 130px;
-    margin-bottom: 40px;
-    margin-right: 30px;
-    cursor: pointer;
+@media(min-width: 769px) {
+    .header-content-wrapper a {
+        display: none;
+    }
+
+    .main-content p,
+    .main-content div {
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 1124px) {
+    .purple-line-right {
+        width: clamp(120px, 30vw, 580px);
+    }
 }
 
 /* ⚠️ TABLET - 768px */
@@ -115,5 +155,11 @@ span {
     .main-content p,
     .main-content div {
         font-size: 16px;
+    }
+}
+
+@media(max-width: 350px) {
+    h1 {
+        font-size: 20px;
     }
 }

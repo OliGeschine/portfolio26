@@ -191,15 +191,11 @@ async function handleEmailInput() {
     const emailInput = document.getElementById('contactEmail');
     const emailError = document.getElementById('emailError');
     const emailIcon = emailInput.parentElement.querySelector('.inputIcon');
-
-    // ✅ Entferne Error-Styling sofort beim Tippen
     if (emailInput.value.trim() !== '') {
         emailInput.classList.remove('error');
         if (emailIcon) emailIcon.classList.remove('visible');
-        if (emailError) emailError.classList.add('dNone');
+        if (emailError) emailError.classList.add('contactdNone');
     }
-
-    // Validiere in Echtzeit für Button-Status
     await validateFormRealTime();
 }
 
@@ -212,15 +208,11 @@ async function handleMessageInput() {
     const messageInput = document.getElementById('contactMessage');
     const messageError = document.getElementById('messageError');
     const messageIcon = messageInput.parentElement.querySelector('.inputIcon');
-
-    // ✅ Entferne Error-Styling sofort beim Tippen
     if (messageInput.value.trim() !== '') {
         messageInput.classList.remove('error');
         if (messageIcon) messageIcon.classList.remove('visible');
-        if (messageError) messageError.classList.add('dNone');
+        if (messageError) messageError.classList.add('contactdNone');
     }
-
-    // Validiere in Echtzeit für Button-Status
     await validateFormRealTime();
 }
 
@@ -283,9 +275,9 @@ function showSuccessMessage() {
     const messageDiv = document.createElement('div');
     messageDiv.className = 'success-message';
     messageDiv.innerHTML = '✓ Message sent successfully!';
-    const contactSection = document.getElementById('contact');
+    const contactSection = document.getElementById('sendMessageButton').parentElement;
     contactSection.appendChild(messageDiv);
-    setTimeout(() => messageDiv.remove(), 5000);
+    setTimeout(() => messageDiv.remove(), 3000);
 }
 
 /**

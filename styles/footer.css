@@ -54,6 +54,7 @@ footer span {
 
 .footer-links a:hover {
     transform: scale(1.4);
+    cursor: pointer;
 }
 
 .legal-notice {

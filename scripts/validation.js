@@ -230,7 +230,7 @@ async function validateAddEmailFormat(showErrors = true) {
         emailInput.classList.remove("error");
         const emailIcon = emailInput.parentElement.querySelector('.inputIcon');
         if (emailIcon) emailIcon.classList.remove('visible');
-        if (errorMsgEmail) errorMsgEmail.classList.add("dNone");
+        if (errorMsgEmail) errorMsgEmail.classList.add("contactdNone");
     }
     return true;
 }
@@ -255,7 +255,7 @@ async function validateMessageFormat(showErrors = true) {
         messageInput.classList.remove("error");
         const messageIcon = messageInput.parentElement.querySelector('.inputIcon');
         if (messageIcon) messageIcon.classList.remove('visible');
-        if (errorMsgMessage) errorMsgMessage.classList.add("dNone");
+        if (errorMsgMessage) errorMsgMessage.classList.add("contactdNone");
     }
     return true;
 }
@@ -272,7 +272,7 @@ function patternTestEmail(emailInput, errorMsgEmail) {
     const emailIcon = emailInput.parentElement.querySelector('.inputIcon');
     if (emailIcon) emailIcon.classList.add('visible');
     errorMsgEmail.innerText = "Please enter a valid email address.";
-    errorMsgEmail.classList.remove("dNone");
+    errorMsgEmail.classList.remove("contactdNone");
 }
 
 /**
@@ -287,5 +287,5 @@ function patternTestMessage(messageInput, errorMsgMessage) {
     const messageIcon = messageInput.parentElement.querySelector('.inputIcon');
     if (messageIcon) messageIcon.classList.add('visible');
     errorMsgMessage.innerText = "Message must be at least 10 characters long.";
-    errorMsgMessage.classList.remove("dNone");
+    errorMsgMessage.classList.remove("contactdNone");
 }

@@ -259,6 +259,12 @@
         width: clamp(400px, 65vw, 1100px);
         height: clamp(450px, 83vw, 1300px);
     }
+
+    .green-shadow {
+        left: clamp(-460px, calc(-85vw / 2.5), -230px);
+        width: clamp(400px, 60vw, 990px);
+        height: clamp(450px, 65vw, 1120px);
+    }
 }
 
 @media(max-width: 1260px) {
