@@ -1,18 +1,11 @@
 .main-content {
     display: flex;
     flex-direction: column;
-    width: clamp(300px, 90vw, 1168px);
+    width: clamp(300px, 90vw, 1440px);
     margin-top: clamp(40px, 6vh, 56px);
     margin-bottom: clamp(40px, 6vh, 60px);
     height: auto;
     box-sizing: border-box;
-    background-color: #141D2F;
-}
-
-.content {
-    margin-top: clamp(40px, 6vh, 56px);
-    padding-right: clamp(0px, 5vw, 130px);
-    padding-left: clamp(0px, 5vw, 130px);
 }
 
 .privacy-header {
@@ -25,8 +18,7 @@
     height: auto;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: clamp(15px, 3vw, 25px);
+    justify-content: flex-end;
     position: relative;
     width: 100%;
 }
@@ -48,7 +40,7 @@
     height: clamp(35px, 4vw, 40px);
     color: #70E61C;
     cursor: pointer;
-    background-image: url(../assets/icons/arrow_left_framed.png);
+    background-image: url(../assets/icons/arrow_left_framed.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -108,15 +100,10 @@
     width: clamp(45px, 14vw, 130px);
     height: 2px;
     flex-shrink: 0;
-    position: relative;
-    z-index: 2;
 }
 
 .second-header-line {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateY(-50%);
+    width: clamp(150px, 40vw, 580px);
     width: 100vw;
     height: 2px;
     flex-shrink: 0;
@@ -131,6 +118,13 @@
     font-size: clamp(16px, 1.8vw, 16px);
     line-height: 1.5;
     color: white;
+}
+
+@media (min-width: 1441px) {
+    .second-header-line {
+        position: relative;
+        width: calc((100vw - 1440px) / 2 + 730px);
+    }
 }
 
 @media(min-width: 769px) {

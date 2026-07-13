@@ -124,19 +124,19 @@
 }
 
 #left_arrow {
-    background-image: url("../assets/icons/arrow_left.png");
+    background-image: url("../assets/icons/arrow_left.svg");
 }
 
 #left_arrow:hover {
-    background-image: url("../assets/icons/arrow_left_framed.png");
+    background-image: url("../assets/icons/arrow_left_framed.svg");
 }
 
 #right_arrow {
-    background-image: url("../assets/icons/arrow_right.png");
+    background-image: url("../assets/icons/arrow_right.svg");
 }
 
 #right_arrow:hover {
-    background-image: url("../assets/icons/arrow_right_framed.png");
+    background-image: url("../assets/icons/arrow_right_framed.svg");
 }
 
 .navigation-dot {

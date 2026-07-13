@@ -24,7 +24,7 @@ let comments = [
         position: "Software Tester",
     },
     {
-        profile_img: "./assets/img/profile_picture_3.jpeg",
+        profile_img: "./assets/img/profile_picture_3.jpg",
         name: "Y. Willemsen",
         comment: "navigation dot function also works fine.",
         position: "CSS Design Tester",
