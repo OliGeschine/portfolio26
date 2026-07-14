@@ -313,6 +313,10 @@ textarea.inputFields {
 }
 
 @media(min-width: 1441px) {
+    .contact-section {
+        max-width: 1440px;
+    }
+
     .contact-content-container {
         margin: 0 auto;
     }

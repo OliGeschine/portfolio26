@@ -21,7 +21,14 @@ footer span {
     height: 48px;
 }
 
+.footer-content-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 .footer-content {
+    max-width: 1440px;
     display: flex;
     justify-content: space-between;
 }

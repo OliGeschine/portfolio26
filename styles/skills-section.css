@@ -207,28 +207,25 @@
     transform: scale(1.07);
 }
 
-/* ✅ WIDESCREEN (über 1440px) - Blaue Linie bis zum Bildschirmrand */
 @media(min-width: 1441px) {
     .skills_section {
         overflow: visible;
+        max-width: 1440px;
     }
 
     .skills-content {
-        max-width: 1440px;
-        margin: 0 auto;
         justify-content: flex-start;
         overflow: visible;
     }
 
     .skills_headline_container {
-        max-width: 100%;
         justify-content: flex-start;
         flex-wrap: nowrap;
     }
 
     .blue_line {
         position: relative;
-        width: calc((100vw - 1440px) / 2 + 470px);
+        width: calc((100vw - 1440px) / 2 + 500px);
     }
 }
 

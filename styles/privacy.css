@@ -19,8 +19,8 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    position: relative;
     width: 100%;
+    gap: clamp(15px, 3vw, 25px);
 }
 
 .header-content-wrapper {
@@ -103,8 +103,7 @@
 }
 
 .second-header-line {
-    width: clamp(150px, 40vw, 580px);
-    width: 100vw;
+    width: clamp(150px, 30vw, 580px);
     height: 2px;
     flex-shrink: 0;
     z-index: 1;
@@ -123,12 +122,24 @@
 @media (min-width: 1441px) {
     .second-header-line {
         position: relative;
-        width: calc((100vw - 1440px) / 2 + 730px);
+        width: calc((100vw - 1440px) / 2 + 580px);
     }
 }
 
 @media(min-width: 769px) {
     .header-content-wrapper a {
         display: none;
+    }
+}
+
+@media(max-width: 1124px) {
+    .second-header-line {
+        width: clamp(100px, 30vw, 580px);
+    }
+}
+
+@media(max-width: 350px) {
+    .privacy-h1 {
+        font-size: 20px;
     }
 }
