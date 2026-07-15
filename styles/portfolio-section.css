@@ -25,7 +25,6 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 1440px;
     gap: clamp(15px, 3vh, 20px);
     margin-bottom: clamp(30px, 5vh, 40px);
 }
@@ -35,7 +34,6 @@
     align-items: center;
     gap: clamp(20px, 3vw, 32px);
     margin-bottom: clamp(20px, 4vh, 40px);
-    position: relative;
 }
 
 .headline_container>img {
@@ -240,7 +238,7 @@
 
 @media(min-width: 1441px) {
     .portfolio_section {
-        overflow: visible;
+        width: 1440px;
     }
 
     .portfolio_section h1 {
@@ -254,14 +252,19 @@
         width: calc((100vw - 1440px) / 2 + 80px);
     }
 
+    .portfolio-section-shadows {
+        overflow: visible;
+    }
+
     .blue-shadow {
         bottom: 5%;
         width: clamp(400px, 65vw, 1100px);
         height: clamp(450px, 83vw, 1300px);
+        right: calc((100vw - 1440px) / -2 - 500px);
     }
 
     .green-shadow {
-        left: clamp(-460px, calc(-85vw / 2.5), -230px);
+        left: calc((100vw - 1440px) / -2 - 600px);
         width: clamp(400px, 60vw, 990px);
         height: clamp(450px, 65vw, 1120px);
     }

@@ -220,7 +220,6 @@
 
     .skills_headline_container {
         justify-content: flex-start;
-        flex-wrap: nowrap;
     }
 
     .blue_line {
