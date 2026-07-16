@@ -24,6 +24,13 @@ nav {
     padding: 0 37px;
 }
 
+.nav-content-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 nav a {
     cursor: pointer;
 }
@@ -245,6 +252,13 @@ nav a {
     font-weight: 700;
 }
 
+
+@media(min-width: 1441px) {
+    .nav-content-wrapper {
+        width: 1440px;
+        margin: 0 auto;
+    }
+}
 
 @media(max-width: 768px) {
     .navigation-links-container {

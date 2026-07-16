@@ -41,6 +41,7 @@ async function validateContactInput(showErrors = true, checkboxChecked) {
     }
     hasError = false;
     if (checkEmptyFields(inputs, values, showErrors, checkboxChecked)) return false;
+    let nameValid = await validateNameFormat(showErrors);
     let emailValid = await validateAddEmailFormat(showErrors);
     let messageValid = await validateMessageFormat(showErrors);
     return emailValid && messageValid && !hasError;
@@ -210,6 +211,35 @@ function styleMessageValues(inputs) {
 }
 
 /**
+ * Validates name length (minimum 2 characters).
+ * @param {boolean} [showErrors=true] - Whether to display error messages
+ * @returns {Promise<boolean>} True if name is valid, false otherwise
+ * @async
+ */
+async function validateNameFormat(showErrors = true) {
+    let nameInput = document.getElementById("contactName");
+    if (!nameInput) return true;
+    let name = nameInput.value.trim();
+    let pattern = /^[a-zA-ZäöüÄÖÜß][a-zA-ZäöüÄÖÜß\s-]*[a-zA-ZäöüÄÖÜß]$/;
+    let errorMsgName = document.getElementById("nameError");
+    if (!pattern.test(name)) {
+        if (showErrors) patternTestName(nameInput, errorMsgName);
+        return false;
+    }
+    // if (name.length < 2) {
+    //     if (showErrors) patternTestName(nameInput, errorMsgName);
+    //     return false;
+    // }
+    if (showErrors) {
+        nameInput.classList.remove("error");
+        const nameIcon = nameInput.parentElement.querySelector('.inputIcon');
+        if (nameIcon) nameIcon.classList.remove('visible');
+        if (errorMsgName) errorMsgName.classList.add("contactdNone");
+    }
+    return true;
+}
+
+/**
  * Validates email format using regex pattern.
  * @param {boolean} [showErrors=true] - Whether to display error messages
  * @returns {Promise<boolean>} True if email is valid, false otherwise
@@ -221,7 +251,6 @@ async function validateAddEmailFormat(showErrors = true) {
     let email = emailInput.value.trim().toLowerCase();
     let pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     let errorMsgEmail = document.getElementById("emailError");
-    if (emailInput.value == '') return true;
     if (!pattern.test(email)) {
         if (showErrors) patternTestEmail(emailInput, errorMsgEmail);
         return false;
@@ -258,6 +287,22 @@ async function validateMessageFormat(showErrors = true) {
         if (errorMsgMessage) errorMsgMessage.classList.add("contactdNone");
     }
     return true;
+}
+
+
+/**
+ * Displays name validation error message and styling.
+ * @param {HTMLInputElement} nameInput - Name input element
+ * @param {HTMLElement} errorMsgName - Name error message element
+ * @returns {void}
+ */
+function patternTestName(nameInput, errorMsgName) {
+    if (!errorMsgName) return;
+    nameInput.classList.add("error");
+    const nameIcon = nameInput.parentElement.querySelector('.inputIcon');
+    if (nameIcon) nameIcon.classList.add('visible');
+    errorMsgName.innerText = "Name must be at least 2 characters long. No Symbols or numbers allowed.";
+    errorMsgName.classList.remove("contactdNone");
 }
 
 /**

@@ -13,9 +13,7 @@
     display: flex;
     justify-content: flex-end;
     gap: clamp(30px, 5vw, 48px);
-    box-sizing: border-box;
     width: 100%;
-    max-width: 1440px;
     position: relative;
 }
 
@@ -25,12 +23,12 @@
     justify-content: space-between;
     border: clamp(2px, 0.3vw, 3px) solid #9747FF;
     border-radius: clamp(20px, 3vw, 30px);
-    width: 100%;
-    max-width: clamp(600px, 60vw, 851px);
+    width: clamp(600px, 60vw, 851px);
     min-height: clamp(220px, 30vw, 272px);
     height: auto;
     padding: clamp(30px, 5vw, 48px) clamp(40px, 8vw, 96px);
     gap: clamp(25px, 4vh, 40px);
+    flex-shrink: 0;
 }
 
 .comment-container span {
@@ -62,7 +60,6 @@
 .comment-img-container {
     display: flex;
     align-items: center;
-    box-sizing: border-box;
     position: relative;
     flex-shrink: 0;
 }
@@ -147,24 +144,27 @@
 @media(min-width: 1441px) {
     .comment-section {
         width: 1440px;
+        margin: 0 auto;
+        overflow: visible;
     }
 
     .comment-content {
         justify-content: flex-start;
+        overflow: visible;
+        gap: 30px;
     }
 
-    .comment-img-container {
-        overflow: visible;
-        transform: translateX(calc((1440px) / 3));
+    .comment-container {
+        padding: 48px 60px;
     }
 
     .comment-green-line {
-        width: calc((100vw - 1440px) / 2 + 80px);
+        width: calc((100vw - 1440px) / 2 + 160px);
     }
 }
 
 /* ⚠️ TABLET - 1024px - Vertikales Layout */
-@media(max-width: 1024px) {
+@media(max-width: 1240px) {
     .comment-section {
         padding-top: 60px;
         padding-bottom: 40px;
@@ -175,7 +175,6 @@
         gap: 0;
     }
 
-    /* ⚠️ REIHENFOLGE MIT ORDER */
     .comment-img-container {
         order: 1;
         justify-content: flex-end;

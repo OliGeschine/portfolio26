@@ -23,12 +23,14 @@ footer span {
 
 .footer-content-wrapper {
     width: 100%;
+    max-width: 1440px;
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
 }
 
 .footer-content {
-    max-width: 1440px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
@@ -114,8 +116,12 @@ footer span {
 @media(max-width: 820px) {
     footer {
         align-items: center;
-        gap: 30px;
         padding: 0;
+    }
+
+    .footer-content-wrapper {
+        width: auto;
+        gap: 30px;
     }
 
     .footer-content {
@@ -126,5 +132,9 @@ footer span {
 
     .footer-links {
         gap: 42px;
+    }
+
+    .footer-legal-notice-container {
+        align-self: center;
     }
 }

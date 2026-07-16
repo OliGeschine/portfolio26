@@ -18,7 +18,6 @@
     position: relative;
     width: 100%;
     max-width: 1440px;
-    margin: 0 auto;
     gap: clamp(60px, 12vw, 200px);
     align-items: flex-start;
 }

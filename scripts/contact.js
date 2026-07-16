@@ -174,7 +174,9 @@ async function validateSingleField(event) {
         await validateFormRealTime();
         return;
     }
-    if (fieldId === 'contactEmail') {
+    if (fieldId === 'contactName') {
+        await validateNameFormat(true);
+    } else if (fieldId === 'contactEmail') {
         await validateAddEmailFormat(true);
     } else if (fieldId === 'contactMessage') {
         await validateMessageFormat(true);

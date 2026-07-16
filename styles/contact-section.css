@@ -195,7 +195,19 @@
 
 .inputError {
     color: red;
-    font-size: clamp(16px, 1.5vw, 16px);
+    position: absolute;
+    top: 60px;
+    left: 8px;
+    font-size: 14px;
+    transition: opacity 0.3s ease;
+}
+
+.inputErrorMsg {
+    color: red;
+    position: absolute;
+    top: 150px;
+    left: 8px;
+    font-size: 14px;
     transition: opacity 0.3s ease;
 }
 
@@ -327,6 +339,17 @@ textarea.inputFields {
     .contact-headline-container img {
         position: relative;
         width: calc((100vw - 1440px) / 2 + 600px);
+    }
+
+    .contact-content-img {
+        left: 0;
+        position: absolute;
+        transform: translateX(calc((1440px - 100vw) / 2));
+        width: calc((100vw - 1440px) / 2 + 70px);
+    }
+
+    .contact-content-headline-container h2 {
+        margin-left: clamp(0px, 8vw, 100px);
     }
 
     .contact-section-shadow {
