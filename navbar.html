@@ -1,50 +1,54 @@
 <nav>
-    <h1>
-        <a onclick="navigateToHome()">
-            <span>Ol</span><span class="purple-dot">i</span><span>ve</span><span class="green-r">r</span>
-        </a>
-    </h1>
+    <div class="nav-content-wrapper">
+        <h1>
+            <a onclick="navigateToHome()">
+                <span>Ol</span><span class="purple-dot">i</span><span>ve</span><span class="green-r">r</span>
+            </a>
+        </h1>
 
-    <div class="navigation-bar">
-        <div class="navigation-links-container">
-            <div class="navigations-links">
+        <div class="navigation-bar">
+            <div class="navigation-links-container">
+                <div class="navigations-links">
+                    <a onclick="navigateToSection('about_me')" data-translate="nav.about">About me</a>
+                    <img class="navigation-links-img dNone" src="./assets/icons/purple_line.png" alt="">
+                </div>
+                <div class="navigations-links">
+                    <a onclick="navigateToSection('skills')" data-translate="nav.skills">Skills</a>
+                    <img class="navigation-links-img dNone" src="./assets/icons/purple_line.png" alt="">
+                </div>
+                <div class="navigations-links">
+                    <a onclick="navigateToSection('portfolio')" data-translate="nav.portfolio">Portfolio</a>
+                    <img class="navigation-links-img dNone" src="./assets/icons/purple_line.png" alt="">
+                </div>
+            </div>
+
+            <div class="change_language_container">
+                <button class="language-button" id="de_button" onclick="setLanguageDE()">DE</button>
+                <button class="language-button" id="en_button" onclick="setLanguageEN()">EN</button>
+            </div>
+
+            <div id="burger_menu" class="menu-icon dNone" onclick="toggleModal()">
+                <div class="menu-icon-line-top"></div>
+                <div class="menu-icon-line-middle"></div>
+                <div class="menu-icon-line-bottom"></div>
+            </div>
+        </div>
+
+        <div id="modal" class="modal dNone">
+            <div class="modal-content">
                 <a onclick="navigateToSection('about_me')" data-translate="nav.about">About me</a>
-                <img class="navigation-links-img dNone" src="./assets/icons/purple_line.png" alt="">
-            </div>
-            <div class="navigations-links">
                 <a onclick="navigateToSection('skills')" data-translate="nav.skills">Skills</a>
-                <img class="navigation-links-img dNone" src="./assets/icons/purple_line.png" alt="">
-            </div>
-            <div class="navigations-links">
                 <a onclick="navigateToSection('portfolio')" data-translate="nav.portfolio">Portfolio</a>
-                <img class="navigation-links-img dNone" src="./assets/icons/purple_line.png" alt="">
-            </div>
-        </div>
-
-        <div class="change_language_container">
-            <button class="language-button" id="de_button" onclick="setLanguageDE()">DE</button>
-            <button class="language-button" id="en_button" onclick="setLanguageEN()">EN</button>
-        </div>
-
-        <div id="burger_menu" class="menu-icon dNone" onclick="toggleModal()">
-            <div class="menu-icon-line-top"></div>
-            <div class="menu-icon-line-middle"></div>
-            <div class="menu-icon-line-bottom"></div>
-        </div>
-    </div>
-
-    <div id="modal" class="modal dNone">
-        <div class="modal-content">
-            <a onclick="navigateToSection('about_me')" data-translate="nav.about">About me</a>
-            <a onclick="navigateToSection('skills')" data-translate="nav.skills">Skills</a>
-            <a onclick="navigateToSection('portfolio')" data-translate="nav.portfolio">Portfolio</a>
-            <a onclick="navigateToSection('contact')" data-translate="nav.contact">Contact</a>
-            <div class="modal-language-container">
-                <button class="language-button-modal" id="de_button_modal" onclick="setLanguageDEModal()">DE</button>
-                <button class="language-button-modal dNone" id="de_active_modal">DE</button>
-                <p>/</p>
-                <button class="language-button-modal" id="en_button_modal" onclick="setLanguageENModal()">EN</button>
-                <button class="language-button-modal dNone" id="en_active_modal">EN</button>
+                <a onclick="navigateToSection('contact')" data-translate="nav.contact">Contact</a>
+                <div class="modal-language-container">
+                    <button class="language-button-modal" id="de_button_modal"
+                        onclick="setLanguageDEModal()">DE</button>
+                    <button class="language-button-modal dNone" id="de_active_modal">DE</button>
+                    <p>/</p>
+                    <button class="language-button-modal" id="en_button_modal"
+                        onclick="setLanguageENModal()">EN</button>
+                    <button class="language-button-modal dNone" id="en_active_modal">EN</button>
+                </div>
             </div>
         </div>
     </div>

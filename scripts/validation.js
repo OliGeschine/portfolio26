@@ -222,14 +222,11 @@ async function validateNameFormat(showErrors = true) {
     let name = nameInput.value.trim();
     let pattern = /^[a-zA-ZäöüÄÖÜß][a-zA-ZäöüÄÖÜß\s-]*[a-zA-ZäöüÄÖÜß]$/;
     let errorMsgName = document.getElementById("nameError");
+    if (name === '') return true;
     if (!pattern.test(name)) {
         if (showErrors) patternTestName(nameInput, errorMsgName);
         return false;
     }
-    // if (name.length < 2) {
-    //     if (showErrors) patternTestName(nameInput, errorMsgName);
-    //     return false;
-    // }
     if (showErrors) {
         nameInput.classList.remove("error");
         const nameIcon = nameInput.parentElement.querySelector('.inputIcon');

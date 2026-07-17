@@ -65,7 +65,7 @@ function initContactForm() {
     checkboxContainer.addEventListener('click', toggleCheckbox);
 
     // ✅ Input Events - Validierung + Error-Removal während des Tippens
-    document.getElementById('contactName').addEventListener('input', validateFormRealTime);
+    document.getElementById('contactName').addEventListener('input', handleNameInput);
     document.getElementById('contactEmail').addEventListener('input', handleEmailInput);
     document.getElementById('contactMessage').addEventListener('input', handleMessageInput);
 
@@ -162,6 +162,30 @@ async function handleFormSubmit(event) {
 }
 
 /**
+ * Shows error styling and message for an empty field.
+ * @param {HTMLInputElement} input - The input element
+ * @returns {void}
+ */
+function showEmptyFieldError(input) {
+    input.classList.add('error');
+    const icon = input.parentElement.querySelector('.inputIcon');
+    if (icon) icon.classList.add('visible');
+    const errorConfig = {
+        contactName: { id: 'nameError', msg: 'Please enter your name.' },
+        contactEmail: { id: 'emailError', msg: 'Please enter your email address.' },
+        contactMessage: { id: 'messageError', msg: 'Please enter your message.' }
+    };
+    const config = errorConfig[input.id];
+    if (config) {
+        const errorElement = document.getElementById(config.id);
+        if (errorElement) {
+            errorElement.innerText = config.msg;
+            errorElement.classList.remove('contactdNone');
+        }
+    }
+}
+
+/**
  * Validates a single field when it loses focus (blur event).
  * @param {FocusEvent} event - The blur event from the input field
  * @returns {Promise<void>}
@@ -171,6 +195,7 @@ async function validateSingleField(event) {
     const fieldId = event.target.id;
     const input = event.target;
     if (input.value.trim() === '') {
+        showEmptyFieldError(input);
         await validateFormRealTime();
         return;
     }
@@ -180,6 +205,23 @@ async function validateSingleField(event) {
         await validateAddEmailFormat(true);
     } else if (fieldId === 'contactMessage') {
         await validateMessageFormat(true);
+    }
+    await validateFormRealTime();
+}
+
+/**
+ * Handles name input events and removes error styling when user starts typing.
+ * @returns {Promise<void>}
+ * @async
+ */
+async function handleNameInput() {
+    const nameInput = document.getElementById('contactName');
+    const nameError = document.getElementById('nameError');
+    const nameIcon = nameInput.parentElement.querySelector('.inputIcon');
+    if (nameInput.value.trim() !== '') {
+        nameInput.classList.remove('error');
+        if (nameIcon) nameIcon.classList.remove('visible');
+        if (nameError) nameError.classList.add('contactdNone');
     }
     await validateFormRealTime();
 }
