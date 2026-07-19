@@ -207,3 +207,36 @@ function setLanguageENModal() {
     }
     updateLanguageButtons('en');
 }
+
+/**
+ * Initializes the scroll animation for the landing section links.
+ * Uses Intersection Observer to trigger slide-in/out animations based on scroll position.
+ * Observes the entire landing section for better reliability.
+ * @returns {void}
+ */
+function initLandingAnimation() {
+    const linksContainer = document.querySelector('.links');
+    const landingSection = document.querySelector('.landing-section');
+    if (!linksContainer || !landingSection) return;
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                linksContainer.classList.remove('slide-out');
+                linksContainer.classList.add('slide-in');
+            } else {
+                linksContainer.classList.remove('slide-in');
+                linksContainer.classList.add('slide-out');
+            }
+        });
+    }, {
+        threshold: 0.3,
+        rootMargin: '0px'
+    });
+    observer.observe(landingSection);
+}
+
+/**
+ * Event listener for page load event.
+ * Initializes landing section links animation when the page loads.
+ */
+window.addEventListener('load', initLandingAnimation);

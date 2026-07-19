@@ -116,3 +116,36 @@ function getCurrentDot() {
         document.getElementById('navigation_dot_right').style.color = '#70E61C';
     }
 }
+
+/**
+ * Initializes the scroll animation for the comments headline container.
+ * Uses Intersection Observer to trigger slide-in/out animations based on scroll position.
+ * Observes the entire comments section for better reliability.
+ * @returns {void}
+ */
+function initCommentsAnimation() {
+    const headlineContainer = document.querySelector('.comment-img-container');
+    const commentsSection = document.querySelector('.comment-section');
+    if (!headlineContainer || !commentsSection) return;
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                headlineContainer.classList.remove('slide-out');
+                headlineContainer.classList.add('slide-in');
+            } else {
+                headlineContainer.classList.remove('slide-in');
+                headlineContainer.classList.add('slide-out');
+            }
+        });
+    }, {
+        threshold: 0.3,
+        rootMargin: '0px'
+    });
+    observer.observe(commentsSection);
+}
+
+/**
+ * Event listener for page load event.
+ * Initializes comments headline animation when the page loads.
+ */
+window.addEventListener('load', initCommentsAnimation);

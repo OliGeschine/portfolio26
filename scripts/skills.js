@@ -27,3 +27,36 @@ window.addEventListener('resize', showSkills);
  * Ensures correct skills section is displayed when the page first loads.
  */
 window.addEventListener('load', showSkills);
+
+/**
+ * Initializes the scroll animation for the skills headline container.
+ * Uses Intersection Observer to trigger slide-in/out animations based on scroll position.
+ * Observes the entire skills section for better reliability.
+ * @returns {void}
+ */
+function initSkillsAnimation() {
+    const headlineContainer = document.querySelector('.skills_headline_container');
+    const skillsSection = document.querySelector('.skills_section');
+    if (!headlineContainer || !skillsSection) return;
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                headlineContainer.classList.remove('slide-out');
+                headlineContainer.classList.add('slide-in');
+            } else {
+                headlineContainer.classList.remove('slide-in');
+                headlineContainer.classList.add('slide-out');
+            }
+        });
+    }, {
+        threshold: 0.3,
+        rootMargin: '0px'
+    });
+    observer.observe(skillsSection);
+}
+
+/**
+ * Event listener for page load event.
+ * Initializes skills headline animation when the page loads.
+ */
+window.addEventListener('load', initSkillsAnimation);

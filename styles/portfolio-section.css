@@ -1,3 +1,27 @@
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutToLeft {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
 .portfolio_section {
     display: flex;
     flex-direction: column;
@@ -12,7 +36,7 @@
 }
 
 .portfolio_section h1 {
-    font-size: clamp(45px, 8vw, 90px);
+    font-size: clamp(38px, 8vw, 90px);
     font-weight: 700;
     line-height: 120%;
 }
@@ -34,6 +58,16 @@
     align-items: center;
     gap: clamp(20px, 3vw, 32px);
     margin-bottom: clamp(20px, 4vh, 40px);
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.headline_container.slide-in {
+    animation: slideInFromLeft 0.6s ease-out forwards;
+}
+
+.headline_container.slide-out {
+    animation: slideOutToLeft 0.6s ease-out forwards;
 }
 
 .headline_container>img {
@@ -190,7 +224,7 @@
 
 .portfolio_section h2 {
     color: #9747FF;
-    font-size: clamp(24px, 4vw, 32px);
+    font-size: clamp(18px, 4vw, 32px);
     font-weight: 700;
     text-align: center;
 }
@@ -326,10 +360,6 @@
 
 /* ⚠️ MEDIA QUERY - 480px - Mobile */
 @media(max-width: 480px) {
-    .portfolio_section h1 {
-        font-size: 42px;
-    }
-
     .headline_container {
         margin-bottom: 20px;
     }
@@ -351,10 +381,6 @@
     .info_container {
         gap: 22px;
         padding: 24px 0px;
-    }
-
-    .portfolio_section h2 {
-        font-size: 24px;
     }
 
     .project-description {
@@ -383,9 +409,6 @@
 }
 
 @media (max-width: 420px) {
-    .portfolio_section h2 {
-        font-size: 18px;
-    }
 
     .overlay {
         top: 40px;
@@ -395,10 +418,6 @@
 
 /* ⚠️ MEDIA QUERY - 375px - Small Mobile */
 @media(max-width: 375px) {
-    .portfolio_section h1 {
-        font-size: 38px;
-    }
-
     .project_container {
         min-width: 300px;
     }
@@ -406,10 +425,6 @@
     .project-wrapper {
         margin-left: 10px;
         margin-right: 10px;
-    }
-
-    .portfolio_section h2 {
-        font-size: 22px;
     }
 
     .project-description {

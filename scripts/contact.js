@@ -354,3 +354,36 @@ function resetForm() {
         icon.classList.remove('visible');
     });
 }
+
+/**
+ * Initializes the scroll animation for the contact headline container.
+ * Uses Intersection Observer to trigger slide-in/out animations based on scroll position.
+ * Observes the entire contact section for better reliability.
+ * @returns {void}
+ */
+function initContactsAnimation() {
+    const headlineContainer = document.querySelector('.contact-headline-container');
+    const contactSection = document.querySelector('.contact-section');
+    if (!headlineContainer || !contactSection) return;
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                headlineContainer.classList.remove('slide-out');
+                headlineContainer.classList.add('slide-in');
+            } else {
+                headlineContainer.classList.remove('slide-in');
+                headlineContainer.classList.add('slide-out');
+            }
+        });
+    }, {
+        threshold: 0.3,
+        rootMargin: '0px'
+    });
+    observer.observe(contactSection);
+}
+
+/**
+ * Event listener for page load event.
+ * Initializes contact headline animation when the page loads.
+ */
+window.addEventListener('load', initContactsAnimation);

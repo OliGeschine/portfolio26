@@ -1,3 +1,27 @@
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutToRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
 .comment-section {
     display: flex;
     flex-direction: column;
@@ -62,6 +86,16 @@
     align-items: center;
     position: relative;
     flex-shrink: 0;
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.comment-img-container.slide-in {
+    animation: slideInFromRight 0.6s ease-out forwards;
+}
+
+.comment-img-container.slide-out {
+    animation: slideOutToRight 0.6s ease-out forwards;
 }
 
 .comment-img {

@@ -1,3 +1,27 @@
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutToRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
 .contact-section {
     display: flex;
     flex-direction: column;
@@ -17,6 +41,16 @@
     line-height: 120%;
     max-width: 1440px;
     gap: clamp(20px, 4vw, 32px);
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.contact-headline-container.slide-in {
+    animation: slideInFromRight 0.6s ease-out forwards;
+}
+
+.contact-headline-container.slide-out {
+    animation: slideOutToRight 0.6s ease-out forwards;
 }
 
 .contact-headline-container h1 {
@@ -61,7 +95,7 @@
 }
 
 .contact-content-headline-container h2 {
-    font-size: clamp(24px, 4vw, 32px);
+    font-size: clamp(16px, 4vw, 32px);
     font-weight: 700;
     line-height: 120%;
     margin: 0;
@@ -333,7 +367,8 @@ textarea.inputFields {
 
     .contact-headline-container {
         justify-content: flex-start;
-        transform: translateX(calc((1440px) / 3));
+        position: relative;
+        right: -470px;
     }
 
     .contact-headline-container img {
@@ -406,21 +441,12 @@ textarea.inputFields {
 
 /* MOBILE - 768px */
 @media(max-width: 768px) {
-    .contact-headline-container h1 {
-        font-size: 45px;
-    }
-
     .contact-headline-container img {
         width: 200px;
     }
 
     .contact-content-container {
         gap: 40px;
-    }
-
-    .contact-content-headline-container h2 {
-        font-size: 28px;
-        text-align: center;
     }
 
     .contact-content-span-container {
@@ -459,20 +485,12 @@ textarea.inputFields {
 
 /* SMALL MOBILE - 480px */
 @media(max-width: 480px) {
-    .contact-headline-container h1 {
-        font-size: 42px;
-    }
-
     .contact-headline-container img {
         width: 120px;
     }
 
     .contact-content-container {
         gap: 35px;
-    }
-
-    .contact-content-headline-container h2 {
-        font-size: 20px;
     }
 
     .contact-content-span-container {
@@ -508,10 +526,6 @@ textarea.inputFields {
 
 /* EXTRA SMALL - 375px */
 @media(max-width: 375px) {
-    .contact-headline-container h1 {
-        font-size: 38px;
-    }
-
     .contact-headline-container img {
         width: 70px;
     }

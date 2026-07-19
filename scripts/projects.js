@@ -110,3 +110,36 @@ function addHoverEvents(container) {
         img?.classList.remove('zoomed');
     });
 }
+
+/**
+ * Initializes the scroll animation for the portfolio headline container.
+ * Uses Intersection Observer to trigger slide-in/out animations based on scroll position.
+ * Observes the entire portfolio section for better reliability.
+ * @returns {void}
+ */
+function initPortfolioAnimation() {
+    const headlineContainer = document.querySelector('.headline_container');
+    const portfolioSection = document.querySelector('.portfolio_section');
+    if (!headlineContainer || !portfolioSection) return;
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                headlineContainer.classList.remove('slide-out');
+                headlineContainer.classList.add('slide-in');
+            } else {
+                headlineContainer.classList.remove('slide-in');
+                headlineContainer.classList.add('slide-out');
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: '0px'
+    });
+    observer.observe(portfolioSection);
+}
+
+/**
+ * Event listener for page load event.
+ * Initializes portfolio headline animation when the page loads.
+ */
+window.addEventListener('load', initPortfolioAnimation);
