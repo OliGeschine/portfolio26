@@ -38,6 +38,14 @@ let projects = [
         github: "https://github.com/OliGeschine/pokedex",
         live: "https://oliver-geschine.de/pokedex/index.html"
     },
+    {
+        title: "Memory",
+        description: "A browser based two player memory game.",
+        usedSkills: "Typescript | HTML | SCSS",
+        img: "./assets/img/memory.svg",
+        github: "https://github.com/OliGeschine/memory",
+        live: "https://oliver-geschine.de/memory/"
+    }
 ];
 
 /**
